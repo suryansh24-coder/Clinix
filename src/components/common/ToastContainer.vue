@@ -38,34 +38,12 @@
 </template>
 
 <script setup>
-import { ref, provide } from 'vue'
+// ── Use the module-level singleton composable ─────────────
+// This reads the same reactive 'toasts' array that any component
+// can push to via useToast().showToast(), regardless of component hierarchy.
+import { useToast } from '@/composables/useToast'
 
-const toasts = ref([])
-let toastIdCounter = 0
-
-/**
- * Show a toast notification
- * @param {Object} options - { type, title, message, duration }
- * type: 'success' | 'error' | 'warning' | 'info'
- */
-function showToast({ type = 'info', title = '', message = '', duration = 4000 }) {
-  const id = ++toastIdCounter
-  toasts.value.push({ id, type, title, message, duration })
-
-  // Auto-remove after duration
-  setTimeout(() => removeToast(id), duration)
-}
-
-/**
- * Remove a toast by ID
- */
-function removeToast(id) {
-  toasts.value = toasts.value.filter(t => t.id !== id)
-}
-
-// Provide the showToast function globally via Vue's provide/inject
-// Any child component can inject 'showToast' to display notifications
-provide('showToast', showToast)
+const { toasts, removeToast } = useToast()
 </script>
 
 <style scoped>

@@ -11,9 +11,11 @@ export default defineConfig({
     }
   },
   server: {
-    port: 5173,
+    host: '0.0.0.0',       // Required for Replit preview
+    port: 5000,
+    allowedHosts: true,     // Allow Replit proxy domains
     proxy: {
-      // Proxy API requests to JSON Server during development
+      // Proxy /api/* to JSON Server during development
       '/api': {
         target: 'http://localhost:3000',
         changeOrigin: true,

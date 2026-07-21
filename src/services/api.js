@@ -6,10 +6,12 @@
 
 import axios from 'axios'
 
-// Create Axios instance with base configuration
-// Uses environment variable so the URL is configurable for deployment
+// Create Axios instance with base configuration.
+// Uses relative '/api' path so requests go through Vite's dev-server proxy
+// (configured in vite.config.js: /api → http://localhost:3000).
+// For production builds, set VITE_API_BASE_URL to the deployed JSON Server URL.
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000',
+  baseURL: import.meta.env.VITE_API_BASE_URL || '/api',
   headers: {
     'Content-Type': 'application/json'
   },

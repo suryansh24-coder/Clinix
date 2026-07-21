@@ -10,12 +10,15 @@ import axios from 'axios'
 // Uses relative '/api' path so requests go through Vite's dev-server proxy
 // (configured in vite.config.js: /api → http://localhost:3000).
 // For production builds, set VITE_API_BASE_URL to the deployed JSON Server URL.
+// Always use the Vite dev-server proxy (/api → localhost:3000).
+// Using an absolute URL like http://localhost:3000 breaks in Replit
+// because the browser cannot reach localhost directly through the proxy.
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || '/api',
+  baseURL: '/api',
   headers: {
     'Content-Type': 'application/json'
   },
-  timeout: 10000 // 10-second timeout to handle network failures
+  timeout: 10000
 })
 
 // ── Request Interceptor ─────────────────────────────────

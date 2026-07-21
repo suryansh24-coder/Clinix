@@ -1,11 +1,11 @@
 <!-- ============================================================
      Navbar.vue — Premium Navigation Bar
-     Glassmorphism-styled navbar with responsive hamburger menu,
-     search, auth state display, and smooth scroll effects.
+     Inline search, theme toggle, Bookings link, gradient effects
      ============================================================ -->
 <template>
   <nav class="navbar" :class="{ scrolled: isScrolled, 'menu-open': isMobileMenuOpen }">
     <div class="container navbar-inner">
+
       <!-- Logo / Brand -->
       <router-link to="/" class="navbar-brand" @click="closeMobile">
         <span class="brand-icon">🎬</span>
@@ -14,49 +14,77 @@
 
       <!-- Desktop Navigation Links -->
       <div class="navbar-links" :class="{ active: isMobileMenuOpen }">
-        <router-link to="/" class="nav-link" active-class="nav-link-active" @click="closeMobile">
+        <router-link to="/" class="nav-link" active-class="nav-link-active" exact @click="closeMobile">
           Home
         </router-link>
         <router-link to="/movies" class="nav-link" active-class="nav-link-active" @click="closeMobile">
           Movies
         </router-link>
-        <router-link
-          v-if="isLoggedIn"
-          to="/my-bookings"
-          class="nav-link"
-          active-class="nav-link-active"
-          @click="closeMobile"
-        >
-          My Bookings
+        <router-link to="/my-bookings" class="nav-link nav-link-bookings" active-class="nav-link-active" @click="closeMobile">
+          🎟️ Bookings
         </router-link>
 
-        <!-- Mobile-only auth buttons -->
+        <!-- Mobile-only auth + search -->
+        <div class="mobile-search-section">
+          <div class="mobile-search-bar">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
+            <input
+              v-model="searchText"
+              type="text"
+              placeholder="Search movies..."
+              class="mobile-search-input"
+              @keyup.enter="performSearch"
+            />
+          </div>
+        </div>
+
         <div class="mobile-auth-section">
           <template v-if="isLoggedIn">
-            <router-link to="/profile" class="nav-link" @click="closeMobile">
-              Profile
-            </router-link>
+            <router-link to="/profile" class="nav-link" @click="closeMobile">Profile</router-link>
             <button class="btn btn-outline btn-sm" @click="handleLogout">Logout</button>
           </template>
           <template v-else>
-            <router-link to="/login" class="btn btn-ghost btn-sm" @click="closeMobile">
-              Sign In
-            </router-link>
-            <router-link to="/register" class="btn btn-primary btn-sm" @click="closeMobile">
-              Sign Up
-            </router-link>
+            <router-link to="/login" class="btn btn-ghost btn-sm" @click="closeMobile">Sign In</router-link>
+            <router-link to="/register" class="btn btn-primary btn-sm" @click="closeMobile">Sign Up</router-link>
           </template>
         </div>
       </div>
 
-      <!-- Right Section: Auth + Search -->
+      <!-- Right Section: Inline Search + Theme + Auth -->
       <div class="navbar-actions">
-        <!-- Search Toggle -->
-        <button class="btn-icon nav-icon-btn" @click="toggleSearch" aria-label="Search">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="11" cy="11" r="8"/>
-            <path d="m21 21-4.35-4.35"/>
+
+        <!-- Inline Search Bar (desktop) -->
+        <div class="inline-search" :class="{ focused: isSearchFocused }">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
           </svg>
+          <input
+            ref="searchInputRef"
+            v-model="searchText"
+            type="text"
+            placeholder="Search movies, genres, actors..."
+            class="inline-search-input"
+            @focus="isSearchFocused = true"
+            @blur="isSearchFocused = false"
+            @keyup.enter="performSearch"
+            @keyup.escape="searchText = ''"
+          />
+          <button v-if="searchText" class="search-clear" @click="searchText = ''" title="Clear">✕</button>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button
+          class="btn-icon nav-icon-btn theme-toggle"
+          @click="toggleTheme"
+          :title="isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'"
+          :aria-label="isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'"
+        >
+          <transition name="theme-icon" mode="out-in">
+            <span v-if="isDark" key="moon" class="theme-icon">☀️</span>
+            <span v-else key="sun" class="theme-icon">🌙</span>
+          </transition>
         </button>
 
         <!-- Desktop Auth Buttons -->
@@ -80,99 +108,53 @@
           @click="toggleMobile"
           aria-label="Toggle menu"
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
       </div>
     </div>
-
-    <!-- Floating Search Bar -->
-    <transition name="search-slide">
-      <div v-if="isSearchOpen" class="search-overlay">
-        <div class="container">
-          <div class="search-bar">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="11" cy="11" r="8"/>
-              <path d="m21 21-4.35-4.35"/>
-            </svg>
-            <input
-              ref="searchInputRef"
-              v-model="searchText"
-              type="text"
-              placeholder="Search movies, genres, actors..."
-              class="search-input"
-              @keyup.enter="performSearch"
-              @keyup.escape="closeSearch"
-            />
-            <button class="search-close" @click="closeSearch">✕</button>
-          </div>
-        </div>
-      </div>
-    </transition>
   </nav>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, nextTick } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuth } from '@/composables/useAuth'
+import { useTheme } from '@/composables/useTheme'
 
 const router = useRouter()
 const { isLoggedIn, userName, logout } = useAuth()
+const { isDark, toggleTheme } = useTheme()
 
 // ── Reactive State ────────────────────────────────────────
-const isScrolled = ref(false)
+const isScrolled      = ref(false)
 const isMobileMenuOpen = ref(false)
-const isSearchOpen = ref(false)
-const searchText = ref('')
-const searchInputRef = ref(null)
+const isSearchFocused = ref(false)
+const searchText      = ref('')
+const searchInputRef  = ref(null)
 
-// ── Scroll Detection ────────────────────────────────────
-// Adds "scrolled" class for glassmorphism effect on scroll
+// ── Scroll Detection ─────────────────────────────────────
 function handleScroll() {
   isScrolled.value = window.scrollY > 20
 }
 
-// ── Lifecycle: Add/remove scroll listener ───────────────
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll, { passive: true })
-})
+onMounted(() => window.addEventListener('scroll', handleScroll, { passive: true }))
+onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
-})
+// ── Mobile Menu ──────────────────────────────────────────
+function toggleMobile() { isMobileMenuOpen.value = !isMobileMenuOpen.value }
+function closeMobile()  { isMobileMenuOpen.value = false }
 
-// ── Mobile Menu Toggle ──────────────────────────────────
-function toggleMobile() {
-  isMobileMenuOpen.value = !isMobileMenuOpen.value
-}
-function closeMobile() {
-  isMobileMenuOpen.value = false
-}
-
-// ── Search Toggle ───────────────────────────────────────
-function toggleSearch() {
-  isSearchOpen.value = !isSearchOpen.value
-  if (isSearchOpen.value) {
-    nextTick(() => searchInputRef.value?.focus())
-  }
-}
-function closeSearch() {
-  isSearchOpen.value = false
-  searchText.value = ''
-}
-
-// ── Search Navigation ───────────────────────────────────
+// ── Search ───────────────────────────────────────────────
 function performSearch() {
   if (searchText.value.trim()) {
     router.push({ name: 'Movies', query: { search: searchText.value.trim() } })
-    closeSearch()
+    searchText.value = ''
     closeMobile()
+    searchInputRef.value?.blur()
   }
 }
 
-// ── Logout Handler ──────────────────────────────────────
+// ── Logout ───────────────────────────────────────────────
 function handleLogout() {
   logout()
   closeMobile()
@@ -188,14 +170,16 @@ function handleLogout() {
   left: 0;
   right: 0;
   z-index: var(--z-sticky);
-  padding: 0.75rem 0;
+  padding: 0.6rem 0;
   transition: all var(--transition-base);
   background: transparent;
 }
 
+
 .navbar.scrolled {
-  background: rgba(10, 10, 26, 0.85);
-  backdrop-filter: blur(20px);
+  background: var(--navbar-bg-scrolled);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   border-bottom: 1px solid var(--border-color);
   box-shadow: var(--shadow-md);
 }
@@ -203,8 +187,7 @@ function handleLogout() {
 .navbar-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--space-xl);
+  gap: var(--space-md);
 }
 
 /* ── Brand ───────────────────────────────────────────────── */
@@ -217,7 +200,7 @@ function handleLogout() {
   flex-shrink: 0;
 }
 
-.brand-icon { font-size: 1.5rem; }
+.brand-icon { font-size: 1.4rem; }
 
 .brand-text {
   font-family: var(--font-display);
@@ -237,11 +220,12 @@ function handleLogout() {
 .navbar-links {
   display: flex;
   align-items: center;
-  gap: var(--space-xs);
+  gap: 2px;
+  flex-shrink: 0;
 }
 
 .nav-link {
-  padding: 0.5rem 1rem;
+  padding: 0.45rem 0.9rem;
   font-size: var(--font-size-sm);
   font-weight: 500;
   color: var(--text-secondary);
@@ -258,7 +242,83 @@ function handleLogout() {
 
 .nav-link-active {
   color: var(--color-accent) !important;
-  background: rgba(0, 212, 255, 0.08);
+  background: var(--accent-chip-bg) !important;
+}
+
+/* Bookings link — subtle gradient pill */
+.nav-link-bookings {
+  background: var(--bookings-btn-bg);
+  color: var(--color-primary) !important;
+  border: 1px solid rgba(229, 9, 20, 0.2);
+  font-weight: 600;
+}
+.nav-link-bookings:hover {
+  background: rgba(229, 9, 20, 0.18) !important;
+  border-color: var(--color-primary);
+  color: var(--color-primary-light) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(229, 9, 20, 0.25);
+}
+
+/* ── Inline Search Bar (desktop) ─────────────────────────── */
+.inline-search {
+  flex: 1;
+  max-width: 340px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0.45rem 0.9rem;
+  background: var(--bg-input);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-full);
+  color: var(--text-muted);
+  transition: all var(--transition-base);
+  min-width: 0;
+}
+
+.inline-search svg {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.inline-search.focused,
+.inline-search:focus-within {
+  border-color: var(--color-accent);
+  background: var(--bg-input-focus);
+  box-shadow: 0 0 0 3px var(--accent-glow-sm);
+}
+
+.inline-search.focused svg {
+  color: var(--color-accent);
+}
+
+.inline-search-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  min-width: 0;
+}
+
+.inline-search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-clear {
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  padding: 2px 5px;
+  border-radius: var(--radius-full);
+  background: var(--bg-glass);
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+.search-clear:hover {
+  color: var(--text-primary);
+  background: var(--bg-glass-hover);
 }
 
 /* ── Navbar Actions ──────────────────────────────────────── */
@@ -266,29 +326,54 @@ function handleLogout() {
   display: flex;
   align-items: center;
   gap: var(--space-sm);
+  flex-shrink: 0;
 }
 
 .nav-icon-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: var(--radius-full);
   color: var(--text-secondary);
   background: var(--bg-glass);
+  border: 1px solid var(--border-color);
   transition: all var(--transition-fast);
+  flex-shrink: 0;
 }
 
 .nav-icon-btn:hover {
   color: var(--text-primary);
   background: var(--bg-glass-hover);
+  transform: scale(1.06);
 }
+
+/* Theme Toggle */
+.theme-toggle {
+  font-size: 1rem;
+  border-color: transparent;
+}
+.theme-toggle:hover {
+  border-color: var(--border-color);
+  transform: rotate(15deg) scale(1.08);
+}
+
+.theme-icon {
+  display: block;
+  line-height: 1;
+  font-size: 1.05rem;
+}
+
+.theme-icon-enter-active,
+.theme-icon-leave-active { transition: all 0.2s ease; }
+.theme-icon-enter-from   { opacity: 0; transform: rotate(-90deg) scale(0.6); }
+.theme-icon-leave-to     { opacity: 0; transform: rotate(90deg) scale(0.6); }
 
 /* ── User Avatar ─────────────────────────────────────────── */
 .user-avatar-btn {
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   border-radius: var(--radius-full);
   background: var(--gradient-accent);
   display: flex;
@@ -296,13 +381,12 @@ function handleLogout() {
   justify-content: center;
   text-decoration: none;
   transition: all var(--transition-fast);
+  flex-shrink: 0;
 }
-
 .user-avatar-btn:hover {
   transform: scale(1.08);
   box-shadow: var(--shadow-glow);
 }
-
 .avatar-initial {
   font-family: var(--font-display);
   font-weight: 700;
@@ -317,11 +401,10 @@ function handleLogout() {
   gap: var(--space-sm);
 }
 
-.mobile-auth-section {
-  display: none;
-}
+.mobile-auth-section   { display: none; }
+.mobile-search-section { display: none; }
 
-/* ── Hamburger Menu ──────────────────────────────────────── */
+/* ── Hamburger ───────────────────────────────────────────── */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -332,8 +415,9 @@ function handleLogout() {
   padding: 6px;
   border-radius: var(--radius-md);
   background: var(--bg-glass);
+  border: 1px solid var(--border-color);
+  flex-shrink: 0;
 }
-
 .hamburger span {
   display: block;
   width: 100%;
@@ -342,114 +426,72 @@ function handleLogout() {
   border-radius: 2px;
   transition: all var(--transition-base);
 }
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-.hamburger.open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.open span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .inline-search { max-width: 220px; }
 }
 
-/* ── Floating Search Bar ─────────────────────────────────── */
-.search-overlay {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  padding: var(--space-md) 0;
-  background: rgba(10, 10, 26, 0.95);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border-color);
-}
-
-.search-bar {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  padding: 0.875rem 1.25rem;
-  background: var(--bg-input);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  color: var(--text-muted);
-}
-
-.search-bar:focus-within {
-  border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
-}
-
-.search-input {
-  flex: 1;
-  background: none;
-  border: none;
-  outline: none;
-  color: var(--text-primary);
-  font-size: var(--font-size-base);
-}
-
-.search-close {
-  color: var(--text-muted);
-  font-size: var(--font-size-lg);
-  padding: 4px;
-  border-radius: var(--radius-full);
-  transition: all var(--transition-fast);
-}
-
-.search-close:hover {
-  color: var(--text-primary);
-  background: var(--bg-glass);
-}
-
-/* ── Search Transition ───────────────────────────────────── */
-.search-slide-enter-active,
-.search-slide-leave-active {
-  transition: all 0.3s ease;
-}
-.search-slide-enter-from,
-.search-slide-leave-to {
-  opacity: 0;
-  transform: translateY(-10px);
-}
-
-/* ── Responsive: Tablet & Mobile ─────────────────────────── */
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
-  .desktop-auth {
-    display: none;
-  }
+  .hamburger          { display: flex; }
+  .desktop-auth       { display: none; }
+  .inline-search      { display: none; }
 
   .navbar-links {
     position: fixed;
-    top: 72px;
+    top: 64px;
     left: 0;
     right: 0;
     bottom: 0;
     flex-direction: column;
     padding: var(--space-xl);
     gap: var(--space-sm);
-    background: rgba(10, 10, 26, 0.98);
-    backdrop-filter: blur(20px);
+    background: var(--mobile-menu-bg);
+    backdrop-filter: blur(24px);
     transform: translateX(100%);
     transition: transform var(--transition-slow);
     align-items: stretch;
     overflow-y: auto;
   }
 
-  .navbar-links.active {
-    transform: translateX(0);
-  }
+  .navbar-links.active { transform: translateX(0); }
 
   .nav-link {
     font-size: var(--font-size-lg);
     padding: 1rem;
     border-radius: var(--radius-md);
   }
+
+  .mobile-search-section {
+    display: block;
+    margin-top: var(--space-md);
+  }
+
+  .mobile-search-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 0.75rem 1rem;
+    background: var(--bg-input);
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    color: var(--text-muted);
+  }
+  .mobile-search-bar:focus-within {
+    border-color: var(--color-accent);
+  }
+  .mobile-search-input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+    font-size: var(--font-size-base);
+  }
+  .mobile-search-input::placeholder { color: var(--text-muted); }
 
   .mobile-auth-section {
     display: flex;
@@ -459,5 +501,9 @@ function handleLogout() {
     padding-top: var(--space-xl);
     border-top: 1px solid var(--border-color);
   }
+}
+
+@media (max-width: 480px) {
+  .nav-link-bookings { display: none; }
 }
 </style>

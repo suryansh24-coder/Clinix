@@ -7,24 +7,52 @@
       "password": "demo1234",
       "phone": "9999999999",
       "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "name": "Suryansh Tiwari",
+      "email": "iit.tiwari0@gmail.com",
+      "password": "Suryansh@07",
+      "phone": "8800976050",
+      "avatar": "",
+      "createdAt": "2026-07-22T07:31:30.621Z",
+      "id": 2
     }
   ],
   "movies": [
     {
       "id": 1,
       "title": "Pathaan",
-      "genre": ["Action", "Thriller"],
+      "genre": [
+        "Action",
+        "Thriller"
+      ],
       "language": "Hindi",
       "duration": "2h 26m",
       "rating": 5.9,
-      "poster": "https://image.tmdb.org/t/p/w500/a31jBlNLVkRsJzCWNpI6CTk1W0G.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/6OEBp0Gqv6DsOgi8diPUslT2kbA.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/1BE2AKEU9QuSAqBGjXAr3zFElOR.jpg",
       "description": "India's most wanted spy Pathaan takes on a vengeful mercenary who has unleashed a deadly biological weapon against the nation. A high-octane action thriller packed with jaw-dropping sequences across exotic global locations.",
       "cast": [
-        {"name": "Shah Rukh Khan", "role": "Pathaan", "image": "https://ui-avatars.com/api/?name=Shah+Rukh+Khan&background=b91c1c&color=fff&size=200"},
-        {"name": "Deepika Padukone", "role": "Rubai", "image": "https://ui-avatars.com/api/?name=Deepika+Padukone&background=7c3aed&color=fff&size=200"},
-        {"name": "John Abraham", "role": "Jim", "image": "https://ui-avatars.com/api/?name=John+Abraham&background=0369a1&color=fff&size=200"},
-        {"name": "Dimple Kapadia", "role": "Nandini", "image": "https://ui-avatars.com/api/?name=Dimple+Kapadia&background=059669&color=fff&size=200"}
+        {
+          "name": "Shah Rukh Khan",
+          "role": "Pathaan",
+          "image": "https://ui-avatars.com/api/?name=Shah+Rukh+Khan&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Deepika Padukone",
+          "role": "Rubai",
+          "image": "https://ui-avatars.com/api/?name=Deepika+Padukone&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "John Abraham",
+          "role": "Jim",
+          "image": "https://ui-avatars.com/api/?name=John+Abraham&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Dimple Kapadia",
+          "role": "Nandini",
+          "image": "https://ui-avatars.com/api/?name=Dimple+Kapadia&background=059669&color=fff&size=200"
+        }
       ],
       "director": "Siddharth Anand",
       "releaseDate": "2023-01-25",
@@ -32,23 +60,52 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "vqu4z34wENw",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad"
+      ]
     },
     {
       "id": 2,
       "title": "Jawan",
-      "genre": ["Action", "Drama", "Thriller"],
+      "genre": [
+        "Action",
+        "Drama",
+        "Thriller"
+      ],
       "language": "Hindi",
       "duration": "2h 49m",
-      "rating": 7.0,
-      "poster": "https://image.tmdb.org/t/p/w500/mOknlmrJ3v5oKoGqVxr9bYivSaM.jpg",
+      "rating": 7,
+      "poster": "https://media.themoviedb.org/t/p/w500/ybAbiGbJ2WwTlMaqtXiJ08rKJFs.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/1I0wuB1A0KhCrUiPWvh8PGBHZOX.jpg",
       "description": "A prison warden recruits a group of women to pull off a heist while simultaneously fighting a social injustice — setting the stage for a thrilling face-off between father and son.",
       "cast": [
-        {"name": "Shah Rukh Khan", "role": "Azad / Vikram Rathore", "image": "https://ui-avatars.com/api/?name=Shah+Rukh+Khan&background=b91c1c&color=fff&size=200"},
-        {"name": "Nayanthara", "role": "Narmada Rai", "image": "https://ui-avatars.com/api/?name=Nayanthara&background=7c3aed&color=fff&size=200"},
-        {"name": "Vijay Sethupathi", "role": "Kaalee Gaikwad", "image": "https://ui-avatars.com/api/?name=Vijay+Sethupathi&background=d97706&color=fff&size=200"},
-        {"name": "Deepika Padukone", "role": "Special Appearance", "image": "https://ui-avatars.com/api/?name=Deepika+Padukone&background=0369a1&color=fff&size=200"}
+        {
+          "name": "Shah Rukh Khan",
+          "role": "Azad / Vikram Rathore",
+          "image": "https://ui-avatars.com/api/?name=Shah+Rukh+Khan&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Nayanthara",
+          "role": "Narmada Rai",
+          "image": "https://ui-avatars.com/api/?name=Nayanthara&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Vijay Sethupathi",
+          "role": "Kaalee Gaikwad",
+          "image": "https://ui-avatars.com/api/?name=Vijay+Sethupathi&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Deepika Padukone",
+          "role": "Special Appearance",
+          "image": "https://ui-avatars.com/api/?name=Deepika+Padukone&background=0369a1&color=fff&size=200"
+        }
       ],
       "director": "Atlee Kumar",
       "releaseDate": "2023-09-07",
@@ -56,23 +113,54 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "oOpFMUEFjhw",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Chandigarh", "Kochi"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad",
+        "Chandigarh",
+        "Kochi"
+      ]
     },
     {
       "id": 3,
       "title": "Animal",
-      "genre": ["Action", "Drama", "Crime"],
+      "genre": [
+        "Action",
+        "Drama",
+        "Crime"
+      ],
       "language": "Hindi",
       "duration": "3h 21m",
       "rating": 6.1,
-      "poster": "https://image.tmdb.org/t/p/w500/rtCx0fiZBDWEDNBFBXAOm6cEoSJ.jpg",
+      "poster": "https://placehold.co/500x750/0d0820/e50914?text=Animal&font=roboto",
       "banner": "https://image.tmdb.org/t/p/w1280/y3fCMPHPsXSU0Gfac4RaqEQOGBX.jpg",
       "description": "A son's obsessive love for his father transforms into a destructive rage as he discovers the corporate conspiracies threatening his family. A visceral and unapologetic exploration of raw masculine emotion.",
       "cast": [
-        {"name": "Ranbir Kapoor", "role": "Ranvijay Singh", "image": "https://ui-avatars.com/api/?name=Ranbir+Kapoor&background=b91c1c&color=fff&size=200"},
-        {"name": "Anil Kapoor", "role": "Balbir Singh", "image": "https://ui-avatars.com/api/?name=Anil+Kapoor&background=0369a1&color=fff&size=200"},
-        {"name": "Rashmika Mandanna", "role": "Geetanjali", "image": "https://ui-avatars.com/api/?name=Rashmika+Mandanna&background=7c3aed&color=fff&size=200"},
-        {"name": "Bobby Deol", "role": "Abrar Haque", "image": "https://ui-avatars.com/api/?name=Bobby+Deol&background=d97706&color=fff&size=200"}
+        {
+          "name": "Ranbir Kapoor",
+          "role": "Ranvijay Singh",
+          "image": "https://ui-avatars.com/api/?name=Ranbir+Kapoor&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Anil Kapoor",
+          "role": "Balbir Singh",
+          "image": "https://ui-avatars.com/api/?name=Anil+Kapoor&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Rashmika Mandanna",
+          "role": "Geetanjali",
+          "image": "https://ui-avatars.com/api/?name=Rashmika+Mandanna&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Bobby Deol",
+          "role": "Abrar Haque",
+          "image": "https://ui-avatars.com/api/?name=Bobby+Deol&background=d97706&color=fff&size=200"
+        }
       ],
       "director": "Sandeep Reddy Vanga",
       "releaseDate": "2023-12-01",
@@ -80,22 +168,46 @@
       "status": "now_showing",
       "certificate": "A",
       "trailerYouTubeId": "WmDGMJ6QZCE",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Pune", "Ahmedabad", "Chandigarh"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Pune",
+        "Ahmedabad",
+        "Chandigarh"
+      ]
     },
     {
       "id": 4,
       "title": "Gadar 2",
-      "genre": ["Action", "Drama", "Romance"],
+      "genre": [
+        "Action",
+        "Drama",
+        "Romance"
+      ],
       "language": "Hindi",
       "duration": "2h 50m",
       "rating": 4.9,
-      "poster": "https://image.tmdb.org/t/p/w500/tIsBrN1ISvTZe21TfbFmAeq0y1A.jpg",
+      "poster": "https://media.themoviedb.org/t/p/w500/zlw8XB5uPH6USW7JCcidsjKHY5u.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/8Ah2AS7GDoLZ1Qcm7b1m2WLy0bv.jpg",
       "description": "Tara Singh crosses the border into Pakistan once again to rescue his son Charanjeet, fighting against an entire nation in a battle of love and courage.",
       "cast": [
-        {"name": "Sunny Deol", "role": "Tara Singh", "image": "https://ui-avatars.com/api/?name=Sunny+Deol&background=b91c1c&color=fff&size=200"},
-        {"name": "Ameesha Patel", "role": "Sakeena", "image": "https://ui-avatars.com/api/?name=Ameesha+Patel&background=7c3aed&color=fff&size=200"},
-        {"name": "Utkarsh Sharma", "role": "Charanjeet", "image": "https://ui-avatars.com/api/?name=Utkarsh+Sharma&background=0369a1&color=fff&size=200"}
+        {
+          "name": "Sunny Deol",
+          "role": "Tara Singh",
+          "image": "https://ui-avatars.com/api/?name=Sunny+Deol&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Ameesha Patel",
+          "role": "Sakeena",
+          "image": "https://ui-avatars.com/api/?name=Ameesha+Patel&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Utkarsh Sharma",
+          "role": "Charanjeet",
+          "image": "https://ui-avatars.com/api/?name=Utkarsh+Sharma&background=0369a1&color=fff&size=200"
+        }
       ],
       "director": "Anil Sharma",
       "releaseDate": "2023-08-11",
@@ -103,23 +215,49 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "M_cPlJ4eOfk",
-      "cities": ["Mumbai", "Delhi", "Chandigarh", "Pune", "Ahmedabad", "Kolkata"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Chandigarh",
+        "Pune",
+        "Ahmedabad",
+        "Kolkata"
+      ]
     },
     {
       "id": 5,
       "title": "Dunki",
-      "genre": ["Comedy", "Drama"],
+      "genre": [
+        "Comedy",
+        "Drama"
+      ],
       "language": "Hindi",
       "duration": "2h 41m",
       "rating": 5.8,
-      "poster": "https://image.tmdb.org/t/p/w500/uyIzS9bfXPcALkHXcR4B0m4Dfnb.jpg",
+      "poster": "https://media.themoviedb.org/t/p/w500/8ibfhe4P7rhmn3lrPhOZzIJHA2B.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg",
       "description": "A group of friends dream of emigrating to England and take the illegal 'donkey' route through multiple countries. A heartfelt story of friendship, sacrifice, and the pursuit of a better life.",
       "cast": [
-        {"name": "Shah Rukh Khan", "role": "Hardy", "image": "https://ui-avatars.com/api/?name=Shah+Rukh+Khan&background=b91c1c&color=fff&size=200"},
-        {"name": "Taapsee Pannu", "role": "Manu", "image": "https://ui-avatars.com/api/?name=Taapsee+Pannu&background=7c3aed&color=fff&size=200"},
-        {"name": "Vicky Kaushal", "role": "Special Appearance", "image": "https://ui-avatars.com/api/?name=Vicky+Kaushal&background=0369a1&color=fff&size=200"},
-        {"name": "Boman Irani", "role": "Danish Wadia", "image": "https://ui-avatars.com/api/?name=Boman+Irani&background=d97706&color=fff&size=200"}
+        {
+          "name": "Shah Rukh Khan",
+          "role": "Hardy",
+          "image": "https://ui-avatars.com/api/?name=Shah+Rukh+Khan&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Taapsee Pannu",
+          "role": "Manu",
+          "image": "https://ui-avatars.com/api/?name=Taapsee+Pannu&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Vicky Kaushal",
+          "role": "Special Appearance",
+          "image": "https://ui-avatars.com/api/?name=Vicky+Kaushal&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Boman Irani",
+          "role": "Danish Wadia",
+          "image": "https://ui-avatars.com/api/?name=Boman+Irani&background=d97706&color=fff&size=200"
+        }
       ],
       "director": "Rajkumar Hirani",
       "releaseDate": "2023-12-21",
@@ -127,23 +265,51 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "unSjQVqf-gg",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune"
+      ]
     },
     {
       "id": 6,
       "title": "Rocky Aur Rani Kii Prem Kahaani",
-      "genre": ["Romance", "Drama", "Comedy"],
+      "genre": [
+        "Romance",
+        "Drama",
+        "Comedy"
+      ],
       "language": "Hindi",
       "duration": "2h 50m",
-      "rating": 6.0,
-      "poster": "https://image.tmdb.org/t/p/w500/qIwqfJiEiIBQDXCPJ8ePBjYZ6WH.jpg",
+      "rating": 6,
+      "poster": "https://media.themoviedb.org/t/p/w500/mR08InfIvBEo45hml5Zu9ct96hq.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/3lTPGXMb1n2HF0MRGBmEAFkLs4B.jpg",
       "description": "Rocky, a brash Punjabi businessman, and Rani, an intellectual journalist from a Bengali family, fall in love — only to navigate the complexities of family, culture, and tradition.",
       "cast": [
-        {"name": "Ranveer Singh", "role": "Rocky Randhawa", "image": "https://ui-avatars.com/api/?name=Ranveer+Singh&background=b91c1c&color=fff&size=200"},
-        {"name": "Alia Bhatt", "role": "Rani Chatterjee", "image": "https://ui-avatars.com/api/?name=Alia+Bhatt&background=7c3aed&color=fff&size=200"},
-        {"name": "Dharmendra", "role": "Kanwaljeet Randhawa", "image": "https://ui-avatars.com/api/?name=Dharmendra&background=d97706&color=fff&size=200"},
-        {"name": "Jaya Bachchan", "role": "Jamini Chatterjee", "image": "https://ui-avatars.com/api/?name=Jaya+Bachchan&background=059669&color=fff&size=200"}
+        {
+          "name": "Ranveer Singh",
+          "role": "Rocky Randhawa",
+          "image": "https://ui-avatars.com/api/?name=Ranveer+Singh&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Alia Bhatt",
+          "role": "Rani Chatterjee",
+          "image": "https://ui-avatars.com/api/?name=Alia+Bhatt&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Dharmendra",
+          "role": "Kanwaljeet Randhawa",
+          "image": "https://ui-avatars.com/api/?name=Dharmendra&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Jaya Bachchan",
+          "role": "Jamini Chatterjee",
+          "image": "https://ui-avatars.com/api/?name=Jaya+Bachchan&background=059669&color=fff&size=200"
+        }
       ],
       "director": "Karan Johar",
       "releaseDate": "2023-07-28",
@@ -151,46 +317,94 @@
       "status": "now_showing",
       "certificate": "U",
       "trailerYouTubeId": "Bq4dvIcl8V8",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Kolkata", "Pune", "Ahmedabad"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad"
+      ]
     },
     {
       "id": 7,
       "title": "OMG 2",
-      "genre": ["Comedy", "Drama"],
+      "genre": [
+        "Comedy",
+        "Drama"
+      ],
       "language": "Hindi",
       "duration": "2h 24m",
-      "rating": 7.0,
-      "poster": "https://image.tmdb.org/t/p/w500/cFiOTiLMRjXYrMi3lzr9hNNXyGY.jpg",
+      "rating": 7,
+      "poster": "https://placehold.co/500x750/0d1a2e/00c4e0?text=OMG+2&font=roboto",
       "banner": "https://image.tmdb.org/t/p/w1280/eHqSjE7TjgROhYS5U7grCYVbovr.jpg",
       "description": "A man finds himself in a legal battle against the education system after his son is expelled from school for alleged misconduct. With divine intervention, he fights for sex education and truth.",
       "cast": [
-        {"name": "Akshay Kumar", "role": "Kanti Sharan Mudgal / Messenger of Shiva", "image": "https://ui-avatars.com/api/?name=Akshay+Kumar&background=b91c1c&color=fff&size=200"},
-        {"name": "Pankaj Tripathi", "role": "Kamalkishore Mudgal", "image": "https://ui-avatars.com/api/?name=Pankaj+Tripathi&background=0369a1&color=fff&size=200"},
-        {"name": "Yami Gautam", "role": "Advocate Kamini Maheshwari", "image": "https://ui-avatars.com/api/?name=Yami+Gautam&background=7c3aed&color=fff&size=200"}
+        {
+          "name": "Akshay Kumar",
+          "role": "Kanti Sharan Mudgal / Messenger of Shiva",
+          "image": "https://ui-avatars.com/api/?name=Akshay+Kumar&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Pankaj Tripathi",
+          "role": "Kamalkishore Mudgal",
+          "image": "https://ui-avatars.com/api/?name=Pankaj+Tripathi&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Yami Gautam",
+          "role": "Advocate Kamini Maheshwari",
+          "image": "https://ui-avatars.com/api/?name=Yami+Gautam&background=7c3aed&color=fff&size=200"
+        }
       ],
       "director": "Amit Rai",
       "releaseDate": "2023-08-11",
       "price": 210,
       "status": "now_showing",
       "certificate": "UA",
-      "trailerYouTubeId": "x7I0C5vTgp0",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Pune", "Ahmedabad", "Chandigarh"]
+      "trailerYouTubeId": "OGVFzWN5N7E",
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Pune",
+        "Ahmedabad",
+        "Chandigarh"
+      ]
     },
     {
       "id": 8,
       "title": "Fighter",
-      "genre": ["Action", "Drama"],
+      "genre": [
+        "Action",
+        "Drama"
+      ],
       "language": "Hindi",
       "duration": "2h 46m",
       "rating": 6.2,
-      "poster": "https://image.tmdb.org/t/p/w500/aZPJBiMHGmKlFSMHXcXVBfKnqCm.jpg",
+      "poster": "https://media.themoviedb.org/t/p/w500/kYusjmfChNoOJ4zml68LsXLPDjk.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/p3OWBt6tRFfEj3HpD8i9YEFPGPC.jpg",
       "description": "India's first aerial action franchise follows the Air Force's Aerial Force One as they take on a dangerous enemy threatening national security. Spectacular aerial combat sequences.",
       "cast": [
-        {"name": "Hrithik Roshan", "role": "Shamsher Pathania", "image": "https://ui-avatars.com/api/?name=Hrithik+Roshan&background=b91c1c&color=fff&size=200"},
-        {"name": "Deepika Padukone", "role": "Minal Rathore", "image": "https://ui-avatars.com/api/?name=Deepika+Padukone&background=7c3aed&color=fff&size=200"},
-        {"name": "Anil Kapoor", "role": "Air Vice Marshal Sena", "image": "https://ui-avatars.com/api/?name=Anil+Kapoor&background=d97706&color=fff&size=200"},
-        {"name": "Karan Singh Grover", "role": "Air Force Officer", "image": "https://ui-avatars.com/api/?name=Karan+Grover&background=0369a1&color=fff&size=200"}
+        {
+          "name": "Hrithik Roshan",
+          "role": "Shamsher Pathania",
+          "image": "https://ui-avatars.com/api/?name=Hrithik+Roshan&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Deepika Padukone",
+          "role": "Minal Rathore",
+          "image": "https://ui-avatars.com/api/?name=Deepika+Padukone&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Anil Kapoor",
+          "role": "Air Vice Marshal Sena",
+          "image": "https://ui-avatars.com/api/?name=Anil+Kapoor&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Karan Singh Grover",
+          "role": "Air Force Officer",
+          "image": "https://ui-avatars.com/api/?name=Karan+Grover&background=0369a1&color=fff&size=200"
+        }
       ],
       "director": "Siddharth Anand",
       "releaseDate": "2024-01-25",
@@ -198,23 +412,51 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "dMH-y3puPjI",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Pune", "Ahmedabad"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Pune",
+        "Ahmedabad"
+      ]
     },
     {
       "id": 9,
       "title": "Crew",
-      "genre": ["Comedy", "Thriller", "Crime"],
+      "genre": [
+        "Comedy",
+        "Thriller",
+        "Crime"
+      ],
       "language": "Hindi",
       "duration": "2h 8m",
-      "rating": 6.0,
-      "poster": "https://image.tmdb.org/t/p/w500/a9AZFBJqzjCqRUQBPquG29pPGiV.jpg",
+      "rating": 6,
+      "poster": "https://media.themoviedb.org/t/p/w500/rXiyrdxnoz1VRWUM1wshA14QPu3.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/2mcFOCBCXhMDHEHOVv2D1r7vKmW.jpg",
       "description": "Three air-hostesses get entangled in a gold smuggling operation run by a bankrupt airline, leading to a hilarious yet dangerous chain of events.",
       "cast": [
-        {"name": "Tabu", "role": "Geeta Sethi", "image": "https://ui-avatars.com/api/?name=Tabu&background=7c3aed&color=fff&size=200"},
-        {"name": "Kareena Kapoor Khan", "role": "Jasmine Kohli", "image": "https://ui-avatars.com/api/?name=Kareena+Kapoor&background=b91c1c&color=fff&size=200"},
-        {"name": "Kriti Sanon", "role": "Divya Rana", "image": "https://ui-avatars.com/api/?name=Kriti+Sanon&background=d97706&color=fff&size=200"},
-        {"name": "Diljit Dosanjh", "role": "Param Bir Singh", "image": "https://ui-avatars.com/api/?name=Diljit+Dosanjh&background=0369a1&color=fff&size=200"}
+        {
+          "name": "Tabu",
+          "role": "Geeta Sethi",
+          "image": "https://ui-avatars.com/api/?name=Tabu&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Kareena Kapoor Khan",
+          "role": "Jasmine Kohli",
+          "image": "https://ui-avatars.com/api/?name=Kareena+Kapoor&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Kriti Sanon",
+          "role": "Divya Rana",
+          "image": "https://ui-avatars.com/api/?name=Kriti+Sanon&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Diljit Dosanjh",
+          "role": "Param Bir Singh",
+          "image": "https://ui-avatars.com/api/?name=Diljit+Dosanjh&background=0369a1&color=fff&size=200"
+        }
       ],
       "director": "Rajesh A. Krishnan",
       "releaseDate": "2024-03-29",
@@ -222,24 +464,56 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "YGPmkHBf87M",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Pune", "Ahmedabad", "Chandigarh", "Kochi"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Pune",
+        "Ahmedabad",
+        "Chandigarh",
+        "Kochi"
+      ]
     },
     {
       "id": 10,
       "title": "Brahmastra: Part One – Shiva",
-      "genre": ["Fantasy", "Action", "Adventure"],
+      "genre": [
+        "Fantasy",
+        "Action",
+        "Adventure"
+      ],
       "language": "Hindi",
       "duration": "2h 47m",
       "rating": 5.6,
-      "poster": "https://image.tmdb.org/t/p/w500/5WUoQBMsJUbXuBLVVHxd5MbLz4v.jpg",
+      "poster": "https://media.themoviedb.org/t/p/w500/6PAd0dUay0ZyaEHGQracI8nB9jS.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/bkb5bwEDVBPt2sRSXD8mYGkANe3.jpg",
       "description": "A young DJ named Shiva discovers he has a mysterious connection to fire and to a powerful ancient weapon, the Brahmastra, as dark forces threaten the world.",
       "cast": [
-        {"name": "Ranbir Kapoor", "role": "Shiva", "image": "https://ui-avatars.com/api/?name=Ranbir+Kapoor&background=b91c1c&color=fff&size=200"},
-        {"name": "Alia Bhatt", "role": "Isha", "image": "https://ui-avatars.com/api/?name=Alia+Bhatt&background=7c3aed&color=fff&size=200"},
-        {"name": "Amitabh Bachchan", "role": "Guruji", "image": "https://ui-avatars.com/api/?name=Amitabh+Bachchan&background=d97706&color=fff&size=200"},
-        {"name": "Nagarjuna", "role": "Anish", "image": "https://ui-avatars.com/api/?name=Nagarjuna&background=059669&color=fff&size=200"},
-        {"name": "Mouni Roy", "role": "Junoon", "image": "https://ui-avatars.com/api/?name=Mouni+Roy&background=db2777&color=fff&size=200"}
+        {
+          "name": "Ranbir Kapoor",
+          "role": "Shiva",
+          "image": "https://ui-avatars.com/api/?name=Ranbir+Kapoor&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Alia Bhatt",
+          "role": "Isha",
+          "image": "https://ui-avatars.com/api/?name=Alia+Bhatt&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Amitabh Bachchan",
+          "role": "Guruji",
+          "image": "https://ui-avatars.com/api/?name=Amitabh+Bachchan&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Nagarjuna",
+          "role": "Anish",
+          "image": "https://ui-avatars.com/api/?name=Nagarjuna&background=059669&color=fff&size=200"
+        },
+        {
+          "name": "Mouni Roy",
+          "role": "Junoon",
+          "image": "https://ui-avatars.com/api/?name=Mouni+Roy&background=db2777&color=fff&size=200"
+        }
       ],
       "director": "Ayan Mukerji",
       "releaseDate": "2022-09-09",
@@ -247,23 +521,51 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "oZKp9D4f_a0",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune"
+      ]
     },
     {
       "id": 11,
       "title": "Drishyam 2",
-      "genre": ["Thriller", "Drama", "Crime"],
+      "genre": [
+        "Thriller",
+        "Drama",
+        "Crime"
+      ],
       "language": "Hindi",
       "duration": "2h 22m",
-      "rating": 8.0,
-      "poster": "https://image.tmdb.org/t/p/w500/7JLGzMiROEJpVLTISiJWHwlKgqo.jpg",
+      "rating": 8,
+      "poster": "https://media.themoviedb.org/t/p/w500/fGHmaXX1M1r0KioFGJdHruc05bM.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/5bCeRN36zLuWPdJjDXVbN2APMRC.jpg",
       "description": "Seven years after the incident, Vijay Salgaonkar must once again outwit the police as the case is reopened. An even more gripping sequel to the original thriller.",
       "cast": [
-        {"name": "Ajay Devgn", "role": "Vijay Salgaonkar", "image": "https://ui-avatars.com/api/?name=Ajay+Devgn&background=b91c1c&color=fff&size=200"},
-        {"name": "Tabu", "role": "IG Meera Deshmukh", "image": "https://ui-avatars.com/api/?name=Tabu&background=7c3aed&color=fff&size=200"},
-        {"name": "Shriya Saran", "role": "Nandini Salgaonkar", "image": "https://ui-avatars.com/api/?name=Shriya+Saran&background=d97706&color=fff&size=200"},
-        {"name": "Akshaye Khanna", "role": "DCP Tarun Ahlawat", "image": "https://ui-avatars.com/api/?name=Akshaye+Khanna&background=0369a1&color=fff&size=200"}
+        {
+          "name": "Ajay Devgn",
+          "role": "Vijay Salgaonkar",
+          "image": "https://ui-avatars.com/api/?name=Ajay+Devgn&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Tabu",
+          "role": "IG Meera Deshmukh",
+          "image": "https://ui-avatars.com/api/?name=Tabu&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Shriya Saran",
+          "role": "Nandini Salgaonkar",
+          "image": "https://ui-avatars.com/api/?name=Shriya+Saran&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Akshaye Khanna",
+          "role": "DCP Tarun Ahlawat",
+          "image": "https://ui-avatars.com/api/?name=Akshaye+Khanna&background=0369a1&color=fff&size=200"
+        }
       ],
       "director": "Abhishek Pathak",
       "releaseDate": "2022-11-18",
@@ -271,23 +573,52 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "TrGiZCgzHOQ",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Kochi"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Kochi"
+      ]
     },
     {
       "id": 12,
       "title": "Dangal",
-      "genre": ["Drama", "Sport", "Biography"],
+      "genre": [
+        "Drama",
+        "Sport",
+        "Biography"
+      ],
       "language": "Hindi",
       "duration": "2h 41m",
       "rating": 8.3,
-      "poster": "https://image.tmdb.org/t/p/w500/1UFJkZHhqkwCN55BGSMC0zRJ7QW.jpg",
+      "poster": "https://media.themoviedb.org/t/p/w500/jHo2M1OiH9Re33jYtUQdfzPeUkx.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/qPTm9Gp7tLxlMgmupeDzBg6UoMi.jpg",
       "description": "Mahavir Singh Phogat, a former wrestler, trains his daughters Geeta and Babita to become world-class wrestlers, defying societal norms in a heartwarming true story.",
       "cast": [
-        {"name": "Aamir Khan", "role": "Mahavir Singh Phogat", "image": "https://ui-avatars.com/api/?name=Aamir+Khan&background=b91c1c&color=fff&size=200"},
-        {"name": "Fatima Sana Shaikh", "role": "Geeta Phogat", "image": "https://ui-avatars.com/api/?name=Fatima+Sana+Shaikh&background=7c3aed&color=fff&size=200"},
-        {"name": "Sanya Malhotra", "role": "Babita Phogat", "image": "https://ui-avatars.com/api/?name=Sanya+Malhotra&background=d97706&color=fff&size=200"},
-        {"name": "Sakshi Tanwar", "role": "Daya Shobha Kaur", "image": "https://ui-avatars.com/api/?name=Sakshi+Tanwar&background=059669&color=fff&size=200"}
+        {
+          "name": "Aamir Khan",
+          "role": "Mahavir Singh Phogat",
+          "image": "https://ui-avatars.com/api/?name=Aamir+Khan&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Fatima Sana Shaikh",
+          "role": "Geeta Phogat",
+          "image": "https://ui-avatars.com/api/?name=Fatima+Sana+Shaikh&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Sanya Malhotra",
+          "role": "Babita Phogat",
+          "image": "https://ui-avatars.com/api/?name=Sanya+Malhotra&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Sakshi Tanwar",
+          "role": "Daya Shobha Kaur",
+          "image": "https://ui-avatars.com/api/?name=Sakshi+Tanwar&background=059669&color=fff&size=200"
+        }
       ],
       "director": "Nitesh Tiwari",
       "releaseDate": "2016-12-23",
@@ -295,23 +626,53 @@
       "status": "now_showing",
       "certificate": "U",
       "trailerYouTubeId": "x_7YlGv9u1g",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Chandigarh"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad",
+        "Chandigarh"
+      ]
     },
     {
       "id": 13,
       "title": "Bajrangi Bhaijaan",
-      "genre": ["Drama", "Comedy", "Adventure"],
+      "genre": [
+        "Drama",
+        "Comedy",
+        "Adventure"
+      ],
       "language": "Hindi",
       "duration": "2h 43m",
       "rating": 8.1,
-      "poster": "https://image.tmdb.org/t/p/w500/o9XHTHZq4XBtj38bJEr5XZj9YvY.jpg",
+      "poster": "https://media.themoviedb.org/t/p/w500/oQ4eYQEZKWnKmq9PntZKbf6YEID.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/pGU2JhfJyD6GBlTDKXrJOi9YQRT.jpg",
       "description": "A man with an unwavering devotion to Hanuman helps a mute Pakistani girl return to her homeland in a journey that crosses the border between two nations at war.",
       "cast": [
-        {"name": "Salman Khan", "role": "Bajrangi / Pawan Kumar Chaturvedi", "image": "https://ui-avatars.com/api/?name=Salman+Khan&background=b91c1c&color=fff&size=200"},
-        {"name": "Harshaali Malhotra", "role": "Munni / Shahida", "image": "https://ui-avatars.com/api/?name=Harshaali+Malhotra&background=d97706&color=fff&size=200"},
-        {"name": "Kareena Kapoor Khan", "role": "Rasika", "image": "https://ui-avatars.com/api/?name=Kareena+Kapoor&background=7c3aed&color=fff&size=200"},
-        {"name": "Nawazuddin Siddiqui", "role": "Chand Nawab", "image": "https://ui-avatars.com/api/?name=Nawazuddin+Siddiqui&background=0369a1&color=fff&size=200"}
+        {
+          "name": "Salman Khan",
+          "role": "Bajrangi / Pawan Kumar Chaturvedi",
+          "image": "https://ui-avatars.com/api/?name=Salman+Khan&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Harshaali Malhotra",
+          "role": "Munni / Shahida",
+          "image": "https://ui-avatars.com/api/?name=Harshaali+Malhotra&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Kareena Kapoor Khan",
+          "role": "Rasika",
+          "image": "https://ui-avatars.com/api/?name=Kareena+Kapoor&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Nawazuddin Siddiqui",
+          "role": "Chand Nawab",
+          "image": "https://ui-avatars.com/api/?name=Nawazuddin+Siddiqui&background=0369a1&color=fff&size=200"
+        }
       ],
       "director": "Kabir Khan",
       "releaseDate": "2015-07-17",
@@ -319,24 +680,56 @@
       "status": "now_showing",
       "certificate": "U",
       "trailerYouTubeId": "RtHGvydL4xQ",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Kolkata", "Pune", "Ahmedabad", "Chandigarh"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad",
+        "Chandigarh"
+      ]
     },
     {
       "id": 14,
       "title": "3 Idiots",
-      "genre": ["Comedy", "Drama"],
+      "genre": [
+        "Comedy",
+        "Drama"
+      ],
       "language": "Hindi",
       "duration": "2h 50m",
       "rating": 8.4,
-      "poster": "https://image.tmdb.org/t/p/w500/66A9MqXOyVFCssoloscN29YuNYN.jpg",
+      "poster": "https://media.themoviedb.org/t/p/w500/r5pffTC8XZsrGUYSU8e23dGmGNK.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/8JzlqVa8F4JEo4n4sRjjQbwpPYG.jpg",
       "description": "Two friends search for their lost companion and reminisce about their unconventional college days at the Imperial College of Engineering, where he inspired them to pursue happiness.",
       "cast": [
-        {"name": "Aamir Khan", "role": "Ranchoddas 'Rancho' Shamaldas Chanchad", "image": "https://ui-avatars.com/api/?name=Aamir+Khan&background=b91c1c&color=fff&size=200"},
-        {"name": "R. Madhavan", "role": "Farhan Qureshi", "image": "https://ui-avatars.com/api/?name=R+Madhavan&background=0369a1&color=fff&size=200"},
-        {"name": "Sharman Joshi", "role": "Raju Rastogi", "image": "https://ui-avatars.com/api/?name=Sharman+Joshi&background=d97706&color=fff&size=200"},
-        {"name": "Kareena Kapoor Khan", "role": "Pia Sahastrabuddhe", "image": "https://ui-avatars.com/api/?name=Kareena+Kapoor&background=7c3aed&color=fff&size=200"},
-        {"name": "Boman Irani", "role": "Professor Viru Sahastrabuddhe", "image": "https://ui-avatars.com/api/?name=Boman+Irani&background=059669&color=fff&size=200"}
+        {
+          "name": "Aamir Khan",
+          "role": "Ranchoddas 'Rancho' Shamaldas Chanchad",
+          "image": "https://ui-avatars.com/api/?name=Aamir+Khan&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "R. Madhavan",
+          "role": "Farhan Qureshi",
+          "image": "https://ui-avatars.com/api/?name=R+Madhavan&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Sharman Joshi",
+          "role": "Raju Rastogi",
+          "image": "https://ui-avatars.com/api/?name=Sharman+Joshi&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Kareena Kapoor Khan",
+          "role": "Pia Sahastrabuddhe",
+          "image": "https://ui-avatars.com/api/?name=Kareena+Kapoor&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Boman Irani",
+          "role": "Professor Viru Sahastrabuddhe",
+          "image": "https://ui-avatars.com/api/?name=Boman+Irani&background=059669&color=fff&size=200"
+        }
       ],
       "director": "Rajkumar Hirani",
       "releaseDate": "2009-12-25",
@@ -344,24 +737,59 @@
       "status": "now_showing",
       "certificate": "PG",
       "trailerYouTubeId": "xvszmNXdM4w",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Chandigarh", "Kochi"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad",
+        "Chandigarh",
+        "Kochi"
+      ]
     },
     {
       "id": 15,
       "title": "Zindagi Na Milegi Dobara",
-      "genre": ["Drama", "Comedy", "Adventure"],
+      "genre": [
+        "Drama",
+        "Comedy",
+        "Adventure"
+      ],
       "language": "Hindi",
       "duration": "2h 35m",
       "rating": 8.1,
-      "poster": "https://image.tmdb.org/t/p/w500/xGrFPFBfMxqE7UqFYxKJFUcAmjG.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/hKO9O715wYxjkQSEv47giCYcyO8.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/xnVkB9fqvp7VAbY2JiYvF0hW1P0.jpg",
       "description": "Three friends take a road trip across Spain, confronting their fears and rediscovering what truly matters in life. A breathtaking celebration of friendship, love, and living fully.",
       "cast": [
-        {"name": "Hrithik Roshan", "role": "Arjun Saluja", "image": "https://ui-avatars.com/api/?name=Hrithik+Roshan&background=b91c1c&color=fff&size=200"},
-        {"name": "Farhan Akhtar", "role": "Imraan Qureshi", "image": "https://ui-avatars.com/api/?name=Farhan+Akhtar&background=0369a1&color=fff&size=200"},
-        {"name": "Abhay Deol", "role": "Kabir Dewan", "image": "https://ui-avatars.com/api/?name=Abhay+Deol&background=d97706&color=fff&size=200"},
-        {"name": "Katrina Kaif", "role": "Laila", "image": "https://ui-avatars.com/api/?name=Katrina+Kaif&background=7c3aed&color=fff&size=200"},
-        {"name": "Kalki Koechlin", "role": "Natasha", "image": "https://ui-avatars.com/api/?name=Kalki+Koechlin&background=db2777&color=fff&size=200"}
+        {
+          "name": "Hrithik Roshan",
+          "role": "Arjun Saluja",
+          "image": "https://ui-avatars.com/api/?name=Hrithik+Roshan&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Farhan Akhtar",
+          "role": "Imraan Qureshi",
+          "image": "https://ui-avatars.com/api/?name=Farhan+Akhtar&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Abhay Deol",
+          "role": "Kabir Dewan",
+          "image": "https://ui-avatars.com/api/?name=Abhay+Deol&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Katrina Kaif",
+          "role": "Laila",
+          "image": "https://ui-avatars.com/api/?name=Katrina+Kaif&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Kalki Koechlin",
+          "role": "Natasha",
+          "image": "https://ui-avatars.com/api/?name=Kalki+Koechlin&background=db2777&color=fff&size=200"
+        }
       ],
       "director": "Zoya Akhtar",
       "releaseDate": "2011-07-15",
@@ -369,23 +797,50 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "lLzUqrOuqls",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Pune", "Kochi"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Pune",
+        "Kochi"
+      ]
     },
     {
       "id": 16,
       "title": "PK",
-      "genre": ["Comedy", "Drama", "Sci-Fi"],
+      "genre": [
+        "Comedy",
+        "Drama",
+        "Sci-Fi"
+      ],
       "language": "Hindi",
       "duration": "2h 33m",
       "rating": 8.1,
-      "poster": "https://image.tmdb.org/t/p/w500/1oQe5FfwRoMfqhpwkjf6zIVuF8R.jpg",
+      "poster": "https://media.themoviedb.org/t/p/w500/yH0LNqBELD55o7juAgtC53imIBi.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/v3jGBRPpA3IpLVY2mOvr4T4FSpF.jpg",
       "description": "An alien stranded on Earth loses his remote control device and must navigate religion, faith, and human society to find his way home.",
       "cast": [
-        {"name": "Aamir Khan", "role": "PK", "image": "https://ui-avatars.com/api/?name=Aamir+Khan&background=b91c1c&color=fff&size=200"},
-        {"name": "Anushka Sharma", "role": "Jaggu", "image": "https://ui-avatars.com/api/?name=Anushka+Sharma&background=7c3aed&color=fff&size=200"},
-        {"name": "Sushant Singh Rajput", "role": "Sarfraz", "image": "https://ui-avatars.com/api/?name=Sushant+Singh&background=0369a1&color=fff&size=200"},
-        {"name": "Saurabh Shukla", "role": "Tapasvi Ji", "image": "https://ui-avatars.com/api/?name=Saurabh+Shukla&background=d97706&color=fff&size=200"}
+        {
+          "name": "Aamir Khan",
+          "role": "PK",
+          "image": "https://ui-avatars.com/api/?name=Aamir+Khan&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Anushka Sharma",
+          "role": "Jaggu",
+          "image": "https://ui-avatars.com/api/?name=Anushka+Sharma&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Sushant Singh Rajput",
+          "role": "Sarfraz",
+          "image": "https://ui-avatars.com/api/?name=Sushant+Singh&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Saurabh Shukla",
+          "role": "Tapasvi Ji",
+          "image": "https://ui-avatars.com/api/?name=Saurabh+Shukla&background=d97706&color=fff&size=200"
+        }
       ],
       "director": "Rajkumar Hirani",
       "releaseDate": "2014-12-19",
@@ -393,23 +848,52 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "Zn4o3V6CMJA",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad"
+      ]
     },
     {
       "id": 17,
       "title": "Andhadhun",
-      "genre": ["Thriller", "Comedy", "Crime"],
+      "genre": [
+        "Thriller",
+        "Comedy",
+        "Crime"
+      ],
       "language": "Hindi",
       "duration": "2h 19m",
       "rating": 8.2,
-      "poster": "https://image.tmdb.org/t/p/w500/jkGZe7xBZ3VuFfqFRHD0qdV7GKv.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/e8wYKDH0LNMyjrl8533p9y2kOj4.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/mBjzEbcq7RM8C6u1EGjHGSwpXX4.jpg",
       "description": "A pianist who pretends to be blind witnesses a murder and becomes entangled in an escalating web of deception, crime, and dark comedy.",
       "cast": [
-        {"name": "Ayushmann Khurrana", "role": "Akash", "image": "https://ui-avatars.com/api/?name=Ayushmann+Khurrana&background=b91c1c&color=fff&size=200"},
-        {"name": "Tabu", "role": "Simi", "image": "https://ui-avatars.com/api/?name=Tabu&background=7c3aed&color=fff&size=200"},
-        {"name": "Radhika Apte", "role": "Sophie", "image": "https://ui-avatars.com/api/?name=Radhika+Apte&background=d97706&color=fff&size=200"},
-        {"name": "Anil Dhawan", "role": "Pramod Sinha", "image": "https://ui-avatars.com/api/?name=Anil+Dhawan&background=0369a1&color=fff&size=200"}
+        {
+          "name": "Ayushmann Khurrana",
+          "role": "Akash",
+          "image": "https://ui-avatars.com/api/?name=Ayushmann+Khurrana&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Tabu",
+          "role": "Simi",
+          "image": "https://ui-avatars.com/api/?name=Tabu&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Radhika Apte",
+          "role": "Sophie",
+          "image": "https://ui-avatars.com/api/?name=Radhika+Apte&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Anil Dhawan",
+          "role": "Pramod Sinha",
+          "image": "https://ui-avatars.com/api/?name=Anil+Dhawan&background=0369a1&color=fff&size=200"
+        }
       ],
       "director": "Sriram Raghavan",
       "releaseDate": "2018-10-05",
@@ -417,22 +901,45 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "x95XMBpGEFw",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Pune", "Kochi"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Pune",
+        "Kochi"
+      ]
     },
     {
       "id": 18,
       "title": "Uri: The Surgical Strike",
-      "genre": ["Action", "Drama", "War"],
+      "genre": [
+        "Action",
+        "Drama",
+        "War"
+      ],
       "language": "Hindi",
       "duration": "2h 18m",
       "rating": 8.4,
-      "poster": "https://image.tmdb.org/t/p/w500/2PH6I5X8V2lbhC3gApA2fCGW7nV.jpg",
+      "poster": "https://media.themoviedb.org/t/p/w500/n1ZRmjlk1BJTY7aASqACfPAaLn2.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/a8ViV8VKraSWVlBpFzYXwBjjH6O.jpg",
       "description": "Based on the 2016 Indian Army surgical strikes across the LOC following the terrorist attack on an Indian Army base. A patriotic thriller with brilliant tactical precision.",
       "cast": [
-        {"name": "Vicky Kaushal", "role": "Major Vihaan Singh Shergill", "image": "https://ui-avatars.com/api/?name=Vicky+Kaushal&background=b91c1c&color=fff&size=200"},
-        {"name": "Paresh Rawal", "role": "Ajit Doval (NSA)", "image": "https://ui-avatars.com/api/?name=Paresh+Rawal&background=0369a1&color=fff&size=200"},
-        {"name": "Yami Gautam", "role": "Intelligence Officer Pallavi Sharma", "image": "https://ui-avatars.com/api/?name=Yami+Gautam&background=7c3aed&color=fff&size=200"}
+        {
+          "name": "Vicky Kaushal",
+          "role": "Major Vihaan Singh Shergill",
+          "image": "https://ui-avatars.com/api/?name=Vicky+Kaushal&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Paresh Rawal",
+          "role": "Ajit Doval (NSA)",
+          "image": "https://ui-avatars.com/api/?name=Paresh+Rawal&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Yami Gautam",
+          "role": "Intelligence Officer Pallavi Sharma",
+          "image": "https://ui-avatars.com/api/?name=Yami+Gautam&background=7c3aed&color=fff&size=200"
+        }
       ],
       "director": "Aditya Dhar",
       "releaseDate": "2019-01-11",
@@ -440,22 +947,45 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "ENGAFpkWPcU",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Chandigarh", "Pune", "Ahmedabad", "Kolkata"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Chandigarh",
+        "Pune",
+        "Ahmedabad",
+        "Kolkata"
+      ]
     },
     {
       "id": 19,
       "title": "Queen",
-      "genre": ["Drama", "Comedy"],
+      "genre": [
+        "Drama",
+        "Comedy"
+      ],
       "language": "Hindi",
       "duration": "2h 26m",
       "rating": 8.2,
-      "poster": "https://image.tmdb.org/t/p/w500/4jHTFkb5cBfAIBQ4BKVjFwLjKHB.jpg",
+      "poster": "https://placehold.co/500x750/1a0a2e/f59e0b?text=Queen&font=roboto",
       "banner": "https://image.tmdb.org/t/p/w1280/7vD8SIL9q1vBFVcXiP7pkz8bKaP.jpg",
       "description": "A sheltered Delhi girl goes on her honeymoon solo after her fiancé calls off the wedding, embarking on a journey of self-discovery across Paris and Amsterdam.",
       "cast": [
-        {"name": "Kangana Ranaut", "role": "Rani Mehra", "image": "https://ui-avatars.com/api/?name=Kangana+Ranaut&background=db2777&color=fff&size=200"},
-        {"name": "Rajkummar Rao", "role": "Vijay", "image": "https://ui-avatars.com/api/?name=Rajkummar+Rao&background=0369a1&color=fff&size=200"},
-        {"name": "Lisa Haydon", "role": "Vijayalakshmi", "image": "https://ui-avatars.com/api/?name=Lisa+Haydon&background=d97706&color=fff&size=200"}
+        {
+          "name": "Kangana Ranaut",
+          "role": "Rani Mehra",
+          "image": "https://ui-avatars.com/api/?name=Kangana+Ranaut&background=db2777&color=fff&size=200"
+        },
+        {
+          "name": "Rajkummar Rao",
+          "role": "Vijay",
+          "image": "https://ui-avatars.com/api/?name=Rajkummar+Rao&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Lisa Haydon",
+          "role": "Vijayalakshmi",
+          "image": "https://ui-avatars.com/api/?name=Lisa+Haydon&background=d97706&color=fff&size=200"
+        }
       ],
       "director": "Vikas Bahl",
       "releaseDate": "2014-03-07",
@@ -463,24 +993,54 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "sSRfz7GiTdA",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Pune", "Kolkata"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Pune",
+        "Kolkata"
+      ]
     },
     {
       "id": 20,
       "title": "Dil Chahta Hai",
-      "genre": ["Comedy", "Drama", "Romance"],
+      "genre": [
+        "Comedy",
+        "Drama",
+        "Romance"
+      ],
       "language": "Hindi",
       "duration": "3h 3m",
-      "rating": 8.0,
-      "poster": "https://image.tmdb.org/t/p/w500/5JpYMVvGQdFJtCeAlxUMVRFPRa9.jpg",
+      "rating": 8,
+      "poster": "https://media.themoviedb.org/t/p/w500/f3a1MyH12PSl3LFDahnooGy6mv8.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/2q4aaI2qKaWfnkuPMlmVJ7Ro8rn.jpg",
       "description": "Three inseparable best friends navigate different stages of love and life after college, growing apart and finding themselves again. A timeless coming-of-age classic.",
       "cast": [
-        {"name": "Aamir Khan", "role": "Akash", "image": "https://ui-avatars.com/api/?name=Aamir+Khan&background=b91c1c&color=fff&size=200"},
-        {"name": "Saif Ali Khan", "role": "Sameer", "image": "https://ui-avatars.com/api/?name=Saif+Ali+Khan&background=0369a1&color=fff&size=200"},
-        {"name": "Akshaye Khanna", "role": "Sid", "image": "https://ui-avatars.com/api/?name=Akshaye+Khanna&background=d97706&color=fff&size=200"},
-        {"name": "Preity Zinta", "role": "Shalini", "image": "https://ui-avatars.com/api/?name=Preity+Zinta&background=7c3aed&color=fff&size=200"},
-        {"name": "Dimple Kapadia", "role": "Tara", "image": "https://ui-avatars.com/api/?name=Dimple+Kapadia&background=db2777&color=fff&size=200"}
+        {
+          "name": "Aamir Khan",
+          "role": "Akash",
+          "image": "https://ui-avatars.com/api/?name=Aamir+Khan&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Saif Ali Khan",
+          "role": "Sameer",
+          "image": "https://ui-avatars.com/api/?name=Saif+Ali+Khan&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Akshaye Khanna",
+          "role": "Sid",
+          "image": "https://ui-avatars.com/api/?name=Akshaye+Khanna&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Preity Zinta",
+          "role": "Shalini",
+          "image": "https://ui-avatars.com/api/?name=Preity+Zinta&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Dimple Kapadia",
+          "role": "Tara",
+          "image": "https://ui-avatars.com/api/?name=Dimple+Kapadia&background=db2777&color=fff&size=200"
+        }
       ],
       "director": "Farhan Akhtar",
       "releaseDate": "2001-08-10",
@@ -488,24 +1048,54 @@
       "status": "now_showing",
       "certificate": "U",
       "trailerYouTubeId": "WzMzJgOulIU",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Pune", "Kochi"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Pune",
+        "Kochi"
+      ]
     },
     {
       "id": 21,
       "title": "KGF: Chapter 2",
-      "genre": ["Action", "Crime", "Drama"],
+      "genre": [
+        "Action",
+        "Crime",
+        "Drama"
+      ],
       "language": "Kannada/Hindi",
       "duration": "2h 48m",
       "rating": 8.2,
-      "poster": "https://image.tmdb.org/t/p/w500/4j4s9zGMqEPVjHPmed5NCVREQhV.jpg",
+      "poster": "https://media.themoviedb.org/t/p/w500/jzP5rPwwNqUGERlrUzKKljfyulf.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/9hTBGnPnDbzfnV5XlGGhkBKMBmL.jpg",
       "description": "Rocky has risen through the ranks and now controls the Kolar Gold Fields. But new enemies from both the government and the underworld threaten his reign in this epic sequel.",
       "cast": [
-        {"name": "Yash", "role": "Rocky Bhai", "image": "https://ui-avatars.com/api/?name=Yash&background=b91c1c&color=fff&size=200"},
-        {"name": "Sanjay Dutt", "role": "Adheera", "image": "https://ui-avatars.com/api/?name=Sanjay+Dutt&background=0369a1&color=fff&size=200"},
-        {"name": "Raveena Tandon", "role": "Ramika Sen (PM)", "image": "https://ui-avatars.com/api/?name=Raveena+Tandon&background=7c3aed&color=fff&size=200"},
-        {"name": "Srinidhi Shetty", "role": "Reena", "image": "https://ui-avatars.com/api/?name=Srinidhi+Shetty&background=d97706&color=fff&size=200"},
-        {"name": "Prakash Raj", "role": "Vijayendra Ingalagi", "image": "https://ui-avatars.com/api/?name=Prakash+Raj&background=059669&color=fff&size=200"}
+        {
+          "name": "Yash",
+          "role": "Rocky Bhai",
+          "image": "https://ui-avatars.com/api/?name=Yash&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Sanjay Dutt",
+          "role": "Adheera",
+          "image": "https://ui-avatars.com/api/?name=Sanjay+Dutt&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Raveena Tandon",
+          "role": "Ramika Sen (PM)",
+          "image": "https://ui-avatars.com/api/?name=Raveena+Tandon&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Srinidhi Shetty",
+          "role": "Reena",
+          "image": "https://ui-avatars.com/api/?name=Srinidhi+Shetty&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Prakash Raj",
+          "role": "Vijayendra Ingalagi",
+          "image": "https://ui-avatars.com/api/?name=Prakash+Raj&background=059669&color=fff&size=200"
+        }
       ],
       "director": "Prashanth Neel",
       "releaseDate": "2022-04-14",
@@ -513,24 +1103,57 @@
       "status": "now_showing",
       "certificate": "A",
       "trailerYouTubeId": "_tYxKzQabHw",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad"
+      ]
     },
     {
       "id": 22,
       "title": "RRR",
-      "genre": ["Action", "Drama", "Historical"],
+      "genre": [
+        "Action",
+        "Drama",
+        "Historical"
+      ],
       "language": "Telugu/Hindi",
       "duration": "3h 7m",
       "rating": 7.9,
-      "poster": "https://image.tmdb.org/t/p/w500/nEPhFJ9OLCR3S2bWkrxaLBJMYi5.jpg",
+      "poster": "https://media.themoviedb.org/t/p/w500/u68AjlvlutfEIcpmbYpKcdi09ut.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/a2snrVQAP8hmL1cbqbGaVJVNSVV.jpg",
       "description": "Two legendary Indian revolutionaries — Ram and Bheem — embark on a mission against British oppression and forge a friendship that becomes legendary in an epic action-drama.",
       "cast": [
-        {"name": "Jr. NTR", "role": "Bheem", "image": "https://ui-avatars.com/api/?name=Jr+NTR&background=b91c1c&color=fff&size=200"},
-        {"name": "Ram Charan", "role": "Ram", "image": "https://ui-avatars.com/api/?name=Ram+Charan&background=0369a1&color=fff&size=200"},
-        {"name": "Alia Bhatt", "role": "Sita", "image": "https://ui-avatars.com/api/?name=Alia+Bhatt&background=7c3aed&color=fff&size=200"},
-        {"name": "Ajay Devgn", "role": "Venkata Rama Raju's father", "image": "https://ui-avatars.com/api/?name=Ajay+Devgn&background=d97706&color=fff&size=200"},
-        {"name": "Shriya Saran", "role": "Sarojini", "image": "https://ui-avatars.com/api/?name=Shriya+Saran&background=db2777&color=fff&size=200"}
+        {
+          "name": "Jr. NTR",
+          "role": "Bheem",
+          "image": "https://ui-avatars.com/api/?name=Jr+NTR&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Ram Charan",
+          "role": "Ram",
+          "image": "https://ui-avatars.com/api/?name=Ram+Charan&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Alia Bhatt",
+          "role": "Sita",
+          "image": "https://ui-avatars.com/api/?name=Alia+Bhatt&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Ajay Devgn",
+          "role": "Venkata Rama Raju's father",
+          "image": "https://ui-avatars.com/api/?name=Ajay+Devgn&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Shriya Saran",
+          "role": "Sarojini",
+          "image": "https://ui-avatars.com/api/?name=Shriya+Saran&background=db2777&color=fff&size=200"
+        }
       ],
       "director": "S. S. Rajamouli",
       "releaseDate": "2022-03-25",
@@ -538,23 +1161,53 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "f_vbAtFSEc0",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Kochi"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad",
+        "Kochi"
+      ]
     },
     {
       "id": 23,
       "title": "Vikram",
-      "genre": ["Action", "Thriller", "Crime"],
+      "genre": [
+        "Action",
+        "Thriller",
+        "Crime"
+      ],
       "language": "Tamil/Hindi",
       "duration": "2h 54m",
       "rating": 8.3,
-      "poster": "https://image.tmdb.org/t/p/w500/ddOHCEcB8vKJm1QEGXA3M3BFVfV.jpg",
+      "poster": "https://media.themoviedb.org/t/p/w500/7uyhRgrY9ValVWZ2T5pAfasPN0F.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/lQiBFzZAqFSmNO6EVXgYJkevmLq.jpg",
       "description": "A black-ops agent investigates a series of masked killings, uncovering a vast underworld conspiracy involving powerful enemies in a relentlessly paced thriller.",
       "cast": [
-        {"name": "Kamal Haasan", "role": "Vikram", "image": "https://ui-avatars.com/api/?name=Kamal+Haasan&background=b91c1c&color=fff&size=200"},
-        {"name": "Vijay Sethupathi", "role": "Santhanam", "image": "https://ui-avatars.com/api/?name=Vijay+Sethupathi&background=0369a1&color=fff&size=200"},
-        {"name": "Fahadh Faasil", "role": "Amar", "image": "https://ui-avatars.com/api/?name=Fahadh+Faasil&background=d97706&color=fff&size=200"},
-        {"name": "Suriya", "role": "Rolex (Special Appearance)", "image": "https://ui-avatars.com/api/?name=Suriya&background=059669&color=fff&size=200"}
+        {
+          "name": "Kamal Haasan",
+          "role": "Vikram",
+          "image": "https://ui-avatars.com/api/?name=Kamal+Haasan&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Vijay Sethupathi",
+          "role": "Santhanam",
+          "image": "https://ui-avatars.com/api/?name=Vijay+Sethupathi&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Fahadh Faasil",
+          "role": "Amar",
+          "image": "https://ui-avatars.com/api/?name=Fahadh+Faasil&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Suriya",
+          "role": "Rolex (Special Appearance)",
+          "image": "https://ui-avatars.com/api/?name=Suriya&background=059669&color=fff&size=200"
+        }
       ],
       "director": "Lokesh Kanagaraj",
       "releaseDate": "2022-06-03",
@@ -562,22 +1215,46 @@
       "status": "now_showing",
       "certificate": "A",
       "trailerYouTubeId": "OKBMV8kobDM",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Kochi"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Kochi"
+      ]
     },
     {
       "id": 24,
       "title": "Kantara",
-      "genre": ["Drama", "Thriller", "Mythology"],
+      "genre": [
+        "Drama",
+        "Thriller",
+        "Mythology"
+      ],
       "language": "Kannada/Hindi",
       "duration": "2h 30m",
       "rating": 8.4,
-      "poster": "https://image.tmdb.org/t/p/w500/s3lVCGWiGy0RBi4iBMqiNDJmzNL.jpg",
+      "poster": "https://media.themoviedb.org/t/p/w500/j84kmnb7hdeanrckfYDGijAMYvs.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/fPmv2K3xkDM0TxS0v0OSJFWU6hS.jpg",
       "description": "A conflict between a forest tribe and greedy landlords reaches a divine climax, blending mythology, folklore, and breathtaking action in this extraordinary Kannada film.",
       "cast": [
-        {"name": "Rishab Shetty", "role": "Shiva", "image": "https://ui-avatars.com/api/?name=Rishab+Shetty&background=b91c1c&color=fff&size=200"},
-        {"name": "Sapthami Gowda", "role": "Leela", "image": "https://ui-avatars.com/api/?name=Sapthami+Gowda&background=7c3aed&color=fff&size=200"},
-        {"name": "Kishore Kumar G", "role": "Muralidhar", "image": "https://ui-avatars.com/api/?name=Kishore+Kumar&background=0369a1&color=fff&size=200"}
+        {
+          "name": "Rishab Shetty",
+          "role": "Shiva",
+          "image": "https://ui-avatars.com/api/?name=Rishab+Shetty&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Sapthami Gowda",
+          "role": "Leela",
+          "image": "https://ui-avatars.com/api/?name=Sapthami+Gowda&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Kishore Kumar G",
+          "role": "Muralidhar",
+          "image": "https://ui-avatars.com/api/?name=Kishore+Kumar&background=0369a1&color=fff&size=200"
+        }
       ],
       "director": "Rishab Shetty",
       "releaseDate": "2022-09-30",
@@ -585,24 +1262,55 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "b2sFhPTcbFo",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kochi"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kochi"
+      ]
     },
     {
       "id": 25,
       "title": "Ponniyin Selvan: I",
-      "genre": ["Historical", "Drama", "Action"],
+      "genre": [
+        "Historical",
+        "Drama",
+        "Action"
+      ],
       "language": "Tamil/Hindi",
       "duration": "2h 47m",
-      "rating": 8.0,
-      "poster": "https://image.tmdb.org/t/p/w500/sRfzMPzREQdpNfW3RjJsJmVGPCO.jpg",
+      "rating": 8,
+      "poster": "https://media.themoviedb.org/t/p/w500/brZtUZEzTTV7zZpYaGoUPmJ7PdL.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/1KLRV1jBpzfvLHn0cCCCgqlxoJo.jpg",
       "description": "Set in 10th century Tamil Nadu, the film follows the Chola empire's power struggle, intrigue, and romance with stunning production design and an ensemble cast.",
       "cast": [
-        {"name": "Vikram", "role": "Aditya Karikalan", "image": "https://ui-avatars.com/api/?name=Vikram&background=b91c1c&color=fff&size=200"},
-        {"name": "Aishwarya Rai Bachchan", "role": "Nandini", "image": "https://ui-avatars.com/api/?name=Aishwarya+Rai&background=7c3aed&color=fff&size=200"},
-        {"name": "Jayam Ravi", "role": "Arulmozhi Varman", "image": "https://ui-avatars.com/api/?name=Jayam+Ravi&background=0369a1&color=fff&size=200"},
-        {"name": "Karthi", "role": "Vanthiyathevan", "image": "https://ui-avatars.com/api/?name=Karthi&background=d97706&color=fff&size=200"},
-        {"name": "Trisha Krishnan", "role": "Kundavai", "image": "https://ui-avatars.com/api/?name=Trisha+Krishnan&background=db2777&color=fff&size=200"}
+        {
+          "name": "Vikram",
+          "role": "Aditya Karikalan",
+          "image": "https://ui-avatars.com/api/?name=Vikram&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Aishwarya Rai Bachchan",
+          "role": "Nandini",
+          "image": "https://ui-avatars.com/api/?name=Aishwarya+Rai&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Jayam Ravi",
+          "role": "Arulmozhi Varman",
+          "image": "https://ui-avatars.com/api/?name=Jayam+Ravi&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Karthi",
+          "role": "Vanthiyathevan",
+          "image": "https://ui-avatars.com/api/?name=Karthi&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Trisha Krishnan",
+          "role": "Kundavai",
+          "image": "https://ui-avatars.com/api/?name=Trisha+Krishnan&background=db2777&color=fff&size=200"
+        }
       ],
       "director": "Mani Ratnam",
       "releaseDate": "2022-09-30",
@@ -610,22 +1318,46 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "AHNJrXJSEzA",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Kochi"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Kochi"
+      ]
     },
     {
       "id": 26,
       "title": "Maidaan",
-      "genre": ["Drama", "Sport", "Biography"],
+      "genre": [
+        "Drama",
+        "Sport",
+        "Biography"
+      ],
       "language": "Hindi",
       "duration": "2h 53m",
       "rating": 7.8,
-      "poster": "https://image.tmdb.org/t/p/w500/r4IqgLN1cqbcV1cNJgbz8R6CJWV.jpg",
+      "poster": "https://media.themoviedb.org/t/p/w500/7VFSbhN5nZerjz26sHHZCqrzEsC.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/sJSKvF3MhGTiZM7p8KGu5aBYSmN.jpg",
       "description": "The real story of Syed Abdul Rahim, the revolutionary coach who built the Indian national football team from scratch and led them to glory in the 1950s and 60s.",
       "cast": [
-        {"name": "Ajay Devgn", "role": "Syed Abdul Rahim", "image": "https://ui-avatars.com/api/?name=Ajay+Devgn&background=b91c1c&color=fff&size=200"},
-        {"name": "Priyamani", "role": "Saeeda Rahim", "image": "https://ui-avatars.com/api/?name=Priyamani&background=7c3aed&color=fff&size=200"},
-        {"name": "Gajraj Rao", "role": "P.K. Banerjee", "image": "https://ui-avatars.com/api/?name=Gajraj+Rao&background=0369a1&color=fff&size=200"}
+        {
+          "name": "Ajay Devgn",
+          "role": "Syed Abdul Rahim",
+          "image": "https://ui-avatars.com/api/?name=Ajay+Devgn&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Priyamani",
+          "role": "Saeeda Rahim",
+          "image": "https://ui-avatars.com/api/?name=Priyamani&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Gajraj Rao",
+          "role": "P.K. Banerjee",
+          "image": "https://ui-avatars.com/api/?name=Gajraj+Rao&background=0369a1&color=fff&size=200"
+        }
       ],
       "director": "Amit Ravindernath Sharma",
       "releaseDate": "2024-04-10",
@@ -633,12 +1365,23 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "4Ux9-SCJPB0",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Kolkata", "Chennai", "Pune"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Kolkata",
+        "Chennai",
+        "Pune"
+      ]
     },
     {
       "id": 27,
       "title": "Avengers: Endgame",
-      "genre": ["Action", "Sci-Fi", "Adventure"],
+      "genre": [
+        "Action",
+        "Sci-Fi",
+        "Adventure"
+      ],
       "language": "English",
       "duration": "3h 1m",
       "rating": 8.4,
@@ -646,11 +1389,31 @@
       "banner": "https://image.tmdb.org/t/p/w1280/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg",
       "description": "After the devastating events of Infinity War, the Avengers assemble once more to reverse Thanos' actions and restore balance to the universe in this epic MCU finale.",
       "cast": [
-        {"name": "Robert Downey Jr.", "role": "Tony Stark / Iron Man", "image": "https://ui-avatars.com/api/?name=Robert+Downey&background=b91c1c&color=fff&size=200"},
-        {"name": "Chris Evans", "role": "Steve Rogers / Captain America", "image": "https://ui-avatars.com/api/?name=Chris+Evans&background=0369a1&color=fff&size=200"},
-        {"name": "Scarlett Johansson", "role": "Natasha Romanoff / Black Widow", "image": "https://ui-avatars.com/api/?name=Scarlett+Johansson&background=7c3aed&color=fff&size=200"},
-        {"name": "Chris Hemsworth", "role": "Thor", "image": "https://ui-avatars.com/api/?name=Chris+Hemsworth&background=d97706&color=fff&size=200"},
-        {"name": "Josh Brolin", "role": "Thanos", "image": "https://ui-avatars.com/api/?name=Josh+Brolin&background=6b21a8&color=fff&size=200"}
+        {
+          "name": "Robert Downey Jr.",
+          "role": "Tony Stark / Iron Man",
+          "image": "https://ui-avatars.com/api/?name=Robert+Downey&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Chris Evans",
+          "role": "Steve Rogers / Captain America",
+          "image": "https://ui-avatars.com/api/?name=Chris+Evans&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Scarlett Johansson",
+          "role": "Natasha Romanoff / Black Widow",
+          "image": "https://ui-avatars.com/api/?name=Scarlett+Johansson&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Chris Hemsworth",
+          "role": "Thor",
+          "image": "https://ui-avatars.com/api/?name=Chris+Hemsworth&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Josh Brolin",
+          "role": "Thanos",
+          "image": "https://ui-avatars.com/api/?name=Josh+Brolin&background=6b21a8&color=fff&size=200"
+        }
       ],
       "director": "Anthony & Joe Russo",
       "releaseDate": "2019-04-26",
@@ -658,24 +1421,59 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "TcMBFSGVi1c",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Chandigarh", "Kochi"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad",
+        "Chandigarh",
+        "Kochi"
+      ]
     },
     {
       "id": 28,
       "title": "The Dark Knight",
-      "genre": ["Action", "Crime", "Drama"],
+      "genre": [
+        "Action",
+        "Crime",
+        "Drama"
+      ],
       "language": "English",
       "duration": "2h 32m",
-      "rating": 9.0,
+      "rating": 9,
       "poster": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/dqK9Hag1054tghRQSqLSfrkvQnA.jpg",
       "description": "Batman faces his greatest psychological challenge — the Joker — in a brutal battle for Gotham City's soul. Widely regarded as one of the greatest superhero films ever made.",
       "cast": [
-        {"name": "Christian Bale", "role": "Bruce Wayne / Batman", "image": "https://ui-avatars.com/api/?name=Christian+Bale&background=1e1b4b&color=fff&size=200"},
-        {"name": "Heath Ledger", "role": "The Joker", "image": "https://ui-avatars.com/api/?name=Heath+Ledger&background=b91c1c&color=fff&size=200"},
-        {"name": "Aaron Eckhart", "role": "Harvey Dent / Two-Face", "image": "https://ui-avatars.com/api/?name=Aaron+Eckhart&background=d97706&color=fff&size=200"},
-        {"name": "Gary Oldman", "role": "Commissioner Gordon", "image": "https://ui-avatars.com/api/?name=Gary+Oldman&background=0369a1&color=fff&size=200"},
-        {"name": "Michael Caine", "role": "Alfred Pennyworth", "image": "https://ui-avatars.com/api/?name=Michael+Caine&background=059669&color=fff&size=200"}
+        {
+          "name": "Christian Bale",
+          "role": "Bruce Wayne / Batman",
+          "image": "https://ui-avatars.com/api/?name=Christian+Bale&background=1e1b4b&color=fff&size=200"
+        },
+        {
+          "name": "Heath Ledger",
+          "role": "The Joker",
+          "image": "https://ui-avatars.com/api/?name=Heath+Ledger&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Aaron Eckhart",
+          "role": "Harvey Dent / Two-Face",
+          "image": "https://ui-avatars.com/api/?name=Aaron+Eckhart&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Gary Oldman",
+          "role": "Commissioner Gordon",
+          "image": "https://ui-avatars.com/api/?name=Gary+Oldman&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Michael Caine",
+          "role": "Alfred Pennyworth",
+          "image": "https://ui-avatars.com/api/?name=Michael+Caine&background=059669&color=fff&size=200"
+        }
       ],
       "director": "Christopher Nolan",
       "releaseDate": "2008-07-18",
@@ -683,12 +1481,25 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "EXeTwQWrcwY",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad"
+      ]
     },
     {
       "id": 29,
       "title": "Inception",
-      "genre": ["Sci-Fi", "Thriller", "Action"],
+      "genre": [
+        "Sci-Fi",
+        "Thriller",
+        "Action"
+      ],
       "language": "English",
       "duration": "2h 28m",
       "rating": 8.8,
@@ -696,11 +1507,31 @@
       "banner": "https://image.tmdb.org/t/p/w1280/s3TBrRGB1iav7gFOCNx3H31MoES.jpg",
       "description": "A skilled thief who enters people's dreams to steal secrets is given a chance to have his past wiped clean in exchange for an impossible task — planting an idea.",
       "cast": [
-        {"name": "Leonardo DiCaprio", "role": "Dominic Cobb", "image": "https://ui-avatars.com/api/?name=Leonardo+DiCaprio&background=b91c1c&color=fff&size=200"},
-        {"name": "Joseph Gordon-Levitt", "role": "Arthur", "image": "https://ui-avatars.com/api/?name=Joseph+Gordon-Levitt&background=0369a1&color=fff&size=200"},
-        {"name": "Elliot Page", "role": "Ariadne", "image": "https://ui-avatars.com/api/?name=Elliot+Page&background=7c3aed&color=fff&size=200"},
-        {"name": "Tom Hardy", "role": "Eames", "image": "https://ui-avatars.com/api/?name=Tom+Hardy&background=d97706&color=fff&size=200"},
-        {"name": "Ken Watanabe", "role": "Saito", "image": "https://ui-avatars.com/api/?name=Ken+Watanabe&background=059669&color=fff&size=200"}
+        {
+          "name": "Leonardo DiCaprio",
+          "role": "Dominic Cobb",
+          "image": "https://ui-avatars.com/api/?name=Leonardo+DiCaprio&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Joseph Gordon-Levitt",
+          "role": "Arthur",
+          "image": "https://ui-avatars.com/api/?name=Joseph+Gordon-Levitt&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Elliot Page",
+          "role": "Ariadne",
+          "image": "https://ui-avatars.com/api/?name=Elliot+Page&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Tom Hardy",
+          "role": "Eames",
+          "image": "https://ui-avatars.com/api/?name=Tom+Hardy&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Ken Watanabe",
+          "role": "Saito",
+          "image": "https://ui-avatars.com/api/?name=Ken+Watanabe&background=059669&color=fff&size=200"
+        }
       ],
       "director": "Christopher Nolan",
       "releaseDate": "2010-07-16",
@@ -708,12 +1539,27 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "YoHD9XEInc0",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Chandigarh", "Kochi"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad",
+        "Chandigarh",
+        "Kochi"
+      ]
     },
     {
       "id": 30,
       "title": "Interstellar",
-      "genre": ["Sci-Fi", "Drama", "Adventure"],
+      "genre": [
+        "Sci-Fi",
+        "Drama",
+        "Adventure"
+      ],
       "language": "English",
       "duration": "2h 49m",
       "rating": 8.6,
@@ -721,10 +1567,26 @@
       "banner": "https://image.tmdb.org/t/p/w1280/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg",
       "description": "A team of explorers travels through a wormhole in space in an attempt to ensure humanity's survival as Earth becomes uninhabitable — a mind-bending journey through time and love.",
       "cast": [
-        {"name": "Matthew McConaughey", "role": "Cooper", "image": "https://ui-avatars.com/api/?name=Matthew+McConaughey&background=b91c1c&color=fff&size=200"},
-        {"name": "Anne Hathaway", "role": "Dr. Amelia Brand", "image": "https://ui-avatars.com/api/?name=Anne+Hathaway&background=7c3aed&color=fff&size=200"},
-        {"name": "Jessica Chastain", "role": "Adult Murph", "image": "https://ui-avatars.com/api/?name=Jessica+Chastain&background=d97706&color=fff&size=200"},
-        {"name": "Michael Caine", "role": "Professor Brand", "image": "https://ui-avatars.com/api/?name=Michael+Caine&background=059669&color=fff&size=200"}
+        {
+          "name": "Matthew McConaughey",
+          "role": "Cooper",
+          "image": "https://ui-avatars.com/api/?name=Matthew+McConaughey&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Anne Hathaway",
+          "role": "Dr. Amelia Brand",
+          "image": "https://ui-avatars.com/api/?name=Anne+Hathaway&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Jessica Chastain",
+          "role": "Adult Murph",
+          "image": "https://ui-avatars.com/api/?name=Jessica+Chastain&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Michael Caine",
+          "role": "Professor Brand",
+          "image": "https://ui-avatars.com/api/?name=Michael+Caine&background=059669&color=fff&size=200"
+        }
       ],
       "director": "Christopher Nolan",
       "releaseDate": "2014-11-07",
@@ -732,12 +1594,24 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "zSWdZVtXT7E",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad"
+      ]
     },
     {
       "id": 31,
       "title": "Top Gun: Maverick",
-      "genre": ["Action", "Drama"],
+      "genre": [
+        "Action",
+        "Drama"
+      ],
       "language": "English",
       "duration": "2h 10m",
       "rating": 8.3,
@@ -745,10 +1619,26 @@
       "banner": "https://image.tmdb.org/t/p/w1280/AkB15dMDquYqYdHLUVjFAVLGRhZ.jpg",
       "description": "After thirty-plus years of service as a top naval aviator, Pete 'Maverick' Mitchell is on the edge of retirement — until he finds himself training TOP GUN graduates for a specialized dangerous mission.",
       "cast": [
-        {"name": "Tom Cruise", "role": "Pete 'Maverick' Mitchell", "image": "https://ui-avatars.com/api/?name=Tom+Cruise&background=b91c1c&color=fff&size=200"},
-        {"name": "Miles Teller", "role": "Lt. Bradley 'Rooster' Bradshaw", "image": "https://ui-avatars.com/api/?name=Miles+Teller&background=0369a1&color=fff&size=200"},
-        {"name": "Jennifer Connelly", "role": "Penny Benjamin", "image": "https://ui-avatars.com/api/?name=Jennifer+Connelly&background=7c3aed&color=fff&size=200"},
-        {"name": "Jon Hamm", "role": "Vice Admiral 'Cyclone'", "image": "https://ui-avatars.com/api/?name=Jon+Hamm&background=d97706&color=fff&size=200"}
+        {
+          "name": "Tom Cruise",
+          "role": "Pete 'Maverick' Mitchell",
+          "image": "https://ui-avatars.com/api/?name=Tom+Cruise&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Miles Teller",
+          "role": "Lt. Bradley 'Rooster' Bradshaw",
+          "image": "https://ui-avatars.com/api/?name=Miles+Teller&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Jennifer Connelly",
+          "role": "Penny Benjamin",
+          "image": "https://ui-avatars.com/api/?name=Jennifer+Connelly&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Jon Hamm",
+          "role": "Vice Admiral 'Cyclone'",
+          "image": "https://ui-avatars.com/api/?name=Jon+Hamm&background=d97706&color=fff&size=200"
+        }
       ],
       "director": "Joseph Kosinski",
       "releaseDate": "2022-05-27",
@@ -756,12 +1646,25 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "giXco2jaZ_4",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad"
+      ]
     },
     {
       "id": 32,
       "title": "Avatar: The Way of Water",
-      "genre": ["Sci-Fi", "Adventure", "Action"],
+      "genre": [
+        "Sci-Fi",
+        "Adventure",
+        "Action"
+      ],
       "language": "English",
       "duration": "3h 12m",
       "rating": 7.6,
@@ -769,10 +1672,26 @@
       "banner": "https://image.tmdb.org/t/p/w1280/s16H6tpK2utvwDtzZ8Qy4qm5Emw.jpg",
       "description": "Jake Sully lives with his new family on Pandora. When a familiar threat resurfaces, Jake must work with Neytiri and the army of the Na'vi in a spectacular underwater adventure.",
       "cast": [
-        {"name": "Sam Worthington", "role": "Jake Sully", "image": "https://ui-avatars.com/api/?name=Sam+Worthington&background=b91c1c&color=fff&size=200"},
-        {"name": "Zoe Saldana", "role": "Neytiri", "image": "https://ui-avatars.com/api/?name=Zoe+Saldana&background=0369a1&color=fff&size=200"},
-        {"name": "Sigourney Weaver", "role": "Kiri", "image": "https://ui-avatars.com/api/?name=Sigourney+Weaver&background=7c3aed&color=fff&size=200"},
-        {"name": "Stephen Lang", "role": "Quaritch", "image": "https://ui-avatars.com/api/?name=Stephen+Lang&background=d97706&color=fff&size=200"}
+        {
+          "name": "Sam Worthington",
+          "role": "Jake Sully",
+          "image": "https://ui-avatars.com/api/?name=Sam+Worthington&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Zoe Saldana",
+          "role": "Neytiri",
+          "image": "https://ui-avatars.com/api/?name=Zoe+Saldana&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Sigourney Weaver",
+          "role": "Kiri",
+          "image": "https://ui-avatars.com/api/?name=Sigourney+Weaver&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Stephen Lang",
+          "role": "Quaritch",
+          "image": "https://ui-avatars.com/api/?name=Stephen+Lang&background=d97706&color=fff&size=200"
+        }
       ],
       "director": "James Cameron",
       "releaseDate": "2022-12-16",
@@ -780,12 +1699,27 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "a8Gx8wiNbs8",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Chandigarh", "Kochi"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad",
+        "Chandigarh",
+        "Kochi"
+      ]
     },
     {
       "id": 33,
       "title": "Oppenheimer",
-      "genre": ["Drama", "History", "Thriller"],
+      "genre": [
+        "Drama",
+        "History",
+        "Thriller"
+      ],
       "language": "English",
       "duration": "3h 1m",
       "rating": 8.9,
@@ -793,11 +1727,31 @@
       "banner": "https://image.tmdb.org/t/p/w1280/rLb2cwF3Pazuxaj0sRXQ037tGI1.jpg",
       "description": "The story of J. Robert Oppenheimer, the American theoretical physicist who helped develop the first nuclear weapons during World War II as part of the Manhattan Project.",
       "cast": [
-        {"name": "Cillian Murphy", "role": "J. Robert Oppenheimer", "image": "https://ui-avatars.com/api/?name=Cillian+Murphy&background=b91c1c&color=fff&size=200"},
-        {"name": "Emily Blunt", "role": "Katherine 'Kitty' Oppenheimer", "image": "https://ui-avatars.com/api/?name=Emily+Blunt&background=7c3aed&color=fff&size=200"},
-        {"name": "Matt Damon", "role": "General Leslie Groves Jr.", "image": "https://ui-avatars.com/api/?name=Matt+Damon&background=0369a1&color=fff&size=200"},
-        {"name": "Robert Downey Jr.", "role": "Lewis Strauss", "image": "https://ui-avatars.com/api/?name=Robert+Downey&background=d97706&color=fff&size=200"},
-        {"name": "Florence Pugh", "role": "Jean Tatlock", "image": "https://ui-avatars.com/api/?name=Florence+Pugh&background=db2777&color=fff&size=200"}
+        {
+          "name": "Cillian Murphy",
+          "role": "J. Robert Oppenheimer",
+          "image": "https://ui-avatars.com/api/?name=Cillian+Murphy&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Emily Blunt",
+          "role": "Katherine 'Kitty' Oppenheimer",
+          "image": "https://ui-avatars.com/api/?name=Emily+Blunt&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Matt Damon",
+          "role": "General Leslie Groves Jr.",
+          "image": "https://ui-avatars.com/api/?name=Matt+Damon&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Robert Downey Jr.",
+          "role": "Lewis Strauss",
+          "image": "https://ui-avatars.com/api/?name=Robert+Downey&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Florence Pugh",
+          "role": "Jean Tatlock",
+          "image": "https://ui-avatars.com/api/?name=Florence+Pugh&background=db2777&color=fff&size=200"
+        }
       ],
       "director": "Christopher Nolan",
       "releaseDate": "2023-07-21",
@@ -805,23 +1759,52 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "uYPbbksJxIg",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad"
+      ]
     },
     {
       "id": 34,
       "title": "Barbie",
-      "genre": ["Comedy", "Fantasy", "Adventure"],
+      "genre": [
+        "Comedy",
+        "Fantasy",
+        "Adventure"
+      ],
       "language": "English",
       "duration": "1h 54m",
       "rating": 6.9,
-      "poster": "https://image.tmdb.org/t/p/w500/iuFNMS8vlbRq3nFOPj8K6H1f88a.jpg",
+      "poster": "https://media.themoviedb.org/t/p/w500/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/nHf61UzkfFno5X1ofIhugCPus2R.jpg",
       "description": "Barbie suffers a crisis that leads her to question her perfect Barbieland existence. She and Ken venture to the real world, where the rules of Barbieland don't apply.",
       "cast": [
-        {"name": "Margot Robbie", "role": "Barbie / Stereotypical Barbie", "image": "https://ui-avatars.com/api/?name=Margot+Robbie&background=db2777&color=fff&size=200"},
-        {"name": "Ryan Gosling", "role": "Ken / Stereotypical Ken", "image": "https://ui-avatars.com/api/?name=Ryan+Gosling&background=0369a1&color=fff&size=200"},
-        {"name": "America Ferrera", "role": "Gloria", "image": "https://ui-avatars.com/api/?name=America+Ferrera&background=7c3aed&color=fff&size=200"},
-        {"name": "Kate McKinnon", "role": "Weird Barbie", "image": "https://ui-avatars.com/api/?name=Kate+McKinnon&background=d97706&color=fff&size=200"}
+        {
+          "name": "Margot Robbie",
+          "role": "Barbie / Stereotypical Barbie",
+          "image": "https://ui-avatars.com/api/?name=Margot+Robbie&background=db2777&color=fff&size=200"
+        },
+        {
+          "name": "Ryan Gosling",
+          "role": "Ken / Stereotypical Ken",
+          "image": "https://ui-avatars.com/api/?name=Ryan+Gosling&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "America Ferrera",
+          "role": "Gloria",
+          "image": "https://ui-avatars.com/api/?name=America+Ferrera&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Kate McKinnon",
+          "role": "Weird Barbie",
+          "image": "https://ui-avatars.com/api/?name=Kate+McKinnon&background=d97706&color=fff&size=200"
+        }
       ],
       "director": "Greta Gerwig",
       "releaseDate": "2023-07-21",
@@ -829,12 +1812,27 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "pBk4NYhaISY",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Chandigarh", "Kochi"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad",
+        "Chandigarh",
+        "Kochi"
+      ]
     },
     {
       "id": 35,
       "title": "Spider-Man: Across the Spider-Verse",
-      "genre": ["Animation", "Action", "Adventure"],
+      "genre": [
+        "Animation",
+        "Action",
+        "Adventure"
+      ],
       "language": "English",
       "duration": "2h 20m",
       "rating": 8.7,
@@ -842,10 +1840,26 @@
       "banner": "https://image.tmdb.org/t/p/w1280/4HodYYKEIsGOdinkGi2Ucz6X9i0.jpg",
       "description": "Miles Morales catapults across the multiverse where he encounters a team of Spider-People charged with protecting its very existence — but must choose between his mission and his family.",
       "cast": [
-        {"name": "Shameik Moore", "role": "Miles Morales / Spider-Man", "image": "https://ui-avatars.com/api/?name=Shameik+Moore&background=b91c1c&color=fff&size=200"},
-        {"name": "Hailee Steinfeld", "role": "Gwen Stacy / Spider-Woman", "image": "https://ui-avatars.com/api/?name=Hailee+Steinfeld&background=7c3aed&color=fff&size=200"},
-        {"name": "Oscar Isaac", "role": "Miguel O'Hara / Spider-Man 2099", "image": "https://ui-avatars.com/api/?name=Oscar+Isaac&background=0369a1&color=fff&size=200"},
-        {"name": "Jake Johnson", "role": "Peter B. Parker", "image": "https://ui-avatars.com/api/?name=Jake+Johnson&background=d97706&color=fff&size=200"}
+        {
+          "name": "Shameik Moore",
+          "role": "Miles Morales / Spider-Man",
+          "image": "https://ui-avatars.com/api/?name=Shameik+Moore&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Hailee Steinfeld",
+          "role": "Gwen Stacy / Spider-Woman",
+          "image": "https://ui-avatars.com/api/?name=Hailee+Steinfeld&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Oscar Isaac",
+          "role": "Miguel O'Hara / Spider-Man 2099",
+          "image": "https://ui-avatars.com/api/?name=Oscar+Isaac&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Jake Johnson",
+          "role": "Peter B. Parker",
+          "image": "https://ui-avatars.com/api/?name=Jake+Johnson&background=d97706&color=fff&size=200"
+        }
       ],
       "director": "Joaquim Dos Santos, Kemp Powers, Justin K. Thompson",
       "releaseDate": "2023-06-02",
@@ -853,24 +1867,57 @@
       "status": "now_showing",
       "certificate": "U",
       "trailerYouTubeId": "cSp1dM2Vj48",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad"
+      ]
     },
     {
       "id": 36,
       "title": "Guardians of the Galaxy Vol. 3",
-      "genre": ["Action", "Comedy", "Sci-Fi"],
+      "genre": [
+        "Action",
+        "Comedy",
+        "Sci-Fi"
+      ],
       "language": "English",
       "duration": "2h 30m",
       "rating": 7.9,
-      "poster": "https://image.tmdb.org/t/p/w500/r2J02Z2OpNTctfOSN1Ydgd2xLTn.jpg",
+      "poster": "https://media.themoviedb.org/t/p/w500/r2J02Z2OpNTctfOSN1Ydgii51I3.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/5YZbUmjbMa3ClvSW1Wj3D6XGkVA.jpg",
       "description": "Still reeling from the loss of Gamora, Peter Quill rallies his team to defend the universe, with a mission that, if not completed, could lead to the end of the Guardians.",
       "cast": [
-        {"name": "Chris Pratt", "role": "Peter Quill / Star-Lord", "image": "https://ui-avatars.com/api/?name=Chris+Pratt&background=b91c1c&color=fff&size=200"},
-        {"name": "Zoe Saldana", "role": "Gamora", "image": "https://ui-avatars.com/api/?name=Zoe+Saldana&background=7c3aed&color=fff&size=200"},
-        {"name": "Bradley Cooper", "role": "Rocket (voice)", "image": "https://ui-avatars.com/api/?name=Bradley+Cooper&background=d97706&color=fff&size=200"},
-        {"name": "Vin Diesel", "role": "Groot (voice)", "image": "https://ui-avatars.com/api/?name=Vin+Diesel&background=0369a1&color=fff&size=200"},
-        {"name": "Pom Klementieff", "role": "Mantis", "image": "https://ui-avatars.com/api/?name=Pom+Klementieff&background=db2777&color=fff&size=200"}
+        {
+          "name": "Chris Pratt",
+          "role": "Peter Quill / Star-Lord",
+          "image": "https://ui-avatars.com/api/?name=Chris+Pratt&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Zoe Saldana",
+          "role": "Gamora",
+          "image": "https://ui-avatars.com/api/?name=Zoe+Saldana&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Bradley Cooper",
+          "role": "Rocket (voice)",
+          "image": "https://ui-avatars.com/api/?name=Bradley+Cooper&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Vin Diesel",
+          "role": "Groot (voice)",
+          "image": "https://ui-avatars.com/api/?name=Vin+Diesel&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Pom Klementieff",
+          "role": "Mantis",
+          "image": "https://ui-avatars.com/api/?name=Pom+Klementieff&background=db2777&color=fff&size=200"
+        }
       ],
       "director": "James Gunn",
       "releaseDate": "2023-05-05",
@@ -878,12 +1925,25 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "u3V5KDHRQvk",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad"
+      ]
     },
     {
       "id": 37,
       "title": "Dune: Part Two",
-      "genre": ["Sci-Fi", "Drama", "Action"],
+      "genre": [
+        "Sci-Fi",
+        "Drama",
+        "Action"
+      ],
       "language": "English",
       "duration": "2h 46m",
       "rating": 8.5,
@@ -891,11 +1951,31 @@
       "banner": "https://image.tmdb.org/t/p/w1280/xOMo8BRK7PfcJv9JCnx7s5hj0PX.jpg",
       "description": "Paul Atreides unites with Chani and the Fremen while seeking revenge against those who destroyed his family. He faces a choice between his love and the fate of the known universe.",
       "cast": [
-        {"name": "Timothée Chalamet", "role": "Paul Atreides", "image": "https://ui-avatars.com/api/?name=Timothee+Chalamet&background=b91c1c&color=fff&size=200"},
-        {"name": "Zendaya", "role": "Chani", "image": "https://ui-avatars.com/api/?name=Zendaya&background=d97706&color=fff&size=200"},
-        {"name": "Rebecca Ferguson", "role": "Lady Jessica", "image": "https://ui-avatars.com/api/?name=Rebecca+Ferguson&background=7c3aed&color=fff&size=200"},
-        {"name": "Austin Butler", "role": "Feyd-Rautha Harkonnen", "image": "https://ui-avatars.com/api/?name=Austin+Butler&background=0369a1&color=fff&size=200"},
-        {"name": "Florence Pugh", "role": "Princess Irulan", "image": "https://ui-avatars.com/api/?name=Florence+Pugh&background=db2777&color=fff&size=200"}
+        {
+          "name": "Timothée Chalamet",
+          "role": "Paul Atreides",
+          "image": "https://ui-avatars.com/api/?name=Timothee+Chalamet&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Zendaya",
+          "role": "Chani",
+          "image": "https://ui-avatars.com/api/?name=Zendaya&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Rebecca Ferguson",
+          "role": "Lady Jessica",
+          "image": "https://ui-avatars.com/api/?name=Rebecca+Ferguson&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Austin Butler",
+          "role": "Feyd-Rautha Harkonnen",
+          "image": "https://ui-avatars.com/api/?name=Austin+Butler&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Florence Pugh",
+          "role": "Princess Irulan",
+          "image": "https://ui-avatars.com/api/?name=Florence+Pugh&background=db2777&color=fff&size=200"
+        }
       ],
       "director": "Denis Villeneuve",
       "releaseDate": "2024-03-01",
@@ -903,23 +1983,52 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "Way9Dexny3w",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad"
+      ]
     },
     {
       "id": 38,
       "title": "Fast X",
-      "genre": ["Action", "Adventure", "Thriller"],
+      "genre": [
+        "Action",
+        "Adventure",
+        "Thriller"
+      ],
       "language": "English",
       "duration": "2h 21m",
       "rating": 5.8,
-      "poster": "https://image.tmdb.org/t/p/w500/fiVW06jE7z9YnO4KTkvsn3S7yJa.jpg",
+      "poster": "https://media.themoviedb.org/t/p/w500/fiVW06jE7z9YnO4trhaMEdclSiC.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/4XM8DUTQb3lhLemJC51Jx4a2EuA.jpg",
       "description": "Dom Toretto and his family are targeted by the son of drug kingpin Hernan Reyes, who seeks revenge across the globe for his father's death.",
       "cast": [
-        {"name": "Vin Diesel", "role": "Dom Toretto", "image": "https://ui-avatars.com/api/?name=Vin+Diesel&background=b91c1c&color=fff&size=200"},
-        {"name": "Jason Momoa", "role": "Dante Reyes", "image": "https://ui-avatars.com/api/?name=Jason+Momoa&background=0369a1&color=fff&size=200"},
-        {"name": "Michelle Rodriguez", "role": "Letty Ortiz", "image": "https://ui-avatars.com/api/?name=Michelle+Rodriguez&background=7c3aed&color=fff&size=200"},
-        {"name": "Charlize Theron", "role": "Cipher", "image": "https://ui-avatars.com/api/?name=Charlize+Theron&background=d97706&color=fff&size=200"}
+        {
+          "name": "Vin Diesel",
+          "role": "Dom Toretto",
+          "image": "https://ui-avatars.com/api/?name=Vin+Diesel&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Jason Momoa",
+          "role": "Dante Reyes",
+          "image": "https://ui-avatars.com/api/?name=Jason+Momoa&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Michelle Rodriguez",
+          "role": "Letty Ortiz",
+          "image": "https://ui-avatars.com/api/?name=Michelle+Rodriguez&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Charlize Theron",
+          "role": "Cipher",
+          "image": "https://ui-avatars.com/api/?name=Charlize+Theron&background=d97706&color=fff&size=200"
+        }
       ],
       "director": "Louis Leterrier",
       "releaseDate": "2023-05-19",
@@ -927,12 +2036,23 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "32RAq6JoN9U",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Pune", "Ahmedabad"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Pune",
+        "Ahmedabad"
+      ]
     },
     {
       "id": 39,
       "title": "Mission: Impossible – Dead Reckoning",
-      "genre": ["Action", "Thriller", "Adventure"],
+      "genre": [
+        "Action",
+        "Thriller",
+        "Adventure"
+      ],
       "language": "English",
       "duration": "2h 43m",
       "rating": 7.7,
@@ -940,10 +2060,26 @@
       "banner": "https://image.tmdb.org/t/p/w1280/lPYyNKbYopA47UNMx0aTxGWllSB.jpg",
       "description": "Ethan Hunt and his IMF team embark on their most dangerous mission yet — to track down a terrifying new weapon before it falls into the wrong hands.",
       "cast": [
-        {"name": "Tom Cruise", "role": "Ethan Hunt", "image": "https://ui-avatars.com/api/?name=Tom+Cruise&background=b91c1c&color=fff&size=200"},
-        {"name": "Hayley Atwell", "role": "Grace", "image": "https://ui-avatars.com/api/?name=Hayley+Atwell&background=7c3aed&color=fff&size=200"},
-        {"name": "Simon Pegg", "role": "Benji Dunn", "image": "https://ui-avatars.com/api/?name=Simon+Pegg&background=d97706&color=fff&size=200"},
-        {"name": "Ving Rhames", "role": "Luther Stickell", "image": "https://ui-avatars.com/api/?name=Ving+Rhames&background=0369a1&color=fff&size=200"}
+        {
+          "name": "Tom Cruise",
+          "role": "Ethan Hunt",
+          "image": "https://ui-avatars.com/api/?name=Tom+Cruise&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Hayley Atwell",
+          "role": "Grace",
+          "image": "https://ui-avatars.com/api/?name=Hayley+Atwell&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Simon Pegg",
+          "role": "Benji Dunn",
+          "image": "https://ui-avatars.com/api/?name=Simon+Pegg&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Ving Rhames",
+          "role": "Luther Stickell",
+          "image": "https://ui-avatars.com/api/?name=Ving+Rhames&background=0369a1&color=fff&size=200"
+        }
       ],
       "director": "Christopher McQuarrie",
       "releaseDate": "2023-07-12",
@@ -951,12 +2087,25 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "avz06PDqDbM",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad"
+      ]
     },
     {
       "id": 40,
       "title": "John Wick: Chapter 4",
-      "genre": ["Action", "Thriller", "Crime"],
+      "genre": [
+        "Action",
+        "Thriller",
+        "Crime"
+      ],
       "language": "English",
       "duration": "2h 49m",
       "rating": 7.7,
@@ -964,10 +2113,26 @@
       "banner": "https://image.tmdb.org/t/p/w1280/a4EwIRestFDANPRrFVqh85IB9Wg.jpg",
       "description": "John Wick discovers a path to defeating the High Table — but before he can earn his freedom, he must face off against a new enemy with powerful alliances around the world.",
       "cast": [
-        {"name": "Keanu Reeves", "role": "John Wick", "image": "https://ui-avatars.com/api/?name=Keanu+Reeves&background=1e1b4b&color=fff&size=200"},
-        {"name": "Donnie Yen", "role": "Caine", "image": "https://ui-avatars.com/api/?name=Donnie+Yen&background=b91c1c&color=fff&size=200"},
-        {"name": "Bill Skarsgård", "role": "Marquis de Gramont", "image": "https://ui-avatars.com/api/?name=Bill+Skarsgard&background=0369a1&color=fff&size=200"},
-        {"name": "Laurence Fishburne", "role": "The Bowery King", "image": "https://ui-avatars.com/api/?name=Laurence+Fishburne&background=d97706&color=fff&size=200"}
+        {
+          "name": "Keanu Reeves",
+          "role": "John Wick",
+          "image": "https://ui-avatars.com/api/?name=Keanu+Reeves&background=1e1b4b&color=fff&size=200"
+        },
+        {
+          "name": "Donnie Yen",
+          "role": "Caine",
+          "image": "https://ui-avatars.com/api/?name=Donnie+Yen&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Bill Skarsgård",
+          "role": "Marquis de Gramont",
+          "image": "https://ui-avatars.com/api/?name=Bill+Skarsgard&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Laurence Fishburne",
+          "role": "The Bowery King",
+          "image": "https://ui-avatars.com/api/?name=Laurence+Fishburne&background=d97706&color=fff&size=200"
+        }
       ],
       "director": "Chad Stahelski",
       "releaseDate": "2023-03-24",
@@ -975,12 +2140,23 @@
       "status": "now_showing",
       "certificate": "A",
       "trailerYouTubeId": "qEVUtrk8_B4",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Pune", "Ahmedabad"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Pune",
+        "Ahmedabad"
+      ]
     },
     {
       "id": 41,
       "title": "The Batman",
-      "genre": ["Action", "Crime", "Drama"],
+      "genre": [
+        "Action",
+        "Crime",
+        "Drama"
+      ],
       "language": "English",
       "duration": "2h 56m",
       "rating": 7.8,
@@ -988,10 +2164,26 @@
       "banner": "https://image.tmdb.org/t/p/w1280/b0PlSFdDwbyK0cf5RxwDpaOJQvQ.jpg",
       "description": "In his second year of fighting crime, Batman uncovers corruption in Gotham City that links to his own family while facing a killer who targets Gotham's elite with cryptic riddles.",
       "cast": [
-        {"name": "Robert Pattinson", "role": "Bruce Wayne / Batman", "image": "https://ui-avatars.com/api/?name=Robert+Pattinson&background=1e1b4b&color=fff&size=200"},
-        {"name": "Zoë Kravitz", "role": "Selina Kyle / Catwoman", "image": "https://ui-avatars.com/api/?name=Zoe+Kravitz&background=7c3aed&color=fff&size=200"},
-        {"name": "Paul Dano", "role": "The Riddler", "image": "https://ui-avatars.com/api/?name=Paul+Dano&background=b91c1c&color=fff&size=200"},
-        {"name": "Colin Farrell", "role": "Oswald Cobblepot / The Penguin", "image": "https://ui-avatars.com/api/?name=Colin+Farrell&background=0369a1&color=fff&size=200"}
+        {
+          "name": "Robert Pattinson",
+          "role": "Bruce Wayne / Batman",
+          "image": "https://ui-avatars.com/api/?name=Robert+Pattinson&background=1e1b4b&color=fff&size=200"
+        },
+        {
+          "name": "Zoë Kravitz",
+          "role": "Selina Kyle / Catwoman",
+          "image": "https://ui-avatars.com/api/?name=Zoe+Kravitz&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Paul Dano",
+          "role": "The Riddler",
+          "image": "https://ui-avatars.com/api/?name=Paul+Dano&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Colin Farrell",
+          "role": "Oswald Cobblepot / The Penguin",
+          "image": "https://ui-avatars.com/api/?name=Colin+Farrell&background=0369a1&color=fff&size=200"
+        }
       ],
       "director": "Matt Reeves",
       "releaseDate": "2022-03-04",
@@ -999,23 +2191,52 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "mqqft2x_Aa4",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad"
+      ]
     },
     {
       "id": 42,
       "title": "Black Panther: Wakanda Forever",
-      "genre": ["Action", "Drama", "Sci-Fi"],
+      "genre": [
+        "Action",
+        "Drama",
+        "Sci-Fi"
+      ],
       "language": "English",
       "duration": "2h 41m",
       "rating": 6.7,
-      "poster": "https://image.tmdb.org/t/p/w500/sv1xJUazXoQuIDTqh3MS05PqFkB.jpg",
+      "poster": "https://media.themoviedb.org/t/p/w500/55emwsc0NYebFXSTEu39zN2Rffq.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/xDMIl84Qo5Tso1QL7YP5tbbj3dR.jpg",
       "description": "The people of Wakanda fight to protect their home from intervening world powers as Queen Ramonda, Shuri, and others forge a new path for the kingdom.",
       "cast": [
-        {"name": "Letitia Wright", "role": "Shuri", "image": "https://ui-avatars.com/api/?name=Letitia+Wright&background=7c3aed&color=fff&size=200"},
-        {"name": "Angela Bassett", "role": "Queen Ramonda", "image": "https://ui-avatars.com/api/?name=Angela+Bassett&background=b91c1c&color=fff&size=200"},
-        {"name": "Tenoch Huerta Mejía", "role": "Namor", "image": "https://ui-avatars.com/api/?name=Tenoch+Huerta&background=0369a1&color=fff&size=200"},
-        {"name": "Lupita Nyong'o", "role": "Nakia", "image": "https://ui-avatars.com/api/?name=Lupita+Nyongo&background=d97706&color=fff&size=200"}
+        {
+          "name": "Letitia Wright",
+          "role": "Shuri",
+          "image": "https://ui-avatars.com/api/?name=Letitia+Wright&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Angela Bassett",
+          "role": "Queen Ramonda",
+          "image": "https://ui-avatars.com/api/?name=Angela+Bassett&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Tenoch Huerta Mejía",
+          "role": "Namor",
+          "image": "https://ui-avatars.com/api/?name=Tenoch+Huerta&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Lupita Nyong'o",
+          "role": "Nakia",
+          "image": "https://ui-avatars.com/api/?name=Lupita+Nyongo&background=d97706&color=fff&size=200"
+        }
       ],
       "director": "Ryan Coogler",
       "releaseDate": "2022-11-11",
@@ -1023,23 +2244,52 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "RlOB3UALvrQ",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad"
+      ]
     },
     {
       "id": 43,
       "title": "Killers of the Flower Moon",
-      "genre": ["Crime", "Drama", "History"],
+      "genre": [
+        "Crime",
+        "Drama",
+        "History"
+      ],
       "language": "English",
       "duration": "3h 26m",
       "rating": 7.6,
-      "poster": "https://image.tmdb.org/t/p/w500/dB6jEBBdrFrBHdbexsNn7OoGSRh.jpg",
+      "poster": "https://media.themoviedb.org/t/p/w500/a7KyFMPXj0iY4EoLq1PIGU1WJPw.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/f0oMygxRQzKUdAqapGO74mBCwRP.jpg",
       "description": "Members of the Osage Nation are murdered under mysterious circumstances in the 1920s, sparking a major investigation by the newly formed FBI.",
       "cast": [
-        {"name": "Leonardo DiCaprio", "role": "Ernest Burkhart", "image": "https://ui-avatars.com/api/?name=Leonardo+DiCaprio&background=b91c1c&color=fff&size=200"},
-        {"name": "Lily Gladstone", "role": "Mollie Burkhart", "image": "https://ui-avatars.com/api/?name=Lily+Gladstone&background=7c3aed&color=fff&size=200"},
-        {"name": "Robert De Niro", "role": "William King Hale", "image": "https://ui-avatars.com/api/?name=Robert+DeNiro&background=0369a1&color=fff&size=200"},
-        {"name": "Jesse Plemons", "role": "Tom White", "image": "https://ui-avatars.com/api/?name=Jesse+Plemons&background=d97706&color=fff&size=200"}
+        {
+          "name": "Leonardo DiCaprio",
+          "role": "Ernest Burkhart",
+          "image": "https://ui-avatars.com/api/?name=Leonardo+DiCaprio&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Lily Gladstone",
+          "role": "Mollie Burkhart",
+          "image": "https://ui-avatars.com/api/?name=Lily+Gladstone&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Robert De Niro",
+          "role": "William King Hale",
+          "image": "https://ui-avatars.com/api/?name=Robert+DeNiro&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Jesse Plemons",
+          "role": "Tom White",
+          "image": "https://ui-avatars.com/api/?name=Jesse+Plemons&background=d97706&color=fff&size=200"
+        }
       ],
       "director": "Martin Scorsese",
       "releaseDate": "2023-10-20",
@@ -1047,12 +2297,22 @@
       "status": "now_showing",
       "certificate": "A",
       "trailerYouTubeId": "EP34Yoxs3FQ",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Kolkata", "Chennai"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Kolkata",
+        "Chennai"
+      ]
     },
     {
       "id": 44,
       "title": "Doctor Strange in the Multiverse of Madness",
-      "genre": ["Action", "Fantasy", "Sci-Fi"],
+      "genre": [
+        "Action",
+        "Fantasy",
+        "Sci-Fi"
+      ],
       "language": "English",
       "duration": "2h 6m",
       "rating": 6.9,
@@ -1060,10 +2320,26 @@
       "banner": "https://image.tmdb.org/t/p/w1280/wcKFYIiVDvRURrzglV9bOoNSwyk.jpg",
       "description": "Doctor Strange teams with a mysterious teenager who can travel the multiverse to face the Scarlet Witch — a powerful adversary intent on taking what Strange can never have.",
       "cast": [
-        {"name": "Benedict Cumberbatch", "role": "Dr. Stephen Strange", "image": "https://ui-avatars.com/api/?name=Benedict+Cumberbatch&background=b91c1c&color=fff&size=200"},
-        {"name": "Elizabeth Olsen", "role": "Wanda Maximoff / Scarlet Witch", "image": "https://ui-avatars.com/api/?name=Elizabeth+Olsen&background=7c3aed&color=fff&size=200"},
-        {"name": "Xochitl Gomez", "role": "America Chavez", "image": "https://ui-avatars.com/api/?name=Xochitl+Gomez&background=d97706&color=fff&size=200"},
-        {"name": "Rachel McAdams", "role": "Christine Palmer", "image": "https://ui-avatars.com/api/?name=Rachel+McAdams&background=db2777&color=fff&size=200"}
+        {
+          "name": "Benedict Cumberbatch",
+          "role": "Dr. Stephen Strange",
+          "image": "https://ui-avatars.com/api/?name=Benedict+Cumberbatch&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Elizabeth Olsen",
+          "role": "Wanda Maximoff / Scarlet Witch",
+          "image": "https://ui-avatars.com/api/?name=Elizabeth+Olsen&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Xochitl Gomez",
+          "role": "America Chavez",
+          "image": "https://ui-avatars.com/api/?name=Xochitl+Gomez&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Rachel McAdams",
+          "role": "Christine Palmer",
+          "image": "https://ui-avatars.com/api/?name=Rachel+McAdams&background=db2777&color=fff&size=200"
+        }
       ],
       "director": "Sam Raimi",
       "releaseDate": "2022-05-06",
@@ -1071,23 +2347,52 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "aWzlQ2N6qqg",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad"
+      ]
     },
     {
       "id": 45,
       "title": "Adipurush",
-      "genre": ["Fantasy", "Mythology", "Action"],
+      "genre": [
+        "Fantasy",
+        "Mythology",
+        "Action"
+      ],
       "language": "Hindi/Telugu",
       "duration": "2h 59m",
       "rating": 3.4,
-      "poster": "https://image.tmdb.org/t/p/w500/kpBGzMWVLzs0rjFpXXjLSiRNgRL.jpg",
+      "poster": "https://placehold.co/500x750/1a0a20/a855f7?text=Adipurush&font=roboto",
       "banner": "https://image.tmdb.org/t/p/w1280/6OxPqKWf5TOz7A4zXJVQb19sfzh.jpg",
       "description": "The epic saga of Raghava — a divine warrior who rescues his beloved Janaki from the demon king Lankesh. Based on the ancient Hindu epic Ramayana with grand visual effects.",
       "cast": [
-        {"name": "Prabhas", "role": "Raghava / Ram", "image": "https://ui-avatars.com/api/?name=Prabhas&background=b91c1c&color=fff&size=200"},
-        {"name": "Saif Ali Khan", "role": "Lankesh / Ravana", "image": "https://ui-avatars.com/api/?name=Saif+Ali+Khan&background=0369a1&color=fff&size=200"},
-        {"name": "Kriti Sanon", "role": "Janaki / Sita", "image": "https://ui-avatars.com/api/?name=Kriti+Sanon&background=7c3aed&color=fff&size=200"},
-        {"name": "Sunny Singh", "role": "Lakshmana", "image": "https://ui-avatars.com/api/?name=Sunny+Singh&background=d97706&color=fff&size=200"}
+        {
+          "name": "Prabhas",
+          "role": "Raghava / Ram",
+          "image": "https://ui-avatars.com/api/?name=Prabhas&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Saif Ali Khan",
+          "role": "Lankesh / Ravana",
+          "image": "https://ui-avatars.com/api/?name=Saif+Ali+Khan&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Kriti Sanon",
+          "role": "Janaki / Sita",
+          "image": "https://ui-avatars.com/api/?name=Kriti+Sanon&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Sunny Singh",
+          "role": "Lakshmana",
+          "image": "https://ui-avatars.com/api/?name=Sunny+Singh&background=d97706&color=fff&size=200"
+        }
       ],
       "director": "Om Raut",
       "releaseDate": "2023-06-16",
@@ -1095,24 +2400,55 @@
       "status": "now_showing",
       "certificate": "UA",
       "trailerYouTubeId": "WVJZF4LJJhk",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Pune"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Pune"
+      ]
     },
     {
       "id": 46,
       "title": "Stree 2",
-      "genre": ["Horror", "Comedy", "Thriller"],
+      "genre": [
+        "Horror",
+        "Comedy",
+        "Thriller"
+      ],
       "language": "Hindi",
       "duration": "2h 18m",
       "rating": 8.5,
-      "poster": "https://image.tmdb.org/t/p/w500/bsWJDnIhHZFHYlPLf2LXi7tGLJE.jpg",
+      "poster": "https://media.themoviedb.org/t/p/w500/vA1kcZET669QfA5nCkFRVUJxq0E.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/nq0eBTlRi8kJbOoQDGDdqrHGVWl.jpg",
       "description": "The town of Chanderi faces a new supernatural terror as a headless ghost known as Sarkata begins snatching men. Stree must return to protect the ones she loves.",
       "cast": [
-        {"name": "Shraddha Kapoor", "role": "Stree", "image": "https://ui-avatars.com/api/?name=Shraddha+Kapoor&background=7c3aed&color=fff&size=200"},
-        {"name": "Rajkummar Rao", "role": "Vicky", "image": "https://ui-avatars.com/api/?name=Rajkummar+Rao&background=b91c1c&color=fff&size=200"},
-        {"name": "Aparshakti Khurana", "role": "Bittu", "image": "https://ui-avatars.com/api/?name=Aparshakti+Khurana&background=0369a1&color=fff&size=200"},
-        {"name": "Pankaj Tripathi", "role": "Rudra", "image": "https://ui-avatars.com/api/?name=Pankaj+Tripathi&background=d97706&color=fff&size=200"},
-        {"name": "Tamannaah Bhatia", "role": "Special Appearance", "image": "https://ui-avatars.com/api/?name=Tamannaah+Bhatia&background=db2777&color=fff&size=200"}
+        {
+          "name": "Shraddha Kapoor",
+          "role": "Stree",
+          "image": "https://ui-avatars.com/api/?name=Shraddha+Kapoor&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Rajkummar Rao",
+          "role": "Vicky",
+          "image": "https://ui-avatars.com/api/?name=Rajkummar+Rao&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Aparshakti Khurana",
+          "role": "Bittu",
+          "image": "https://ui-avatars.com/api/?name=Aparshakti+Khurana&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Pankaj Tripathi",
+          "role": "Rudra",
+          "image": "https://ui-avatars.com/api/?name=Pankaj+Tripathi&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Tamannaah Bhatia",
+          "role": "Special Appearance",
+          "image": "https://ui-avatars.com/api/?name=Tamannaah+Bhatia&background=db2777&color=fff&size=200"
+        }
       ],
       "director": "Amar Kaushik",
       "releaseDate": "2024-08-15",
@@ -1120,23 +2456,54 @@
       "status": "coming_soon",
       "certificate": "UA",
       "trailerYouTubeId": "bFf4EUi6958",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Chandigarh", "Kochi"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad",
+        "Chandigarh",
+        "Kochi"
+      ]
     },
     {
       "id": 47,
       "title": "Pushpa 2: The Rule",
-      "genre": ["Action", "Drama", "Crime"],
+      "genre": [
+        "Action",
+        "Drama",
+        "Crime"
+      ],
       "language": "Telugu/Hindi",
       "duration": "3h 20m",
-      "rating": 8.0,
-      "poster": "https://image.tmdb.org/t/p/w500/4UPa5LCdFsZ8OEGVXv3pGpuRqzG.jpg",
+      "rating": 8,
+      "poster": "https://image.tmdb.org/t/p/w500/cusxgBAGFGEOXNsBxw4AFsbQMHv.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/yRt7MGBElkLWcKd8Zf7vHhKRkjQ.jpg",
       "description": "Pushpa Raj continues to expand his red sandalwood smuggling empire while clashing against the officer who seeks to destroy him. More action, more swagger, more fire.",
       "cast": [
-        {"name": "Allu Arjun", "role": "Pushpa Raj", "image": "https://ui-avatars.com/api/?name=Allu+Arjun&background=b91c1c&color=fff&size=200"},
-        {"name": "Rashmika Mandanna", "role": "Srivalli", "image": "https://ui-avatars.com/api/?name=Rashmika+Mandanna&background=7c3aed&color=fff&size=200"},
-        {"name": "Fahadh Faasil", "role": "Bhanwar Singh Shekhawat IPS", "image": "https://ui-avatars.com/api/?name=Fahadh+Faasil&background=0369a1&color=fff&size=200"},
-        {"name": "Sunil", "role": "Kesava", "image": "https://ui-avatars.com/api/?name=Sunil&background=d97706&color=fff&size=200"}
+        {
+          "name": "Allu Arjun",
+          "role": "Pushpa Raj",
+          "image": "https://ui-avatars.com/api/?name=Allu+Arjun&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Rashmika Mandanna",
+          "role": "Srivalli",
+          "image": "https://ui-avatars.com/api/?name=Rashmika+Mandanna&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Fahadh Faasil",
+          "role": "Bhanwar Singh Shekhawat IPS",
+          "image": "https://ui-avatars.com/api/?name=Fahadh+Faasil&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Sunil",
+          "role": "Kesava",
+          "image": "https://ui-avatars.com/api/?name=Sunil&background=d97706&color=fff&size=200"
+        }
       ],
       "director": "Sukumar",
       "releaseDate": "2024-12-06",
@@ -1144,24 +2511,58 @@
       "status": "coming_soon",
       "certificate": "UA",
       "trailerYouTubeId": "aW9YJFXV7oM",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Kochi"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad",
+        "Kochi"
+      ]
     },
     {
       "id": 48,
       "title": "Kalki 2898 AD",
-      "genre": ["Sci-Fi", "Action", "Mythology"],
+      "genre": [
+        "Sci-Fi",
+        "Action",
+        "Mythology"
+      ],
       "language": "Telugu/Hindi",
       "duration": "3h 1m",
-      "rating": 7.0,
-      "poster": "https://image.tmdb.org/t/p/w500/9oYPVS3cnU9F6D4q2DxEPlVitrb.jpg",
+      "rating": 7,
+      "poster": "https://media.themoviedb.org/t/p/w500/dgS9RfgmPNIVCWkkS3WAyOcA4BB.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/xTPa4OMIBzHdlpJFnFJKA8Pf0PJ.jpg",
       "description": "A mythological sci-fi epic where Lord Vishnu's final avatar Kalki is destined to arrive in the year 2898 AD to protect humanity. A spectacular blend of Hindu mythology and futuristic vision.",
       "cast": [
-        {"name": "Prabhas", "role": "Bhairava", "image": "https://ui-avatars.com/api/?name=Prabhas&background=b91c1c&color=fff&size=200"},
-        {"name": "Deepika Padukone", "role": "SUM-80 / Sumathi", "image": "https://ui-avatars.com/api/?name=Deepika+Padukone&background=7c3aed&color=fff&size=200"},
-        {"name": "Amitabh Bachchan", "role": "Ashwatthama", "image": "https://ui-avatars.com/api/?name=Amitabh+Bachchan&background=d97706&color=fff&size=200"},
-        {"name": "Kamal Haasan", "role": "Supreme Yaskin", "image": "https://ui-avatars.com/api/?name=Kamal+Haasan&background=0369a1&color=fff&size=200"},
-        {"name": "Disha Patani", "role": "Roxo", "image": "https://ui-avatars.com/api/?name=Disha+Patani&background=db2777&color=fff&size=200"}
+        {
+          "name": "Prabhas",
+          "role": "Bhairava",
+          "image": "https://ui-avatars.com/api/?name=Prabhas&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Deepika Padukone",
+          "role": "SUM-80 / Sumathi",
+          "image": "https://ui-avatars.com/api/?name=Deepika+Padukone&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Amitabh Bachchan",
+          "role": "Ashwatthama",
+          "image": "https://ui-avatars.com/api/?name=Amitabh+Bachchan&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Kamal Haasan",
+          "role": "Supreme Yaskin",
+          "image": "https://ui-avatars.com/api/?name=Kamal+Haasan&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Disha Patani",
+          "role": "Roxo",
+          "image": "https://ui-avatars.com/api/?name=Disha+Patani&background=db2777&color=fff&size=200"
+        }
       ],
       "director": "Nag Ashwin",
       "releaseDate": "2024-06-27",
@@ -1169,12 +2570,27 @@
       "status": "coming_soon",
       "certificate": "UA",
       "trailerYouTubeId": "Yl3tFiScfMo",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Chandigarh", "Kochi"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad",
+        "Chandigarh",
+        "Kochi"
+      ]
     },
     {
       "id": 49,
       "title": "Deadpool & Wolverine",
-      "genre": ["Action", "Comedy", "Sci-Fi"],
+      "genre": [
+        "Action",
+        "Comedy",
+        "Sci-Fi"
+      ],
       "language": "English",
       "duration": "2h 8m",
       "rating": 7.8,
@@ -1182,10 +2598,26 @@
       "banner": "https://image.tmdb.org/t/p/w1280/yDHYTfA3R0jFYba16jBB1ef8oIt.jpg",
       "description": "Deadpool is recruited by the TVA and joins forces with a variant of Wolverine in a multiverse adventure that changes the MCU forever. R-rated chaos at its most entertaining.",
       "cast": [
-        {"name": "Ryan Reynolds", "role": "Wade Wilson / Deadpool", "image": "https://ui-avatars.com/api/?name=Ryan+Reynolds&background=b91c1c&color=fff&size=200"},
-        {"name": "Hugh Jackman", "role": "Wolverine", "image": "https://ui-avatars.com/api/?name=Hugh+Jackman&background=d97706&color=fff&size=200"},
-        {"name": "Emma Corrin", "role": "Paradox", "image": "https://ui-avatars.com/api/?name=Emma+Corrin&background=7c3aed&color=fff&size=200"},
-        {"name": "Jennifer Garner", "role": "Elektra", "image": "https://ui-avatars.com/api/?name=Jennifer+Garner&background=db2777&color=fff&size=200"}
+        {
+          "name": "Ryan Reynolds",
+          "role": "Wade Wilson / Deadpool",
+          "image": "https://ui-avatars.com/api/?name=Ryan+Reynolds&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Hugh Jackman",
+          "role": "Wolverine",
+          "image": "https://ui-avatars.com/api/?name=Hugh+Jackman&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Emma Corrin",
+          "role": "Paradox",
+          "image": "https://ui-avatars.com/api/?name=Emma+Corrin&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Jennifer Garner",
+          "role": "Elektra",
+          "image": "https://ui-avatars.com/api/?name=Jennifer+Garner&background=db2777&color=fff&size=200"
+        }
       ],
       "director": "Shawn Levy",
       "releaseDate": "2024-07-26",
@@ -1193,12 +2625,27 @@
       "status": "coming_soon",
       "certificate": "A",
       "trailerYouTubeId": "73_1biulkYk",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Chandigarh", "Kochi"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad",
+        "Chandigarh",
+        "Kochi"
+      ]
     },
     {
       "id": 50,
       "title": "Inside Out 2",
-      "genre": ["Animation", "Comedy", "Family"],
+      "genre": [
+        "Animation",
+        "Comedy",
+        "Family"
+      ],
       "language": "English",
       "duration": "1h 40m",
       "rating": 7.8,
@@ -1206,10 +2653,26 @@
       "banner": "https://image.tmdb.org/t/p/w1280/xg27NrXi7VXCGUr7MG75UqLl6Vg.jpg",
       "description": "Riley enters adolescence and new emotions — Anxiety, Ennui, Envy and Embarrassment — take control, forcing Joy and the original emotions to embark on a new adventure.",
       "cast": [
-        {"name": "Amy Poehler", "role": "Joy (voice)", "image": "https://ui-avatars.com/api/?name=Amy+Poehler&background=d97706&color=fff&size=200"},
-        {"name": "Maya Hawke", "role": "Anxiety (voice)", "image": "https://ui-avatars.com/api/?name=Maya+Hawke&background=7c3aed&color=fff&size=200"},
-        {"name": "Kensington Tallman", "role": "Riley (voice)", "image": "https://ui-avatars.com/api/?name=Kensington+Tallman&background=0369a1&color=fff&size=200"},
-        {"name": "Phyllis Smith", "role": "Sadness (voice)", "image": "https://ui-avatars.com/api/?name=Phyllis+Smith&background=b91c1c&color=fff&size=200"}
+        {
+          "name": "Amy Poehler",
+          "role": "Joy (voice)",
+          "image": "https://ui-avatars.com/api/?name=Amy+Poehler&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Maya Hawke",
+          "role": "Anxiety (voice)",
+          "image": "https://ui-avatars.com/api/?name=Maya+Hawke&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Kensington Tallman",
+          "role": "Riley (voice)",
+          "image": "https://ui-avatars.com/api/?name=Kensington+Tallman&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Phyllis Smith",
+          "role": "Sadness (voice)",
+          "image": "https://ui-avatars.com/api/?name=Phyllis+Smith&background=b91c1c&color=fff&size=200"
+        }
       ],
       "director": "Kelsey Mann",
       "releaseDate": "2024-06-14",
@@ -1217,12 +2680,27 @@
       "status": "coming_soon",
       "certificate": "U",
       "trailerYouTubeId": "LEjhY15eCx0",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Chandigarh", "Kochi"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad",
+        "Chandigarh",
+        "Kochi"
+      ]
     },
     {
       "id": 51,
       "title": "Alien: Romulus",
-      "genre": ["Sci-Fi", "Horror", "Thriller"],
+      "genre": [
+        "Sci-Fi",
+        "Horror",
+        "Thriller"
+      ],
       "language": "English",
       "duration": "1h 59m",
       "rating": 7.3,
@@ -1230,9 +2708,21 @@
       "banner": "https://image.tmdb.org/t/p/w1280/9SSEUrSqhljBMzRe4aBTh17rUaC.jpg",
       "description": "A group of young space colonizers find themselves in a confrontation with the most terrifying life form in the universe while scavenging the ruins of an abandoned space station.",
       "cast": [
-        {"name": "Cailee Spaeny", "role": "Rain Carradine", "image": "https://ui-avatars.com/api/?name=Cailee+Spaeny&background=7c3aed&color=fff&size=200"},
-        {"name": "David Jonsson", "role": "Andy", "image": "https://ui-avatars.com/api/?name=David+Jonsson&background=b91c1c&color=fff&size=200"},
-        {"name": "Archie Renaux", "role": "Tyler", "image": "https://ui-avatars.com/api/?name=Archie+Renaux&background=0369a1&color=fff&size=200"}
+        {
+          "name": "Cailee Spaeny",
+          "role": "Rain Carradine",
+          "image": "https://ui-avatars.com/api/?name=Cailee+Spaeny&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "David Jonsson",
+          "role": "Andy",
+          "image": "https://ui-avatars.com/api/?name=David+Jonsson&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Archie Renaux",
+          "role": "Tyler",
+          "image": "https://ui-avatars.com/api/?name=Archie+Renaux&background=0369a1&color=fff&size=200"
+        }
       ],
       "director": "Fede Álvarez",
       "releaseDate": "2024-08-16",
@@ -1240,102 +2730,225 @@
       "status": "coming_soon",
       "certificate": "A",
       "trailerYouTubeId": "x1rYDrM-F8o",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Pune", "Ahmedabad"]
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Pune",
+        "Ahmedabad"
+      ]
     },
     {
       "id": 52,
       "title": "Don 3",
-      "genre": ["Action", "Thriller", "Crime"],
+      "genre": [
+        "Action",
+        "Thriller",
+        "Crime"
+      ],
       "language": "Hindi",
       "duration": "2h 30m",
       "rating": 7.5,
-      "poster": "https://image.tmdb.org/t/p/w500/wjMIFKbVwDaIADTDm5oSqsKUHYF.jpg",
+      "poster": "https://media.themoviedb.org/t/p/w500/lexxju9BtEm1vTTdofDvBCZvkZ7.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/qNJEgEhJvhMZoRuFB8ILpBKCsXG.jpg",
       "description": "Don returns — more dangerous, more elusive, and with an impossible score to settle. The international criminal mastermind takes on the world's most powerful crime syndicate.",
       "cast": [
-        {"name": "Ranveer Singh", "role": "Don", "image": "https://ui-avatars.com/api/?name=Ranveer+Singh&background=b91c1c&color=fff&size=200"},
-        {"name": "Kiara Advani", "role": "Roma", "image": "https://ui-avatars.com/api/?name=Kiara+Advani&background=7c3aed&color=fff&size=200"},
-        {"name": "Pooja Hegde", "role": "Leading Role", "image": "https://ui-avatars.com/api/?name=Pooja+Hegde&background=d97706&color=fff&size=200"}
+        {
+          "name": "Ranveer Singh",
+          "role": "Don",
+          "image": "https://ui-avatars.com/api/?name=Ranveer+Singh&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Kiara Advani",
+          "role": "Roma",
+          "image": "https://ui-avatars.com/api/?name=Kiara+Advani&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Pooja Hegde",
+          "role": "Leading Role",
+          "image": "https://ui-avatars.com/api/?name=Pooja+Hegde&background=d97706&color=fff&size=200"
+        }
       ],
       "director": "Farhan Akhtar",
       "releaseDate": "2025-12-25",
       "price": 350,
       "status": "coming_soon",
       "certificate": "UA",
-      "trailerYouTubeId": "EXeTwQWrcwY",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Chandigarh", "Kochi"]
+      "trailerYouTubeId": "WnPHOo0RXGU",
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad",
+        "Chandigarh",
+        "Kochi"
+      ]
     },
     {
       "id": 53,
       "title": "War 2",
-      "genre": ["Action", "Thriller", "Spy"],
+      "genre": [
+        "Action",
+        "Thriller",
+        "Spy"
+      ],
       "language": "Hindi",
       "duration": "2h 45m",
       "rating": 7.8,
-      "poster": "https://image.tmdb.org/t/p/w500/62HCnUTziyWcpDaBO2i1DX17ljH.jpg",
+      "poster": "https://placehold.co/500x750/0a1520/22c55e?text=War+2&font=roboto",
       "banner": "https://image.tmdb.org/t/p/w1280/AkB15dMDquYqYdHLUVjFAVLGRhZ.jpg",
       "description": "Kabir is back — India's most lethal secret agent faces a new global threat in this adrenaline-charged sequel to the blockbuster action franchise.",
       "cast": [
-        {"name": "Hrithik Roshan", "role": "Kabir", "image": "https://ui-avatars.com/api/?name=Hrithik+Roshan&background=b91c1c&color=fff&size=200"},
-        {"name": "Jr. NTR", "role": "Antagonist", "image": "https://ui-avatars.com/api/?name=Jr+NTR&background=0369a1&color=fff&size=200"},
-        {"name": "Kiara Advani", "role": "Lead Role", "image": "https://ui-avatars.com/api/?name=Kiara+Advani&background=7c3aed&color=fff&size=200"}
+        {
+          "name": "Hrithik Roshan",
+          "role": "Kabir",
+          "image": "https://ui-avatars.com/api/?name=Hrithik+Roshan&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Jr. NTR",
+          "role": "Antagonist",
+          "image": "https://ui-avatars.com/api/?name=Jr+NTR&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Kiara Advani",
+          "role": "Lead Role",
+          "image": "https://ui-avatars.com/api/?name=Kiara+Advani&background=7c3aed&color=fff&size=200"
+        }
       ],
       "director": "Ayan Mukerji",
       "releaseDate": "2025-05-01",
       "price": 350,
       "status": "coming_soon",
       "certificate": "UA",
-      "trailerYouTubeId": "giXco2jaZ_4",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Chandigarh", "Kochi"]
+      "trailerYouTubeId": "gOc2OJuRGPk",
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad",
+        "Chandigarh",
+        "Kochi"
+      ]
     },
     {
       "id": 54,
       "title": "Devara: Part 1",
-      "genre": ["Action", "Thriller", "Drama"],
+      "genre": [
+        "Action",
+        "Thriller",
+        "Drama"
+      ],
       "language": "Telugu/Hindi",
       "duration": "2h 53m",
       "rating": 6.5,
-      "poster": "https://image.tmdb.org/t/p/w500/nFBLk5BFdyLB0a3dBxA1TMAK3lW.jpg",
+      "poster": "https://media.themoviedb.org/t/p/w500/jzNCo2UqltLKmuvMCV1tqA4I2vb.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/3oVz5MU8F7VvTjSWmS25P0mT4bB.jpg",
       "description": "A fearless sea lord Devara rules through fear for decades, but when his son Vara must pick up the mantle, the past returns with deadly consequences.",
       "cast": [
-        {"name": "Jr. NTR", "role": "Devara / Vara", "image": "https://ui-avatars.com/api/?name=Jr+NTR&background=b91c1c&color=fff&size=200"},
-        {"name": "Janhvi Kapoor", "role": "Thangam", "image": "https://ui-avatars.com/api/?name=Janhvi+Kapoor&background=7c3aed&color=fff&size=200"},
-        {"name": "Saif Ali Khan", "role": "Bhaira", "image": "https://ui-avatars.com/api/?name=Saif+Ali+Khan&background=0369a1&color=fff&size=200"},
-        {"name": "Prakash Raj", "role": "Murali", "image": "https://ui-avatars.com/api/?name=Prakash+Raj&background=d97706&color=fff&size=200"}
+        {
+          "name": "Jr. NTR",
+          "role": "Devara / Vara",
+          "image": "https://ui-avatars.com/api/?name=Jr+NTR&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Janhvi Kapoor",
+          "role": "Thangam",
+          "image": "https://ui-avatars.com/api/?name=Janhvi+Kapoor&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Saif Ali Khan",
+          "role": "Bhaira",
+          "image": "https://ui-avatars.com/api/?name=Saif+Ali+Khan&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Prakash Raj",
+          "role": "Murali",
+          "image": "https://ui-avatars.com/api/?name=Prakash+Raj&background=d97706&color=fff&size=200"
+        }
       ],
       "director": "Koratala Siva",
       "releaseDate": "2024-09-27",
       "price": 300,
       "status": "coming_soon",
       "certificate": "UA",
-      "trailerYouTubeId": "f_vbAtFSEc0",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kochi"]
+      "trailerYouTubeId": "SQ8z3Fk8e7k",
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kochi"
+      ]
     },
     {
       "id": 55,
       "title": "Singham Returns",
-      "genre": ["Action", "Drama", "Crime"],
+      "genre": [
+        "Action",
+        "Drama",
+        "Crime"
+      ],
       "language": "Hindi",
       "duration": "2h 30m",
       "rating": 7.2,
-      "poster": "https://image.tmdb.org/t/p/w500/a31jBlNLVkRsJzCWNpI6CTk1W0G.jpg",
+      "poster": "https://media.themoviedb.org/t/p/w500/dkUYb51rm0yV6pG8AE6exFcqn4p.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/1BE2AKEU9QuSAqBGjXAr3zFElOR.jpg",
       "description": "ACP Singham returns to take on a massive political conspiracy that threatens the nation, teaming up with Simmba and Sooryavanshi in the ultimate cop universe crossover.",
       "cast": [
-        {"name": "Ajay Devgn", "role": "ACP Bajirao Singham", "image": "https://ui-avatars.com/api/?name=Ajay+Devgn&background=b91c1c&color=fff&size=200"},
-        {"name": "Kareena Kapoor Khan", "role": "Avni Singham", "image": "https://ui-avatars.com/api/?name=Kareena+Kapoor&background=7c3aed&color=fff&size=200"},
-        {"name": "Deepika Padukone", "role": "Lady Singham", "image": "https://ui-avatars.com/api/?name=Deepika+Padukone&background=d97706&color=fff&size=200"},
-        {"name": "Ranveer Singh", "role": "Simmba", "image": "https://ui-avatars.com/api/?name=Ranveer+Singh&background=0369a1&color=fff&size=200"},
-        {"name": "Tiger Shroff", "role": "Satya", "image": "https://ui-avatars.com/api/?name=Tiger+Shroff&background=059669&color=fff&size=200"}
+        {
+          "name": "Ajay Devgn",
+          "role": "ACP Bajirao Singham",
+          "image": "https://ui-avatars.com/api/?name=Ajay+Devgn&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Kareena Kapoor Khan",
+          "role": "Avni Singham",
+          "image": "https://ui-avatars.com/api/?name=Kareena+Kapoor&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Deepika Padukone",
+          "role": "Lady Singham",
+          "image": "https://ui-avatars.com/api/?name=Deepika+Padukone&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Ranveer Singh",
+          "role": "Simmba",
+          "image": "https://ui-avatars.com/api/?name=Ranveer+Singh&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Tiger Shroff",
+          "role": "Satya",
+          "image": "https://ui-avatars.com/api/?name=Tiger+Shroff&background=059669&color=fff&size=200"
+        }
       ],
       "director": "Rohit Shetty",
       "releaseDate": "2024-08-15",
       "price": 300,
       "status": "coming_soon",
       "certificate": "UA",
-      "trailerYouTubeId": "dMH-y3puPjI",
-      "cities": ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Chandigarh", "Kochi"]
+      "trailerYouTubeId": "1lRl4_UrJkA",
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad",
+        "Chandigarh",
+        "Kochi"
+      ]
     }
   ],
   "theatres": [
@@ -1344,7 +2957,12 @@
       "name": "PVR Cinemas – Phoenix Mills",
       "location": "Lower Parel",
       "city": "Mumbai",
-      "facilities": ["Dolby Atmos", "IMAX", "4DX", "Premium Lounges"],
+      "facilities": [
+        "Dolby Atmos",
+        "IMAX",
+        "4DX",
+        "Premium Lounges"
+      ],
       "screens": 8
     },
     {
@@ -1352,7 +2970,11 @@
       "name": "INOX – Select Citywalk",
       "location": "Saket",
       "city": "Delhi",
-      "facilities": ["Dolby Atmos", "LUXE", "Director's Cut"],
+      "facilities": [
+        "Dolby Atmos",
+        "LUXE",
+        "Director's Cut"
+      ],
       "screens": 6
     },
     {
@@ -1360,7 +2982,11 @@
       "name": "Cinépolis – Garuda Mall",
       "location": "Magrath Road",
       "city": "Bengaluru",
-      "facilities": ["Dolby Atmos", "4DX", "VIP"],
+      "facilities": [
+        "Dolby Atmos",
+        "4DX",
+        "VIP"
+      ],
       "screens": 7
     },
     {
@@ -1368,7 +2994,11 @@
       "name": "PVR ICON – Jubilee Hills",
       "location": "Jubilee Hills",
       "city": "Hyderabad",
-      "facilities": ["IMAX", "Dolby Atmos", "Playhouse"],
+      "facilities": [
+        "IMAX",
+        "Dolby Atmos",
+        "Playhouse"
+      ],
       "screens": 5
     },
     {
@@ -1376,7 +3006,11 @@
       "name": "SPI Sathyam Cinemas",
       "location": "Royapettah",
       "city": "Chennai",
-      "facilities": ["IMAX", "Dolby Atmos", "LUXE"],
+      "facilities": [
+        "IMAX",
+        "Dolby Atmos",
+        "LUXE"
+      ],
       "screens": 10
     },
     {
@@ -1384,41 +3018,314 @@
       "name": "INOX – South City Mall",
       "location": "Prince Anwar Shah Road",
       "city": "Kolkata",
-      "facilities": ["Dolby Atmos", "LUXE"],
+      "facilities": [
+        "Dolby Atmos",
+        "LUXE"
+      ],
       "screens": 5
     }
   ],
   "shows": [
-    {"id": 1, "movieId": 1, "theatreId": 1, "time": "09:30 AM", "date": "2026-07-22", "price": 250, "availableSeats": 72, "totalSeats": 100},
-    {"id": 2, "movieId": 1, "theatreId": 1, "time": "01:00 PM", "date": "2026-07-22", "price": 300, "availableSeats": 45, "totalSeats": 100},
-    {"id": 3, "movieId": 1, "theatreId": 2, "time": "04:30 PM", "date": "2026-07-22", "price": 280, "availableSeats": 88, "totalSeats": 100},
-    {"id": 4, "movieId": 1, "theatreId": 3, "time": "08:00 PM", "date": "2026-07-22", "price": 320, "availableSeats": 20, "totalSeats": 100},
-    {"id": 5, "movieId": 2, "theatreId": 1, "time": "10:00 AM", "date": "2026-07-22", "price": 260, "availableSeats": 60, "totalSeats": 100},
-    {"id": 6, "movieId": 2, "theatreId": 2, "time": "02:00 PM", "date": "2026-07-22", "price": 280, "availableSeats": 80, "totalSeats": 100},
-    {"id": 7, "movieId": 2, "theatreId": 4, "time": "07:00 PM", "date": "2026-07-22", "price": 300, "availableSeats": 35, "totalSeats": 100},
-    {"id": 8, "movieId": 3, "theatreId": 1, "time": "11:00 AM", "date": "2026-07-22", "price": 280, "availableSeats": 50, "totalSeats": 100},
-    {"id": 9, "movieId": 3, "theatreId": 3, "time": "03:00 PM", "date": "2026-07-22", "price": 280, "availableSeats": 70, "totalSeats": 100},
-    {"id": 10, "movieId": 4, "theatreId": 2, "time": "12:00 PM", "date": "2026-07-22", "price": 220, "availableSeats": 90, "totalSeats": 100},
-    {"id": 11, "movieId": 4, "theatreId": 6, "time": "06:00 PM", "date": "2026-07-22", "price": 240, "availableSeats": 65, "totalSeats": 100},
-    {"id": 12, "movieId": 5, "theatreId": 1, "time": "10:30 AM", "date": "2026-07-22", "price": 240, "availableSeats": 55, "totalSeats": 100},
-    {"id": 13, "movieId": 5, "theatreId": 4, "time": "02:30 PM", "date": "2026-07-22", "price": 260, "availableSeats": 78, "totalSeats": 100},
-    {"id": 14, "movieId": 6, "theatreId": 1, "time": "01:30 PM", "date": "2026-07-22", "price": 230, "availableSeats": 85, "totalSeats": 100},
-    {"id": 15, "movieId": 6, "theatreId": 3, "time": "05:00 PM", "date": "2026-07-22", "price": 230, "availableSeats": 92, "totalSeats": 100},
-    {"id": 16, "movieId": 7, "theatreId": 2, "time": "11:30 AM", "date": "2026-07-22", "price": 210, "availableSeats": 82, "totalSeats": 100},
-    {"id": 17, "movieId": 8, "theatreId": 1, "time": "12:30 PM", "date": "2026-07-22", "price": 270, "availableSeats": 40, "totalSeats": 100},
-    {"id": 18, "movieId": 8, "theatreId": 4, "time": "04:00 PM", "date": "2026-07-22", "price": 270, "availableSeats": 60, "totalSeats": 100},
-    {"id": 19, "movieId": 9, "theatreId": 3, "time": "01:00 PM", "date": "2026-07-22", "price": 220, "availableSeats": 75, "totalSeats": 100},
-    {"id": 20, "movieId": 10, "theatreId": 1, "time": "10:00 AM", "date": "2026-07-22", "price": 300, "availableSeats": 55, "totalSeats": 100},
-    {"id": 21, "movieId": 10, "theatreId": 5, "time": "07:30 PM", "date": "2026-07-22", "price": 320, "availableSeats": 30, "totalSeats": 100},
-    {"id": 22, "movieId": 11, "theatreId": 2, "time": "03:30 PM", "date": "2026-07-22", "price": 220, "availableSeats": 88, "totalSeats": 100},
-    {"id": 23, "movieId": 12, "theatreId": 6, "time": "11:00 AM", "date": "2026-07-22", "price": 180, "availableSeats": 95, "totalSeats": 100},
-    {"id": 24, "movieId": 21, "theatreId": 1, "time": "06:30 PM", "date": "2026-07-22", "price": 280, "availableSeats": 25, "totalSeats": 100},
-    {"id": 25, "movieId": 22, "theatreId": 3, "time": "07:00 PM", "date": "2026-07-22", "price": 260, "availableSeats": 42, "totalSeats": 100},
-    {"id": 26, "movieId": 27, "theatreId": 1, "time": "09:00 AM", "date": "2026-07-22", "price": 300, "availableSeats": 68, "totalSeats": 100},
-    {"id": 27, "movieId": 28, "theatreId": 2, "time": "08:30 PM", "date": "2026-07-22", "price": 280, "availableSeats": 15, "totalSeats": 100},
-    {"id": 28, "movieId": 29, "theatreId": 4, "time": "05:30 PM", "date": "2026-07-22", "price": 260, "availableSeats": 50, "totalSeats": 100},
-    {"id": 29, "movieId": 33, "theatreId": 1, "time": "11:00 AM", "date": "2026-07-22", "price": 280, "availableSeats": 45, "totalSeats": 100},
-    {"id": 30, "movieId": 37, "theatreId": 3, "time": "06:00 PM", "date": "2026-07-22", "price": 290, "availableSeats": 38, "totalSeats": 100}
+    {
+      "id": 1,
+      "movieId": 1,
+      "theatreId": 1,
+      "time": "09:30 AM",
+      "date": "2026-07-22",
+      "price": 250,
+      "availableSeats": 72,
+      "totalSeats": 100
+    },
+    {
+      "id": 2,
+      "movieId": 1,
+      "theatreId": 1,
+      "time": "01:00 PM",
+      "date": "2026-07-22",
+      "price": 300,
+      "availableSeats": 45,
+      "totalSeats": 100
+    },
+    {
+      "id": 3,
+      "movieId": 1,
+      "theatreId": 2,
+      "time": "04:30 PM",
+      "date": "2026-07-22",
+      "price": 280,
+      "availableSeats": 88,
+      "totalSeats": 100
+    },
+    {
+      "id": 4,
+      "movieId": 1,
+      "theatreId": 3,
+      "time": "08:00 PM",
+      "date": "2026-07-22",
+      "price": 320,
+      "availableSeats": 20,
+      "totalSeats": 100
+    },
+    {
+      "id": 5,
+      "movieId": 2,
+      "theatreId": 1,
+      "time": "10:00 AM",
+      "date": "2026-07-22",
+      "price": 260,
+      "availableSeats": 60,
+      "totalSeats": 100
+    },
+    {
+      "id": 6,
+      "movieId": 2,
+      "theatreId": 2,
+      "time": "02:00 PM",
+      "date": "2026-07-22",
+      "price": 280,
+      "availableSeats": 80,
+      "totalSeats": 100
+    },
+    {
+      "id": 7,
+      "movieId": 2,
+      "theatreId": 4,
+      "time": "07:00 PM",
+      "date": "2026-07-22",
+      "price": 300,
+      "availableSeats": 35,
+      "totalSeats": 100
+    },
+    {
+      "id": 8,
+      "movieId": 3,
+      "theatreId": 1,
+      "time": "11:00 AM",
+      "date": "2026-07-22",
+      "price": 280,
+      "availableSeats": 50,
+      "totalSeats": 100
+    },
+    {
+      "id": 9,
+      "movieId": 3,
+      "theatreId": 3,
+      "time": "03:00 PM",
+      "date": "2026-07-22",
+      "price": 280,
+      "availableSeats": 70,
+      "totalSeats": 100
+    },
+    {
+      "id": 10,
+      "movieId": 4,
+      "theatreId": 2,
+      "time": "12:00 PM",
+      "date": "2026-07-22",
+      "price": 220,
+      "availableSeats": 90,
+      "totalSeats": 100
+    },
+    {
+      "id": 11,
+      "movieId": 4,
+      "theatreId": 6,
+      "time": "06:00 PM",
+      "date": "2026-07-22",
+      "price": 240,
+      "availableSeats": 65,
+      "totalSeats": 100
+    },
+    {
+      "id": 12,
+      "movieId": 5,
+      "theatreId": 1,
+      "time": "10:30 AM",
+      "date": "2026-07-22",
+      "price": 240,
+      "availableSeats": 55,
+      "totalSeats": 100
+    },
+    {
+      "id": 13,
+      "movieId": 5,
+      "theatreId": 4,
+      "time": "02:30 PM",
+      "date": "2026-07-22",
+      "price": 260,
+      "availableSeats": 78,
+      "totalSeats": 100
+    },
+    {
+      "id": 14,
+      "movieId": 6,
+      "theatreId": 1,
+      "time": "01:30 PM",
+      "date": "2026-07-22",
+      "price": 230,
+      "availableSeats": 85,
+      "totalSeats": 100
+    },
+    {
+      "id": 15,
+      "movieId": 6,
+      "theatreId": 3,
+      "time": "05:00 PM",
+      "date": "2026-07-22",
+      "price": 230,
+      "availableSeats": 92,
+      "totalSeats": 100
+    },
+    {
+      "id": 16,
+      "movieId": 7,
+      "theatreId": 2,
+      "time": "11:30 AM",
+      "date": "2026-07-22",
+      "price": 210,
+      "availableSeats": 82,
+      "totalSeats": 100
+    },
+    {
+      "id": 17,
+      "movieId": 8,
+      "theatreId": 1,
+      "time": "12:30 PM",
+      "date": "2026-07-22",
+      "price": 270,
+      "availableSeats": 40,
+      "totalSeats": 100
+    },
+    {
+      "id": 18,
+      "movieId": 8,
+      "theatreId": 4,
+      "time": "04:00 PM",
+      "date": "2026-07-22",
+      "price": 270,
+      "availableSeats": 60,
+      "totalSeats": 100
+    },
+    {
+      "id": 19,
+      "movieId": 9,
+      "theatreId": 3,
+      "time": "01:00 PM",
+      "date": "2026-07-22",
+      "price": 220,
+      "availableSeats": 75,
+      "totalSeats": 100
+    },
+    {
+      "id": 20,
+      "movieId": 10,
+      "theatreId": 1,
+      "time": "10:00 AM",
+      "date": "2026-07-22",
+      "price": 300,
+      "availableSeats": 55,
+      "totalSeats": 100
+    },
+    {
+      "id": 21,
+      "movieId": 10,
+      "theatreId": 5,
+      "time": "07:30 PM",
+      "date": "2026-07-22",
+      "price": 320,
+      "availableSeats": 30,
+      "totalSeats": 100
+    },
+    {
+      "id": 22,
+      "movieId": 11,
+      "theatreId": 2,
+      "time": "03:30 PM",
+      "date": "2026-07-22",
+      "price": 220,
+      "availableSeats": 88,
+      "totalSeats": 100
+    },
+    {
+      "id": 23,
+      "movieId": 12,
+      "theatreId": 6,
+      "time": "11:00 AM",
+      "date": "2026-07-22",
+      "price": 180,
+      "availableSeats": 95,
+      "totalSeats": 100
+    },
+    {
+      "id": 24,
+      "movieId": 21,
+      "theatreId": 1,
+      "time": "06:30 PM",
+      "date": "2026-07-22",
+      "price": 280,
+      "availableSeats": 25,
+      "totalSeats": 100
+    },
+    {
+      "id": 25,
+      "movieId": 22,
+      "theatreId": 3,
+      "time": "07:00 PM",
+      "date": "2026-07-22",
+      "price": 260,
+      "availableSeats": 42,
+      "totalSeats": 100
+    },
+    {
+      "id": 26,
+      "movieId": 27,
+      "theatreId": 1,
+      "time": "09:00 AM",
+      "date": "2026-07-22",
+      "price": 300,
+      "availableSeats": 68,
+      "totalSeats": 100
+    },
+    {
+      "id": 27,
+      "movieId": 28,
+      "theatreId": 2,
+      "time": "08:30 PM",
+      "date": "2026-07-22",
+      "price": 280,
+      "availableSeats": 15,
+      "totalSeats": 100
+    },
+    {
+      "id": 28,
+      "movieId": 29,
+      "theatreId": 4,
+      "time": "05:30 PM",
+      "date": "2026-07-22",
+      "price": 260,
+      "availableSeats": 50,
+      "totalSeats": 100
+    },
+    {
+      "id": 29,
+      "movieId": 33,
+      "theatreId": 1,
+      "time": "11:00 AM",
+      "date": "2026-07-22",
+      "price": 280,
+      "availableSeats": 45,
+      "totalSeats": 100
+    },
+    {
+      "id": 30,
+      "movieId": 37,
+      "theatreId": 3,
+      "time": "06:00 PM",
+      "date": "2026-07-22",
+      "price": 290,
+      "availableSeats": 38,
+      "totalSeats": 100
+    }
   ],
   "bookings": [],
   "seats": []

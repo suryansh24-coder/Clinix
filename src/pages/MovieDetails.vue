@@ -65,7 +65,8 @@
 
             <div class="banner-actions" v-if="movie.status === 'now_showing'">
               <button class="btn btn-primary btn-lg" @click="scrollToShows">
-                🎟️ Book Tickets
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M22 10V6a2 2 0 00-2-2H4a2 2 0 00-2 2v4a2 2 0 110 4v4a2 2 0 002 2h16a2 2 0 002-2v-4a2 2 0 110-4z"/></svg>
+                Book Tickets
               </button>
               <button v-if="movie.trailerYouTubeId" class="btn btn-outline btn-lg" @click="scrollToTrailer">
                 ▶ Watch Trailer
@@ -474,7 +475,8 @@ function handlePosterError(e) {
   margin-bottom: 1rem;
   padding-bottom: 0.75rem;
   border-bottom: 2px solid var(--color-accent);
-  display: inline-block;
+  display: block;
+  width: 100%;
 }
 .synopsis-text {
   color: var(--text-secondary);
@@ -639,7 +641,7 @@ function handlePosterError(e) {
   gap: 0.75rem;
   font-size: 0.875rem;
   padding-bottom: 0.625rem;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid var(--border-color);
 }
 .dr-label { color: var(--text-muted); flex-shrink: 0; font-size: 0.8125rem; }
 .dr-value { color: var(--text-primary); font-weight: 600; text-align: right; }

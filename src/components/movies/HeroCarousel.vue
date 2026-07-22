@@ -50,7 +50,8 @@
                   :to="{ name: 'MovieDetails', params: { id: currentMovie.id } }"
                   class="btn btn-primary btn-lg"
                 >
-                  🎟️ Book Tickets
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M22 10V6a2 2 0 00-2-2H4a2 2 0 00-2 2v4a2 2 0 110 4v4a2 2 0 002 2h16a2 2 0 002-2v-4a2 2 0 110-4z"/></svg>
+                  Book Tickets
                 </router-link>
                 <router-link
                   :to="{ name: 'MovieDetails', params: { id: currentMovie.id } }"
@@ -215,6 +216,7 @@ onUnmounted(() => {
 .hero-title {
   font-size: var(--font-size-5xl);
   margin-bottom: var(--space-md);
+  color: #ffffff;
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
 }
 
@@ -223,7 +225,7 @@ onUnmounted(() => {
   align-items: center;
   gap: var(--space-sm);
   font-size: var(--font-size-sm);
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.75);
   margin-bottom: var(--space-lg);
   flex-wrap: wrap;
 }
@@ -237,7 +239,7 @@ onUnmounted(() => {
 .hero-dot { opacity: 0.3; }
 
 .hero-desc {
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.85);
   font-size: var(--font-size-base);
   line-height: 1.7;
   margin-bottom: var(--space-xl);

@@ -88,7 +88,7 @@ function shortLanguage(lang) {
 
 function handleImageError(e) {
   const title = encodeURIComponent(props.movie?.title || 'Movie')
-  e.target.src = `https://placehold.co/500x750/1a1a2e/666?text=${title}`
+  e.target.src = `https://placehold.co/500x750/0d0820/e50914?text=${title}&font=roboto`
 }
 </script>
 

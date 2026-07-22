@@ -86,27 +86,31 @@
         <div class="details-main">
 
           <!-- Synopsis -->
-          <section class="detail-section glass-card">
-            <h2 class="detail-section-title">Synopsis</h2>
-            <p class="synopsis-text">{{ movie.description }}</p>
+          <section class="detail-section custom-box">
+            <h2 class="box-title">Synopsis</h2>
+            <div class="box-content">
+              <p class="synopsis-text">{{ movie.description }}</p>
+            </div>
           </section>
 
           <!-- ── Trailer ── -->
           <section
             v-if="movie.trailerYouTubeId"
             ref="trailerSection"
-            class="detail-section glass-card"
+            class="detail-section custom-box"
           >
-            <h2 class="detail-section-title">🎬 Official Trailer</h2>
-            <div class="trailer-container">
-              <iframe
-                :src="`https://www.youtube-nocookie.com/embed/${movie.trailerYouTubeId}?rel=0&modestbranding=1&showinfo=0&color=white`"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-                loading="lazy"
-                title="Movie Trailer"
-              ></iframe>
+            <h2 class="box-title">🎬 Official Trailer</h2>
+            <div class="box-content">
+              <div class="trailer-container">
+                <iframe
+                  :src="`https://www.youtube-nocookie.com/embed/${movie.trailerYouTubeId}?rel=0&modestbranding=1&showinfo=0&color=white`"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"
+                  title="Movie Trailer"
+                ></iframe>
+              </div>
             </div>
           </section>
 
@@ -363,7 +367,8 @@ function formatDate(d) {
 }
 function handleBannerError(e) { e.target.style.opacity = '0' }
 function handlePosterError(e) {
-  e.target.src = `https://placehold.co/400x600/1a1a2e/666?text=Poster`
+  const title = (movie.value?.title || 'Movie').replace(/\s+/g, '+')
+  e.target.src = `https://placehold.co/400x600/1a1a2e/666?text=${title}&font=roboto`
 }
 </script>
 
@@ -467,16 +472,28 @@ function handlePosterError(e) {
 }
 
 /* ── Sections ────────────────────────────────────────────── */
-.detail-section { margin-bottom: var(--space-lg); }
-.detail-section-title {
-  font-family: var(--font-display);
+.detail-section { margin-bottom: var(--space-xl); }
+
+/* Custom Box for Synopsis and Trailer */
+.custom-box {
+  background: var(--bg-primary);
+  border: 1px solid #0099bb; /* Light blue outline */
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.box-title {
+  font-family: var(--font-body);
   font-size: 1.125rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 2px solid var(--color-accent);
-  display: block;
-  width: 100%;
+  font-weight: 800;
+  color: #1a1a2e; /* Dark title */
+  padding: 12px 20px;
+  margin: 0;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid #0099bb;
+}
+.box-content {
+  padding: 16px 20px;
+  background: transparent;
 }
 .synopsis-text {
   color: var(--text-secondary);

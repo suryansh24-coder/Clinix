@@ -16,6 +16,15 @@
       "avatar": "",
       "createdAt": "2026-07-22T07:31:30.621Z",
       "id": 2
+    },
+    {
+      "name": "Sample User",
+      "email": "xyz@gmail.com",
+      "password": "Suryansh@07",
+      "phone": "010588555",
+      "avatar": "",
+      "createdAt": "2026-07-22T08:38:42.977Z",
+      "id": 3
     }
   ],
   "movies": [
@@ -82,7 +91,7 @@
       "language": "Hindi",
       "duration": "2h 49m",
       "rating": 7,
-      "poster": "https://media.themoviedb.org/t/p/w500/ybAbiGbJ2WwTlMaqtXiJ08rKJFs.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/ybAbiGbJ2WwTlMaqtXiJ08rKJFs.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/1I0wuB1A0KhCrUiPWvh8PGBHZOX.jpg",
       "description": "A prison warden recruits a group of women to pull off a heist while simultaneously fighting a social injustice — setting the stage for a thrilling face-off between father and son.",
       "cast": [
@@ -137,7 +146,7 @@
       "language": "Hindi",
       "duration": "3h 21m",
       "rating": 6.1,
-      "poster": "https://placehold.co/500x750/0d0820/e50914?text=Animal&font=roboto",
+      "poster": "https://image.tmdb.org/t/p/w500/b3mdJUCMOlJY2fhMcxKdHr7fnMt.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/y3fCMPHPsXSU0Gfac4RaqEQOGBX.jpg",
       "description": "A son's obsessive love for his father transforms into a destructive rage as he discovers the corporate conspiracies threatening his family. A visceral and unapologetic exploration of raw masculine emotion.",
       "cast": [
@@ -189,7 +198,7 @@
       "language": "Hindi",
       "duration": "2h 50m",
       "rating": 4.9,
-      "poster": "https://media.themoviedb.org/t/p/w500/zlw8XB5uPH6USW7JCcidsjKHY5u.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/zlw8XB5uPH6USW7JCcidsjKHY5u.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/8Ah2AS7GDoLZ1Qcm7b1m2WLy0bv.jpg",
       "description": "Tara Singh crosses the border into Pakistan once again to rescue his son Charanjeet, fighting against an entire nation in a battle of love and courage.",
       "cast": [
@@ -234,7 +243,7 @@
       "language": "Hindi",
       "duration": "2h 41m",
       "rating": 5.8,
-      "poster": "https://media.themoviedb.org/t/p/w500/8ibfhe4P7rhmn3lrPhOZzIJHA2B.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/8ibfhe4P7rhmn3lrPhOZzIJHA2B.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg",
       "description": "A group of friends dream of emigrating to England and take the illegal 'donkey' route through multiple countries. A heartfelt story of friendship, sacrifice, and the pursuit of a better life.",
       "cast": [
@@ -286,7 +295,7 @@
       "language": "Hindi",
       "duration": "2h 50m",
       "rating": 6,
-      "poster": "https://media.themoviedb.org/t/p/w500/mR08InfIvBEo45hml5Zu9ct96hq.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/mR08InfIvBEo45hml5Zu9ct96hq.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/3lTPGXMb1n2HF0MRGBmEAFkLs4B.jpg",
       "description": "Rocky, a brash Punjabi businessman, and Rani, an intellectual journalist from a Bengali family, fall in love — only to navigate the complexities of family, culture, and tradition.",
       "cast": [
@@ -336,7 +345,7 @@
       "language": "Hindi",
       "duration": "2h 24m",
       "rating": 7,
-      "poster": "https://placehold.co/500x750/0d1a2e/00c4e0?text=OMG+2&font=roboto",
+      "poster": "https://image.tmdb.org/t/p/w500/mfGfClwYGOiR7xeZqLmigRkSuBH.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/eHqSjE7TjgROhYS5U7grCYVbovr.jpg",
       "description": "A man finds himself in a legal battle against the education system after his son is expelled from school for alleged misconduct. With divine intervention, he fights for sex education and truth.",
       "cast": [
@@ -381,7 +390,7 @@
       "language": "Hindi",
       "duration": "2h 46m",
       "rating": 6.2,
-      "poster": "https://media.themoviedb.org/t/p/w500/kYusjmfChNoOJ4zml68LsXLPDjk.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/kYusjmfChNoOJ4zml68LsXLPDjk.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/p3OWBt6tRFfEj3HpD8i9YEFPGPC.jpg",
       "description": "India's first aerial action franchise follows the Air Force's Aerial Force One as they take on a dangerous enemy threatening national security. Spectacular aerial combat sequences.",
       "cast": [
@@ -433,7 +442,7 @@
       "language": "Hindi",
       "duration": "2h 8m",
       "rating": 6,
-      "poster": "https://media.themoviedb.org/t/p/w500/rXiyrdxnoz1VRWUM1wshA14QPu3.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/rXiyrdxnoz1VRWUM1wshA14QPu3.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/2mcFOCBCXhMDHEHOVv2D1r7vKmW.jpg",
       "description": "Three air-hostesses get entangled in a gold smuggling operation run by a bankrupt airline, leading to a hilarious yet dangerous chain of events.",
       "cast": [
@@ -485,7 +494,7 @@
       "language": "Hindi",
       "duration": "2h 47m",
       "rating": 5.6,
-      "poster": "https://media.themoviedb.org/t/p/w500/6PAd0dUay0ZyaEHGQracI8nB9jS.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/6PAd0dUay0ZyaEHGQracI8nB9jS.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/bkb5bwEDVBPt2sRSXD8mYGkANe3.jpg",
       "description": "A young DJ named Shiva discovers he has a mysterious connection to fire and to a powerful ancient weapon, the Brahmastra, as dark forces threaten the world.",
       "cast": [
@@ -542,7 +551,7 @@
       "language": "Hindi",
       "duration": "2h 22m",
       "rating": 8,
-      "poster": "https://media.themoviedb.org/t/p/w500/fGHmaXX1M1r0KioFGJdHruc05bM.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/fGHmaXX1M1r0KioFGJdHruc05bM.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/5bCeRN36zLuWPdJjDXVbN2APMRC.jpg",
       "description": "Seven years after the incident, Vijay Salgaonkar must once again outwit the police as the case is reopened. An even more gripping sequel to the original thriller.",
       "cast": [
@@ -595,7 +604,7 @@
       "language": "Hindi",
       "duration": "2h 41m",
       "rating": 8.3,
-      "poster": "https://media.themoviedb.org/t/p/w500/jHo2M1OiH9Re33jYtUQdfzPeUkx.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/jHo2M1OiH9Re33jYtUQdfzPeUkx.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/qPTm9Gp7tLxlMgmupeDzBg6UoMi.jpg",
       "description": "Mahavir Singh Phogat, a former wrestler, trains his daughters Geeta and Babita to become world-class wrestlers, defying societal norms in a heartwarming true story.",
       "cast": [
@@ -649,7 +658,7 @@
       "language": "Hindi",
       "duration": "2h 43m",
       "rating": 8.1,
-      "poster": "https://media.themoviedb.org/t/p/w500/oQ4eYQEZKWnKmq9PntZKbf6YEID.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/oQ4eYQEZKWnKmq9PntZKbf6YEID.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/pGU2JhfJyD6GBlTDKXrJOi9YQRT.jpg",
       "description": "A man with an unwavering devotion to Hanuman helps a mute Pakistani girl return to her homeland in a journey that crosses the border between two nations at war.",
       "cast": [
@@ -701,7 +710,7 @@
       "language": "Hindi",
       "duration": "2h 50m",
       "rating": 8.4,
-      "poster": "https://media.themoviedb.org/t/p/w500/r5pffTC8XZsrGUYSU8e23dGmGNK.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/r5pffTC8XZsrGUYSU8e23dGmGNK.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/8JzlqVa8F4JEo4n4sRjjQbwpPYG.jpg",
       "description": "Two friends search for their lost companion and reminisce about their unconventional college days at the Imperial College of Engineering, where he inspired them to pursue happiness.",
       "cast": [
@@ -817,7 +826,7 @@
       "language": "Hindi",
       "duration": "2h 33m",
       "rating": 8.1,
-      "poster": "https://media.themoviedb.org/t/p/w500/yH0LNqBELD55o7juAgtC53imIBi.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/yH0LNqBELD55o7juAgtC53imIBi.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/v3jGBRPpA3IpLVY2mOvr4T4FSpF.jpg",
       "description": "An alien stranded on Earth loses his remote control device and must navigate religion, faith, and human society to find his way home.",
       "cast": [
@@ -921,7 +930,7 @@
       "language": "Hindi",
       "duration": "2h 18m",
       "rating": 8.4,
-      "poster": "https://media.themoviedb.org/t/p/w500/n1ZRmjlk1BJTY7aASqACfPAaLn2.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/n1ZRmjlk1BJTY7aASqACfPAaLn2.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/a8ViV8VKraSWVlBpFzYXwBjjH6O.jpg",
       "description": "Based on the 2016 Indian Army surgical strikes across the LOC following the terrorist attack on an Indian Army base. A patriotic thriller with brilliant tactical precision.",
       "cast": [
@@ -967,7 +976,7 @@
       "language": "Hindi",
       "duration": "2h 26m",
       "rating": 8.2,
-      "poster": "https://placehold.co/500x750/1a0a2e/f59e0b?text=Queen&font=roboto",
+      "poster": "https://image.tmdb.org/t/p/w500/9R6zf2K6WMJiPaL5YXnmfXnKQwi.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/7vD8SIL9q1vBFVcXiP7pkz8bKaP.jpg",
       "description": "A sheltered Delhi girl goes on her honeymoon solo after her fiancé calls off the wedding, embarking on a journey of self-discovery across Paris and Amsterdam.",
       "cast": [
@@ -1012,7 +1021,7 @@
       "language": "Hindi",
       "duration": "3h 3m",
       "rating": 8,
-      "poster": "https://media.themoviedb.org/t/p/w500/f3a1MyH12PSl3LFDahnooGy6mv8.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/f3a1MyH12PSl3LFDahnooGy6mv8.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/2q4aaI2qKaWfnkuPMlmVJ7Ro8rn.jpg",
       "description": "Three inseparable best friends navigate different stages of love and life after college, growing apart and finding themselves again. A timeless coming-of-age classic.",
       "cast": [
@@ -1067,7 +1076,7 @@
       "language": "Kannada/Hindi",
       "duration": "2h 48m",
       "rating": 8.2,
-      "poster": "https://media.themoviedb.org/t/p/w500/jzP5rPwwNqUGERlrUzKKljfyulf.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/jzP5rPwwNqUGERlrUzKKljfyulf.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/9hTBGnPnDbzfnV5XlGGhkBKMBmL.jpg",
       "description": "Rocky has risen through the ranks and now controls the Kolar Gold Fields. But new enemies from both the government and the underworld threaten his reign in this epic sequel.",
       "cast": [
@@ -1125,7 +1134,7 @@
       "language": "Telugu/Hindi",
       "duration": "3h 7m",
       "rating": 7.9,
-      "poster": "https://media.themoviedb.org/t/p/w500/u68AjlvlutfEIcpmbYpKcdi09ut.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/u68AjlvlutfEIcpmbYpKcdi09ut.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/a2snrVQAP8hmL1cbqbGaVJVNSVV.jpg",
       "description": "Two legendary Indian revolutionaries — Ram and Bheem — embark on a mission against British oppression and forge a friendship that becomes legendary in an epic action-drama.",
       "cast": [
@@ -1184,7 +1193,7 @@
       "language": "Tamil/Hindi",
       "duration": "2h 54m",
       "rating": 8.3,
-      "poster": "https://media.themoviedb.org/t/p/w500/7uyhRgrY9ValVWZ2T5pAfasPN0F.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/7uyhRgrY9ValVWZ2T5pAfasPN0F.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/lQiBFzZAqFSmNO6EVXgYJkevmLq.jpg",
       "description": "A black-ops agent investigates a series of masked killings, uncovering a vast underworld conspiracy involving powerful enemies in a relentlessly paced thriller.",
       "cast": [
@@ -1236,7 +1245,7 @@
       "language": "Kannada/Hindi",
       "duration": "2h 30m",
       "rating": 8.4,
-      "poster": "https://media.themoviedb.org/t/p/w500/j84kmnb7hdeanrckfYDGijAMYvs.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/j84kmnb7hdeanrckfYDGijAMYvs.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/fPmv2K3xkDM0TxS0v0OSJFWU6hS.jpg",
       "description": "A conflict between a forest tribe and greedy landlords reaches a divine climax, blending mythology, folklore, and breathtaking action in this extraordinary Kannada film.",
       "cast": [
@@ -1282,7 +1291,7 @@
       "language": "Tamil/Hindi",
       "duration": "2h 47m",
       "rating": 8,
-      "poster": "https://media.themoviedb.org/t/p/w500/brZtUZEzTTV7zZpYaGoUPmJ7PdL.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/brZtUZEzTTV7zZpYaGoUPmJ7PdL.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/1KLRV1jBpzfvLHn0cCCCgqlxoJo.jpg",
       "description": "Set in 10th century Tamil Nadu, the film follows the Chola empire's power struggle, intrigue, and romance with stunning production design and an ensemble cast.",
       "cast": [
@@ -1339,7 +1348,7 @@
       "language": "Hindi",
       "duration": "2h 53m",
       "rating": 7.8,
-      "poster": "https://media.themoviedb.org/t/p/w500/7VFSbhN5nZerjz26sHHZCqrzEsC.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/7VFSbhN5nZerjz26sHHZCqrzEsC.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/sJSKvF3MhGTiZM7p8KGu5aBYSmN.jpg",
       "description": "The real story of Syed Abdul Rahim, the revolutionary coach who built the Indian national football team from scratch and led them to glory in the 1950s and 60s.",
       "cast": [
@@ -1781,7 +1790,7 @@
       "language": "English",
       "duration": "1h 54m",
       "rating": 6.9,
-      "poster": "https://media.themoviedb.org/t/p/w500/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/nHf61UzkfFno5X1ofIhugCPus2R.jpg",
       "description": "Barbie suffers a crisis that leads her to question her perfect Barbieland existence. She and Ken venture to the real world, where the rules of Barbieland don't apply.",
       "cast": [
@@ -1889,7 +1898,7 @@
       "language": "English",
       "duration": "2h 30m",
       "rating": 7.9,
-      "poster": "https://media.themoviedb.org/t/p/w500/r2J02Z2OpNTctfOSN1Ydgii51I3.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/r2J02Z2OpNTctfOSN1Ydgii51I3.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/5YZbUmjbMa3ClvSW1Wj3D6XGkVA.jpg",
       "description": "Still reeling from the loss of Gamora, Peter Quill rallies his team to defend the universe, with a mission that, if not completed, could lead to the end of the Guardians.",
       "cast": [
@@ -2005,7 +2014,7 @@
       "language": "English",
       "duration": "2h 21m",
       "rating": 5.8,
-      "poster": "https://media.themoviedb.org/t/p/w500/fiVW06jE7z9YnO4trhaMEdclSiC.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/fiVW06jE7z9YnO4trhaMEdclSiC.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/4XM8DUTQb3lhLemJC51Jx4a2EuA.jpg",
       "description": "Dom Toretto and his family are targeted by the son of drug kingpin Hernan Reyes, who seeks revenge across the globe for his father's death.",
       "cast": [
@@ -2213,7 +2222,7 @@
       "language": "English",
       "duration": "2h 41m",
       "rating": 6.7,
-      "poster": "https://media.themoviedb.org/t/p/w500/55emwsc0NYebFXSTEu39zN2Rffq.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/55emwsc0NYebFXSTEu39zN2Rffq.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/xDMIl84Qo5Tso1QL7YP5tbbj3dR.jpg",
       "description": "The people of Wakanda fight to protect their home from intervening world powers as Queen Ramonda, Shuri, and others forge a new path for the kingdom.",
       "cast": [
@@ -2266,7 +2275,7 @@
       "language": "English",
       "duration": "3h 26m",
       "rating": 7.6,
-      "poster": "https://media.themoviedb.org/t/p/w500/a7KyFMPXj0iY4EoLq1PIGU1WJPw.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/a7KyFMPXj0iY4EoLq1PIGU1WJPw.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/f0oMygxRQzKUdAqapGO74mBCwRP.jpg",
       "description": "Members of the Osage Nation are murdered under mysterious circumstances in the 1920s, sparking a major investigation by the newly formed FBI.",
       "cast": [
@@ -2369,7 +2378,7 @@
       "language": "Hindi/Telugu",
       "duration": "2h 59m",
       "rating": 3.4,
-      "poster": "https://placehold.co/500x750/1a0a20/a855f7?text=Adipurush&font=roboto",
+      "poster": "https://image.tmdb.org/t/p/w500/q2RVfGMnx1jMEIDsEHfTkCJI2f1.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/6OxPqKWf5TOz7A4zXJVQb19sfzh.jpg",
       "description": "The epic saga of Raghava — a divine warrior who rescues his beloved Janaki from the demon king Lankesh. Based on the ancient Hindu epic Ramayana with grand visual effects.",
       "cast": [
@@ -2420,7 +2429,7 @@
       "language": "Hindi",
       "duration": "2h 18m",
       "rating": 8.5,
-      "poster": "https://media.themoviedb.org/t/p/w500/vA1kcZET669QfA5nCkFRVUJxq0E.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/vA1kcZET669QfA5nCkFRVUJxq0E.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/nq0eBTlRi8kJbOoQDGDdqrHGVWl.jpg",
       "description": "The town of Chanderi faces a new supernatural terror as a headless ghost known as Sarkata begins snatching men. Stree must return to protect the ones she loves.",
       "cast": [
@@ -2534,7 +2543,7 @@
       "language": "Telugu/Hindi",
       "duration": "3h 1m",
       "rating": 7,
-      "poster": "https://media.themoviedb.org/t/p/w500/dgS9RfgmPNIVCWkkS3WAyOcA4BB.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/dgS9RfgmPNIVCWkkS3WAyOcA4BB.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/xTPa4OMIBzHdlpJFnFJKA8Pf0PJ.jpg",
       "description": "A mythological sci-fi epic where Lord Vishnu's final avatar Kalki is destined to arrive in the year 2898 AD to protect humanity. A spectacular blend of Hindu mythology and futuristic vision.",
       "cast": [
@@ -2750,7 +2759,7 @@
       "language": "Hindi",
       "duration": "2h 30m",
       "rating": 7.5,
-      "poster": "https://media.themoviedb.org/t/p/w500/lexxju9BtEm1vTTdofDvBCZvkZ7.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/lexxju9BtEm1vTTdofDvBCZvkZ7.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/qNJEgEhJvhMZoRuFB8ILpBKCsXG.jpg",
       "description": "Don returns — more dangerous, more elusive, and with an impossible score to settle. The international criminal mastermind takes on the world's most powerful crime syndicate.",
       "cast": [
@@ -2800,7 +2809,7 @@
       "language": "Hindi",
       "duration": "2h 45m",
       "rating": 7.8,
-      "poster": "https://placehold.co/500x750/0a1520/22c55e?text=War+2&font=roboto",
+      "poster": "https://image.tmdb.org/t/p/w500/wWzNKxApFSsrPmfJssfnMuwLPMd.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/AkB15dMDquYqYdHLUVjFAVLGRhZ.jpg",
       "description": "Kabir is back — India's most lethal secret agent faces a new global threat in this adrenaline-charged sequel to the blockbuster action franchise.",
       "cast": [
@@ -2850,7 +2859,7 @@
       "language": "Telugu/Hindi",
       "duration": "2h 53m",
       "rating": 6.5,
-      "poster": "https://media.themoviedb.org/t/p/w500/jzNCo2UqltLKmuvMCV1tqA4I2vb.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/jzNCo2UqltLKmuvMCV1tqA4I2vb.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/3oVz5MU8F7VvTjSWmS25P0mT4bB.jpg",
       "description": "A fearless sea lord Devara rules through fear for decades, but when his son Vara must pick up the mantle, the past returns with deadly consequences.",
       "cast": [
@@ -2901,7 +2910,7 @@
       "language": "Hindi",
       "duration": "2h 30m",
       "rating": 7.2,
-      "poster": "https://media.themoviedb.org/t/p/w500/dkUYb51rm0yV6pG8AE6exFcqn4p.jpg",
+      "poster": "https://image.tmdb.org/t/p/w500/dkUYb51rm0yV6pG8AE6exFcqn4p.jpg",
       "banner": "https://image.tmdb.org/t/p/w1280/1BE2AKEU9QuSAqBGjXAr3zFElOR.jpg",
       "description": "ACP Singham returns to take on a massive political conspiracy that threatens the nation, teaming up with Simmba and Sooryavanshi in the ultimate cop universe crossover.",
       "cast": [
@@ -2948,6 +2957,770 @@
         "Ahmedabad",
         "Chandigarh",
         "Kochi"
+      ]
+    },
+    {
+      "id": 56,
+      "title": "Tumbbad",
+      "genre": [
+        "Horror",
+        "Fantasy",
+        "Thriller"
+      ],
+      "language": "Hindi",
+      "duration": "1h 44m",
+      "rating": 8.3,
+      "poster": "https://image.tmdb.org/t/p/w500/59v34rDM4EN4q7kEDzTBlWdp7sX.jpg",
+      "banner": "https://image.tmdb.org/t/p/w1280/gKa6OSz3oPHt0lFpGS2YyHn4pMa.jpg",
+      "description": "A mythological horror set in a cursed village, where a man's obsessive greed for an ancient treasure leads him into a terrifying encounter with a dark god.",
+      "cast": [
+        {
+          "name": "Sohum Shah",
+          "role": "Vinayak Rao",
+          "image": "https://ui-avatars.com/api/?name=Sohum+Shah&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Jyoti Malshe",
+          "role": "Vinayak's Mother",
+          "image": "https://ui-avatars.com/api/?name=Jyoti+Malshe&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Anita Date",
+          "role": "Vinayak's Wife",
+          "image": "https://ui-avatars.com/api/?name=Anita+Date&background=d97706&color=fff&size=200"
+        }
+      ],
+      "director": "Rahi Anil Barve",
+      "releaseDate": "2018-10-12",
+      "price": 200,
+      "status": "now_showing",
+      "certificate": "A",
+      "trailerYouTubeId": "sN75MPethEE",
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Pune",
+        "Hyderabad"
+      ]
+    },
+    {
+      "id": 57,
+      "title": "Jailer",
+      "genre": [
+        "Action",
+        "Comedy",
+        "Thriller"
+      ],
+      "language": "Tamil/Hindi",
+      "duration": "2h 48m",
+      "rating": 7.1,
+      "poster": "https://image.tmdb.org/t/p/w500/n1JbUFqR3Vty2gWFGqpZHjMh7fR.jpg",
+      "banner": "https://image.tmdb.org/t/p/w1280/q8zzqVJmLvO2F9mRaR9gN3F1HsN.jpg",
+      "description": "A retired jailer goes on a rampage after his son, an honest police officer, is framed and killed. Rajinikanth delivers a mass entertainer in vintage style.",
+      "cast": [
+        {
+          "name": "Rajinikanth",
+          "role": "Tiger Muthuvel Pandian",
+          "image": "https://ui-avatars.com/api/?name=Rajinikanth&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Mohanlal",
+          "role": "Varma",
+          "image": "https://ui-avatars.com/api/?name=Mohanlal&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Vinayakan",
+          "role": "Mathimaaran",
+          "image": "https://ui-avatars.com/api/?name=Vinayakan&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Ramya Krishnan",
+          "role": "Padmavathi",
+          "image": "https://ui-avatars.com/api/?name=Ramya+Krishnan&background=7c3aed&color=fff&size=200"
+        }
+      ],
+      "director": "Nelson Dilipkumar",
+      "releaseDate": "2023-08-10",
+      "price": 260,
+      "status": "now_showing",
+      "certificate": "UA",
+      "trailerYouTubeId": "MYiU0Vc6Ues",
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Chennai",
+        "Hyderabad",
+        "Kolkata",
+        "Kochi"
+      ]
+    },
+    {
+      "id": 58,
+      "title": "Premalu",
+      "genre": [
+        "Romance",
+        "Comedy"
+      ],
+      "language": "Malayalam",
+      "duration": "2h 30m",
+      "rating": 7.8,
+      "poster": "https://image.tmdb.org/t/p/w500/fSiJ1bJeJYPk4kG5cLPJNfzdm1K.jpg",
+      "banner": "https://image.tmdb.org/t/p/w1280/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg",
+      "description": "A charming romantic comedy about a young man who falls in love multiple times while studying engineering in Hyderabad, only to find his true match in an unexpected way.",
+      "cast": [
+        {
+          "name": "Naslen K. Gafoor",
+          "role": "Sachin",
+          "image": "https://ui-avatars.com/api/?name=Naslen+Gafoor&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Mamitha Baiju",
+          "role": "Girly",
+          "image": "https://ui-avatars.com/api/?name=Mamitha+Baiju&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Mathew Thomas",
+          "role": "Hari",
+          "image": "https://ui-avatars.com/api/?name=Mathew+Thomas&background=0369a1&color=fff&size=200"
+        }
+      ],
+      "director": "Girish A.D.",
+      "releaseDate": "2024-02-09",
+      "price": 180,
+      "status": "now_showing",
+      "certificate": "U",
+      "trailerYouTubeId": "f0oMygxRQzKUdAqapGO74mBCwRP",
+      "cities": [
+        "Mumbai",
+        "Bengaluru",
+        "Chennai",
+        "Hyderabad",
+        "Kochi",
+        "Delhi"
+      ]
+    },
+    {
+      "id": 59,
+      "title": "Baahubali 2: The Conclusion",
+      "genre": [
+        "Action",
+        "Drama",
+        "Fantasy"
+      ],
+      "language": "Telugu/Hindi",
+      "duration": "2h 47m",
+      "rating": 8.2,
+      "poster": "https://image.tmdb.org/t/p/w500/aHDwv6RfLgFOzkZEN8KzyxRjRXH.jpg",
+      "banner": "https://image.tmdb.org/t/p/w1280/u6FRFqsXbIlxHEpRR8N0F3eToyB.jpg",
+      "description": "When Shiva learns his true heritage, he begins to seek answers. His story is told through a flashback — an epic tale of love, betrayal, and the legendary warrior Amarendra Baahubali.",
+      "cast": [
+        {
+          "name": "Prabhas",
+          "role": "Amarendra Baahubali / Mahendra Baahubali",
+          "image": "https://ui-avatars.com/api/?name=Prabhas&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Rana Daggubati",
+          "role": "Bhallaladeva",
+          "image": "https://ui-avatars.com/api/?name=Rana+Daggubati&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Anushka Shetty",
+          "role": "Devasena",
+          "image": "https://ui-avatars.com/api/?name=Anushka+Shetty&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Ramya Krishnan",
+          "role": "Sivagami",
+          "image": "https://ui-avatars.com/api/?name=Ramya+Krishnan&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Sathyaraj",
+          "role": "Kattappa",
+          "image": "https://ui-avatars.com/api/?name=Sathyaraj&background=059669&color=fff&size=200"
+        }
+      ],
+      "director": "S. S. Rajamouli",
+      "releaseDate": "2017-04-28",
+      "price": 250,
+      "status": "now_showing",
+      "certificate": "UA",
+      "trailerYouTubeId": "G62HrubdD6o",
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad",
+        "Kochi"
+      ]
+    },
+    {
+      "id": 60,
+      "title": "Rocketry: The Nambi Effect",
+      "genre": [
+        "Biography",
+        "Drama"
+      ],
+      "language": "Hindi/English",
+      "duration": "2h 37m",
+      "rating": 8.5,
+      "poster": "https://image.tmdb.org/t/p/w500/iLLJlDlh9tyBW79kYDKzKl3nD4u.jpg",
+      "banner": "https://image.tmdb.org/t/p/w1280/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg",
+      "description": "The extraordinary true story of ISRO scientist Nambi Narayanan, who was falsely accused of espionage and fought to clear his name while his contributions to India's space program were forgotten.",
+      "cast": [
+        {
+          "name": "R. Madhavan",
+          "role": "Nambi Narayanan",
+          "image": "https://ui-avatars.com/api/?name=R+Madhavan&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Simran",
+          "role": "Meena Narayanan",
+          "image": "https://ui-avatars.com/api/?name=Simran&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Shah Rukh Khan",
+          "role": "Interviewer (Special Appearance)",
+          "image": "https://ui-avatars.com/api/?name=Shah+Rukh+Khan&background=0369a1&color=fff&size=200"
+        }
+      ],
+      "director": "R. Madhavan",
+      "releaseDate": "2022-07-01",
+      "price": 200,
+      "status": "now_showing",
+      "certificate": "UA",
+      "trailerYouTubeId": "VUFRTy-pG4M",
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Chennai",
+        "Hyderabad",
+        "Pune"
+      ]
+    },
+    {
+      "id": 61,
+      "title": "The Conjuring",
+      "genre": [
+        "Horror",
+        "Thriller"
+      ],
+      "language": "English",
+      "duration": "1h 52m",
+      "rating": 7.5,
+      "poster": "https://image.tmdb.org/t/p/w500/wVYREutTvI2tmxr6ujrHT704wGF.jpg",
+      "banner": "https://image.tmdb.org/t/p/w1280/ejxRMeLfBtmDNjJqkpmk2hGWx0W.jpg",
+      "description": "Paranormal investigators Ed and Lorraine Warren work to help a family terrorized by a dark presence in their farmhouse. Based on the true case files of the Warrens.",
+      "cast": [
+        {
+          "name": "Vera Farmiga",
+          "role": "Lorraine Warren",
+          "image": "https://ui-avatars.com/api/?name=Vera+Farmiga&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Patrick Wilson",
+          "role": "Ed Warren",
+          "image": "https://ui-avatars.com/api/?name=Patrick+Wilson&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Lili Taylor",
+          "role": "Carolyn Perron",
+          "image": "https://ui-avatars.com/api/?name=Lili+Taylor&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Ron Livingston",
+          "role": "Roger Perron",
+          "image": "https://ui-avatars.com/api/?name=Ron+Livingston&background=d97706&color=fff&size=200"
+        }
+      ],
+      "director": "James Wan",
+      "releaseDate": "2013-07-19",
+      "price": 220,
+      "status": "now_showing",
+      "certificate": "A",
+      "trailerYouTubeId": "k10ETZ41q5o",
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Pune",
+        "Ahmedabad"
+      ]
+    },
+    {
+      "id": 62,
+      "title": "Titanic",
+      "genre": [
+        "Romance",
+        "Drama"
+      ],
+      "language": "English",
+      "duration": "3h 14m",
+      "rating": 7.9,
+      "poster": "https://image.tmdb.org/t/p/w500/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg",
+      "banner": "https://image.tmdb.org/t/p/w1280/2nFyTvssbtJMLC1sKlnTIb8abJM.jpg",
+      "description": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic. An epic romance set against the most famous maritime disaster in history.",
+      "cast": [
+        {
+          "name": "Leonardo DiCaprio",
+          "role": "Jack Dawson",
+          "image": "https://ui-avatars.com/api/?name=Leonardo+DiCaprio&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Kate Winslet",
+          "role": "Rose DeWitt Bukater",
+          "image": "https://ui-avatars.com/api/?name=Kate+Winslet&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Billy Zane",
+          "role": "Cal Hockley",
+          "image": "https://ui-avatars.com/api/?name=Billy+Zane&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Kathy Bates",
+          "role": "Molly Brown",
+          "image": "https://ui-avatars.com/api/?name=Kathy+Bates&background=d97706&color=fff&size=200"
+        }
+      ],
+      "director": "James Cameron",
+      "releaseDate": "1997-12-19",
+      "price": 250,
+      "status": "now_showing",
+      "certificate": "UA",
+      "trailerYouTubeId": "kVrqfYjkTdQ",
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad"
+      ]
+    },
+    {
+      "id": 63,
+      "title": "Parasite",
+      "genre": [
+        "Thriller",
+        "Drama",
+        "Comedy"
+      ],
+      "language": "Korean",
+      "duration": "2h 12m",
+      "rating": 8.5,
+      "poster": "https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
+      "banner": "https://image.tmdb.org/t/p/w1280/TU9aKhBFGiPbJDWmPxdG4GxFiCX.jpg",
+      "description": "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan. Winner of Best Picture at the Academy Awards.",
+      "cast": [
+        {
+          "name": "Song Kang-ho",
+          "role": "Ki-taek",
+          "image": "https://ui-avatars.com/api/?name=Song+Kang-ho&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Lee Sun-kyun",
+          "role": "Park Dong-ik",
+          "image": "https://ui-avatars.com/api/?name=Lee+Sun-kyun&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Cho Yeo-jeong",
+          "role": "Park Yeon-gyo",
+          "image": "https://ui-avatars.com/api/?name=Cho+Yeo-jeong&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Choi Woo-shik",
+          "role": "Ki-woo",
+          "image": "https://ui-avatars.com/api/?name=Choi+Woo-shik&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Park So-dam",
+          "role": "Ki-jung",
+          "image": "https://ui-avatars.com/api/?name=Park+So-dam&background=db2777&color=fff&size=200"
+        }
+      ],
+      "director": "Bong Joon-ho",
+      "releaseDate": "2019-05-30",
+      "price": 280,
+      "status": "now_showing",
+      "certificate": "A",
+      "trailerYouTubeId": "5xH0HfJHsaY",
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Pune",
+        "Chennai"
+      ]
+    },
+    {
+      "id": 64,
+      "title": "Spirited Away",
+      "genre": [
+        "Animation",
+        "Fantasy",
+        "Adventure"
+      ],
+      "language": "Japanese",
+      "duration": "2h 5m",
+      "rating": 8.6,
+      "poster": "https://image.tmdb.org/t/p/w500/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg",
+      "banner": "https://image.tmdb.org/t/p/w1280/bSXfU4dwZyBA1vMmXvejdRXBvuF.jpg",
+      "description": "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.",
+      "cast": [
+        {
+          "name": "Rumi Hiiragi",
+          "role": "Chihiro / Sen (voice)",
+          "image": "https://ui-avatars.com/api/?name=Rumi+Hiiragi&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Miyu Irino",
+          "role": "Haku (voice)",
+          "image": "https://ui-avatars.com/api/?name=Miyu+Irino&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Mari Natsuki",
+          "role": "Yubaba / Zeniba (voice)",
+          "image": "https://ui-avatars.com/api/?name=Mari+Natsuki&background=b91c1c&color=fff&size=200"
+        }
+      ],
+      "director": "Hayao Miyazaki",
+      "releaseDate": "2001-07-20",
+      "price": 220,
+      "status": "now_showing",
+      "certificate": "U",
+      "trailerYouTubeId": "ByXuk9QqQkk",
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Pune",
+        "Hyderabad"
+      ]
+    },
+    {
+      "id": 65,
+      "title": "Rang De Basanti",
+      "genre": [
+        "Drama",
+        "Comedy",
+        "Thriller"
+      ],
+      "language": "Hindi",
+      "duration": "2h 47m",
+      "rating": 8.1,
+      "poster": "https://image.tmdb.org/t/p/w500/k9MxdVoSEgJONvmLaXdReXidB45.jpg",
+      "banner": "https://image.tmdb.org/t/p/w1280/qPTm9Gp7tLxlMgmupeDzBg6UoMi.jpg",
+      "description": "A group of carefree college students are transformed when they play the roles of freedom fighters for a British filmmaker's documentary, leading them to take radical action against corruption.",
+      "cast": [
+        {
+          "name": "Aamir Khan",
+          "role": "DJ / Chandrashekhar Azad",
+          "image": "https://ui-avatars.com/api/?name=Aamir+Khan&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Siddharth",
+          "role": "Karan / Bhagat Singh",
+          "image": "https://ui-avatars.com/api/?name=Siddharth&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Sharman Joshi",
+          "role": "Sukhi / Rajguru",
+          "image": "https://ui-avatars.com/api/?name=Sharman+Joshi&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Soha Ali Khan",
+          "role": "Sonia",
+          "image": "https://ui-avatars.com/api/?name=Soha+Ali+Khan&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Alice Patten",
+          "role": "Sue McKinley",
+          "image": "https://ui-avatars.com/api/?name=Alice+Patten&background=db2777&color=fff&size=200"
+        }
+      ],
+      "director": "Rakeysh Omprakash Mehra",
+      "releaseDate": "2006-01-26",
+      "price": 180,
+      "status": "now_showing",
+      "certificate": "UA",
+      "trailerYouTubeId": "Qe_dM5YGPco",
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Pune",
+        "Chandigarh",
+        "Kolkata"
+      ]
+    },
+    {
+      "id": 66,
+      "title": "Super Deluxe",
+      "genre": [
+        "Drama",
+        "Comedy",
+        "Thriller"
+      ],
+      "language": "Tamil",
+      "duration": "2h 56m",
+      "rating": 8.4,
+      "poster": "https://image.tmdb.org/t/p/w500/1wWpK5hI55TFdxH3RZx5DNvNkIg.jpg",
+      "banner": "https://image.tmdb.org/t/p/w1280/mBjzEbcq7RM8C6u1EGjHGSwpXX4.jpg",
+      "description": "Four intersecting stories involving a transgender woman, an unfaithful husband, a priest, and a group of teenagers collide in unexpected and mind-bending ways.",
+      "cast": [
+        {
+          "name": "Vijay Sethupathi",
+          "role": "Shilpa",
+          "image": "https://ui-avatars.com/api/?name=Vijay+Sethupathi&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Fahadh Faasil",
+          "role": "Mugil",
+          "image": "https://ui-avatars.com/api/?name=Fahadh+Faasil&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Samantha Ruth Prabhu",
+          "role": "Vaembu",
+          "image": "https://ui-avatars.com/api/?name=Samantha+Ruth&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Ramya Krishnan",
+          "role": "Leela",
+          "image": "https://ui-avatars.com/api/?name=Ramya+Krishnan&background=d97706&color=fff&size=200"
+        }
+      ],
+      "director": "Thiagarajan Kumararaja",
+      "releaseDate": "2019-03-29",
+      "price": 200,
+      "status": "now_showing",
+      "certificate": "A",
+      "trailerYouTubeId": "gVnQM4gfxb4",
+      "cities": [
+        "Chennai",
+        "Bengaluru",
+        "Hyderabad",
+        "Mumbai",
+        "Delhi",
+        "Kochi"
+      ]
+    },
+    {
+      "id": 67,
+      "title": "Drishyam",
+      "genre": [
+        "Thriller",
+        "Drama",
+        "Crime"
+      ],
+      "language": "Malayalam",
+      "duration": "2h 40m",
+      "rating": 8.5,
+      "poster": "https://image.tmdb.org/t/p/w500/jTOgmXnmKJH0FbXNO0kFfYdIfex.jpg",
+      "banner": "https://image.tmdb.org/t/p/w1280/5bCeRN36zLuWPdJjDXVbN2APMRC.jpg",
+      "description": "A man goes to extreme lengths to protect his family after they are involuntarily involved in a crime. The original Malayalam thriller that spawned remakes across India.",
+      "cast": [
+        {
+          "name": "Mohanlal",
+          "role": "Georgekutty",
+          "image": "https://ui-avatars.com/api/?name=Mohanlal&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Meena",
+          "role": "Rani",
+          "image": "https://ui-avatars.com/api/?name=Meena&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Asha Sarath",
+          "role": "IG Geetha Prabhakar",
+          "image": "https://ui-avatars.com/api/?name=Asha+Sarath&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Siddique",
+          "role": "Sub Inspector Sahadevan",
+          "image": "https://ui-avatars.com/api/?name=Siddique&background=d97706&color=fff&size=200"
+        }
+      ],
+      "director": "Jeethu Joseph",
+      "releaseDate": "2013-12-19",
+      "price": 180,
+      "status": "now_showing",
+      "certificate": "UA",
+      "trailerYouTubeId": "D_qjGfgcMQg",
+      "cities": [
+        "Kochi",
+        "Chennai",
+        "Bengaluru",
+        "Mumbai",
+        "Delhi",
+        "Hyderabad"
+      ]
+    },
+    {
+      "id": 68,
+      "title": "Sita Ramam",
+      "genre": [
+        "Romance",
+        "Drama",
+        "War"
+      ],
+      "language": "Telugu/Hindi",
+      "duration": "2h 43m",
+      "rating": 8.4,
+      "poster": "https://image.tmdb.org/t/p/w500/lIR1t0KZGRYJ1Vh8PxAaNuZqXMN.jpg",
+      "banner": "https://image.tmdb.org/t/p/w1280/a2snrVQAP8hmL1cbqbGaVJVNSVV.jpg",
+      "description": "An orphaned soldier writes letters to a woman he has never met. Their love story unfolds across the India-Pakistan border in the 1960s, bridging war, politics, and religion.",
+      "cast": [
+        {
+          "name": "Dulquer Salmaan",
+          "role": "Lieutenant Ram",
+          "image": "https://ui-avatars.com/api/?name=Dulquer+Salmaan&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Mrunal Thakur",
+          "role": "Sita Mahalakshmi",
+          "image": "https://ui-avatars.com/api/?name=Mrunal+Thakur&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Rashmika Mandanna",
+          "role": "Afreen",
+          "image": "https://ui-avatars.com/api/?name=Rashmika+Mandanna&background=d97706&color=fff&size=200"
+        },
+        {
+          "name": "Sumanth",
+          "role": "Brigadier Vishnu Sharma",
+          "image": "https://ui-avatars.com/api/?name=Sumanth&background=0369a1&color=fff&size=200"
+        }
+      ],
+      "director": "Hanu Raghavapudi",
+      "releaseDate": "2022-08-05",
+      "price": 220,
+      "status": "now_showing",
+      "certificate": "UA",
+      "trailerYouTubeId": "u0PGKZ_wNr8",
+      "cities": [
+        "Hyderabad",
+        "Chennai",
+        "Bengaluru",
+        "Mumbai",
+        "Delhi",
+        "Kolkata",
+        "Kochi"
+      ]
+    },
+    {
+      "id": 69,
+      "title": "Joker",
+      "genre": [
+        "Crime",
+        "Drama",
+        "Thriller"
+      ],
+      "language": "English",
+      "duration": "2h 2m",
+      "rating": 8.4,
+      "poster": "https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg",
+      "banner": "https://image.tmdb.org/t/p/w1280/n6bUvigpRFqSwmPp1m2YMDNqKIo.jpg",
+      "description": "In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime.",
+      "cast": [
+        {
+          "name": "Joaquin Phoenix",
+          "role": "Arthur Fleck / Joker",
+          "image": "https://ui-avatars.com/api/?name=Joaquin+Phoenix&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Robert De Niro",
+          "role": "Murray Franklin",
+          "image": "https://ui-avatars.com/api/?name=Robert+DeNiro&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Zazie Beetz",
+          "role": "Sophie Dumond",
+          "image": "https://ui-avatars.com/api/?name=Zazie+Beetz&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Frances Conroy",
+          "role": "Penny Fleck",
+          "image": "https://ui-avatars.com/api/?name=Frances+Conroy&background=d97706&color=fff&size=200"
+        }
+      ],
+      "director": "Todd Phillips",
+      "releaseDate": "2019-10-04",
+      "price": 260,
+      "status": "now_showing",
+      "certificate": "A",
+      "trailerYouTubeId": "zAGVQLHvwOY",
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Chennai",
+        "Kolkata",
+        "Pune",
+        "Ahmedabad"
+      ]
+    },
+    {
+      "id": 70,
+      "title": "Everything Everywhere All at Once",
+      "genre": [
+        "Sci-Fi",
+        "Comedy",
+        "Action"
+      ],
+      "language": "English",
+      "duration": "2h 19m",
+      "rating": 7.8,
+      "poster": "https://image.tmdb.org/t/p/w500/w3LxiVYdWWRvEVdn5RYq6jIqkb1.jpg",
+      "banner": "https://image.tmdb.org/t/p/w1280/feSiISwgEpVzR1v3zv2n2AU4ANJ.jpg",
+      "description": "An aging Chinese immigrant is swept up in an insane adventure, where she alone can save what's important to her by connecting with the lives she could have led in other universes.",
+      "cast": [
+        {
+          "name": "Michelle Yeoh",
+          "role": "Evelyn Quan Wang",
+          "image": "https://ui-avatars.com/api/?name=Michelle+Yeoh&background=b91c1c&color=fff&size=200"
+        },
+        {
+          "name": "Stephanie Hsu",
+          "role": "Joy Wang / Jobu Tupaki",
+          "image": "https://ui-avatars.com/api/?name=Stephanie+Hsu&background=7c3aed&color=fff&size=200"
+        },
+        {
+          "name": "Ke Huy Quan",
+          "role": "Waymond Wang",
+          "image": "https://ui-avatars.com/api/?name=Ke+Huy+Quan&background=0369a1&color=fff&size=200"
+        },
+        {
+          "name": "Jamie Lee Curtis",
+          "role": "Deirdre Beaubeirdre",
+          "image": "https://ui-avatars.com/api/?name=Jamie+Lee+Curtis&background=d97706&color=fff&size=200"
+        }
+      ],
+      "director": "Daniel Kwan, Daniel Scheinert",
+      "releaseDate": "2022-03-25",
+      "price": 240,
+      "status": "now_showing",
+      "certificate": "UA",
+      "trailerYouTubeId": "wxN1T1qdqzY",
+      "cities": [
+        "Mumbai",
+        "Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Pune",
+        "Chennai"
       ]
     }
   ],
@@ -3325,6 +4098,1162 @@
       "price": 290,
       "availableSeats": 38,
       "totalSeats": 100
+    },
+    {
+      "id": 31,
+      "movieId": 56,
+      "theatreId": 1,
+      "time": "10:00 AM",
+      "date": "2026-07-22",
+      "price": 200,
+      "availableSeats": 85,
+      "totalSeats": 100
+    },
+    {
+      "id": 32,
+      "movieId": 56,
+      "theatreId": 3,
+      "time": "09:00 PM",
+      "date": "2026-07-22",
+      "price": 220,
+      "availableSeats": 70,
+      "totalSeats": 100
+    },
+    {
+      "id": 33,
+      "movieId": 57,
+      "theatreId": 5,
+      "time": "11:30 AM",
+      "date": "2026-07-22",
+      "price": 260,
+      "availableSeats": 55,
+      "totalSeats": 100
+    },
+    {
+      "id": 34,
+      "movieId": 57,
+      "theatreId": 1,
+      "time": "03:30 PM",
+      "date": "2026-07-22",
+      "price": 280,
+      "availableSeats": 42,
+      "totalSeats": 100
+    },
+    {
+      "id": 35,
+      "movieId": 58,
+      "theatreId": 3,
+      "time": "12:00 PM",
+      "date": "2026-07-22",
+      "price": 180,
+      "availableSeats": 90,
+      "totalSeats": 100
+    },
+    {
+      "id": 36,
+      "movieId": 59,
+      "theatreId": 1,
+      "time": "02:00 PM",
+      "date": "2026-07-22",
+      "price": 250,
+      "availableSeats": 30,
+      "totalSeats": 100
+    },
+    {
+      "id": 37,
+      "movieId": 59,
+      "theatreId": 4,
+      "time": "06:30 PM",
+      "date": "2026-07-22",
+      "price": 280,
+      "availableSeats": 18,
+      "totalSeats": 100
+    },
+    {
+      "id": 38,
+      "movieId": 60,
+      "theatreId": 2,
+      "time": "10:00 AM",
+      "date": "2026-07-22",
+      "price": 200,
+      "availableSeats": 78,
+      "totalSeats": 100
+    },
+    {
+      "id": 39,
+      "movieId": 61,
+      "theatreId": 1,
+      "time": "10:30 PM",
+      "date": "2026-07-22",
+      "price": 220,
+      "availableSeats": 65,
+      "totalSeats": 100
+    },
+    {
+      "id": 40,
+      "movieId": 61,
+      "theatreId": 4,
+      "time": "08:00 PM",
+      "date": "2026-07-22",
+      "price": 240,
+      "availableSeats": 40,
+      "totalSeats": 100
+    },
+    {
+      "id": 41,
+      "movieId": 62,
+      "theatreId": 1,
+      "time": "01:00 PM",
+      "date": "2026-07-22",
+      "price": 250,
+      "availableSeats": 50,
+      "totalSeats": 100
+    },
+    {
+      "id": 42,
+      "movieId": 62,
+      "theatreId": 6,
+      "time": "07:00 PM",
+      "date": "2026-07-22",
+      "price": 280,
+      "availableSeats": 25,
+      "totalSeats": 100
+    },
+    {
+      "id": 43,
+      "movieId": 63,
+      "theatreId": 2,
+      "time": "04:00 PM",
+      "date": "2026-07-22",
+      "price": 280,
+      "availableSeats": 60,
+      "totalSeats": 100
+    },
+    {
+      "id": 44,
+      "movieId": 64,
+      "theatreId": 3,
+      "time": "11:00 AM",
+      "date": "2026-07-22",
+      "price": 220,
+      "availableSeats": 88,
+      "totalSeats": 100
+    },
+    {
+      "id": 45,
+      "movieId": 65,
+      "theatreId": 2,
+      "time": "01:00 PM",
+      "date": "2026-07-22",
+      "price": 180,
+      "availableSeats": 75,
+      "totalSeats": 100
+    },
+    {
+      "id": 46,
+      "movieId": 66,
+      "theatreId": 5,
+      "time": "05:00 PM",
+      "date": "2026-07-22",
+      "price": 200,
+      "availableSeats": 68,
+      "totalSeats": 100
+    },
+    {
+      "id": 47,
+      "movieId": 67,
+      "theatreId": 3,
+      "time": "09:30 AM",
+      "date": "2026-07-22",
+      "price": 180,
+      "availableSeats": 92,
+      "totalSeats": 100
+    },
+    {
+      "id": 48,
+      "movieId": 68,
+      "theatreId": 4,
+      "time": "03:00 PM",
+      "date": "2026-07-22",
+      "price": 220,
+      "availableSeats": 55,
+      "totalSeats": 100
+    },
+    {
+      "id": 49,
+      "movieId": 69,
+      "theatreId": 1,
+      "time": "08:30 PM",
+      "date": "2026-07-22",
+      "price": 260,
+      "availableSeats": 35,
+      "totalSeats": 100
+    },
+    {
+      "id": 50,
+      "movieId": 69,
+      "theatreId": 2,
+      "time": "10:15 PM",
+      "date": "2026-07-22",
+      "price": 280,
+      "availableSeats": 22,
+      "totalSeats": 100
+    },
+    {
+      "id": 51,
+      "movieId": 70,
+      "theatreId": 3,
+      "time": "02:30 PM",
+      "date": "2026-07-22",
+      "price": 240,
+      "availableSeats": 72,
+      "totalSeats": 100
+    },
+    {
+      "id": 52,
+      "movieId": 70,
+      "theatreId": 1,
+      "time": "07:00 PM",
+      "date": "2026-07-22",
+      "price": 260,
+      "availableSeats": 48,
+      "totalSeats": 100
+    },
+    {
+      "id": "szu7o03r",
+      "movieId": 13,
+      "theatreId": 2,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "Hindi",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "smchwv5r",
+      "movieId": 13,
+      "theatreId": 5,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "Hindi",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "saubtkeu",
+      "movieId": 14,
+      "theatreId": 5,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "Hindi",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "s6nxiotq",
+      "movieId": 14,
+      "theatreId": 3,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "Hindi",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "sfl2yrta",
+      "movieId": 15,
+      "theatreId": 4,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "Hindi",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "spjjmxtb",
+      "movieId": 15,
+      "theatreId": 4,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "Hindi",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "s8nf6tul",
+      "movieId": 16,
+      "theatreId": 1,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "Hindi",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "sfibi76l",
+      "movieId": 16,
+      "theatreId": 1,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "Hindi",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "su9h4vqs",
+      "movieId": 17,
+      "theatreId": 3,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "Hindi",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "s1o9ecm8",
+      "movieId": 17,
+      "theatreId": 3,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "Hindi",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "s6smd6kq",
+      "movieId": 18,
+      "theatreId": 5,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "Hindi",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "sst48zvd",
+      "movieId": 18,
+      "theatreId": 5,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "Hindi",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "sppvaldx",
+      "movieId": 19,
+      "theatreId": 3,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "Hindi",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "s0ewp2ui",
+      "movieId": 19,
+      "theatreId": 5,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "Hindi",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "sqak34va",
+      "movieId": 20,
+      "theatreId": 1,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "Hindi",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "suiqqxoj",
+      "movieId": 20,
+      "theatreId": 2,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "Hindi",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "sx3ygrk3",
+      "movieId": 23,
+      "theatreId": 4,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "Tamil/Hindi",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "s4sbqljc",
+      "movieId": 23,
+      "theatreId": 2,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "Tamil/Hindi",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "s7g9k2hx",
+      "movieId": 24,
+      "theatreId": 2,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "Kannada/Hindi",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "swf8kv2h",
+      "movieId": 24,
+      "theatreId": 4,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "Kannada/Hindi",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "snsoymii",
+      "movieId": 25,
+      "theatreId": 5,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "Tamil/Hindi",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "szi02oq0",
+      "movieId": 25,
+      "theatreId": 4,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "Tamil/Hindi",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "s0ukxkwy",
+      "movieId": 26,
+      "theatreId": 5,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "Hindi",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "sb2yaba8",
+      "movieId": 26,
+      "theatreId": 3,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "Hindi",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "sjqke0de",
+      "movieId": 30,
+      "theatreId": 2,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "szni7mv5",
+      "movieId": 30,
+      "theatreId": 1,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "skk3qppm",
+      "movieId": 31,
+      "theatreId": 2,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "svg5z47n",
+      "movieId": 31,
+      "theatreId": 4,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "s0m6agac",
+      "movieId": 32,
+      "theatreId": 5,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "s1h6zjq8",
+      "movieId": 32,
+      "theatreId": 5,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "sxfg5ggw",
+      "movieId": 34,
+      "theatreId": 2,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "sifdvk11",
+      "movieId": 34,
+      "theatreId": 2,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "s2ba34ys",
+      "movieId": 35,
+      "theatreId": 3,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "sf0ra8cf",
+      "movieId": 35,
+      "theatreId": 3,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "st4qs9qm",
+      "movieId": 36,
+      "theatreId": 4,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "s2ej6g48",
+      "movieId": 36,
+      "theatreId": 1,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "sgsc9urc",
+      "movieId": 38,
+      "theatreId": 2,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "sravgadu",
+      "movieId": 38,
+      "theatreId": 2,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "si28tpfl",
+      "movieId": 39,
+      "theatreId": 4,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "seqb4iyi",
+      "movieId": 39,
+      "theatreId": 1,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "sj9dmr5i",
+      "movieId": 40,
+      "theatreId": 3,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "sn4mm1ll",
+      "movieId": 40,
+      "theatreId": 5,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "sohhwz0c",
+      "movieId": 41,
+      "theatreId": 3,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "svnckzgv",
+      "movieId": 41,
+      "theatreId": 4,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "sj0d5cp3",
+      "movieId": 42,
+      "theatreId": 2,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "s8pek8os",
+      "movieId": 42,
+      "theatreId": 1,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "sby2y9du",
+      "movieId": 43,
+      "theatreId": 4,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "sd907gjj",
+      "movieId": 43,
+      "theatreId": 1,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "sx4f769v",
+      "movieId": 44,
+      "theatreId": 1,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "svza636u",
+      "movieId": 44,
+      "theatreId": 1,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "sdsjsvkq",
+      "movieId": 45,
+      "theatreId": 5,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "Hindi/Telugu",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "snzs1f5a",
+      "movieId": 45,
+      "theatreId": 4,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "Hindi/Telugu",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "shfd1tl7",
+      "movieId": 46,
+      "theatreId": 2,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "Hindi",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "su5z5w4n",
+      "movieId": 46,
+      "theatreId": 5,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "Hindi",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "snj86wf2",
+      "movieId": 47,
+      "theatreId": 3,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "Telugu/Hindi",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "s7ie075f",
+      "movieId": 47,
+      "theatreId": 2,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "Telugu/Hindi",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "scokh7xe",
+      "movieId": 48,
+      "theatreId": 2,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "Telugu/Hindi",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "skuqhr7b",
+      "movieId": 48,
+      "theatreId": 1,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "Telugu/Hindi",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "suobs0jt",
+      "movieId": 49,
+      "theatreId": 5,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "sizrrt24",
+      "movieId": 49,
+      "theatreId": 4,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "stw44wtx",
+      "movieId": 50,
+      "theatreId": 4,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "sjie4g5n",
+      "movieId": 50,
+      "theatreId": 5,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "sumiq235",
+      "movieId": 51,
+      "theatreId": 3,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "sol0m5hh",
+      "movieId": 51,
+      "theatreId": 1,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "English",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "sbxdhuv0",
+      "movieId": 52,
+      "theatreId": 1,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "Hindi",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "spr3wajw",
+      "movieId": 52,
+      "theatreId": 3,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "Hindi",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "swax65ch",
+      "movieId": 53,
+      "theatreId": 1,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "Hindi",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "skuoonxa",
+      "movieId": 53,
+      "theatreId": 4,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "Hindi",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "sawychhy",
+      "movieId": 54,
+      "theatreId": 1,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "Telugu/Hindi",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "sdi7pbf5",
+      "movieId": 54,
+      "theatreId": 1,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "Telugu/Hindi",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "styhrb0s",
+      "movieId": 55,
+      "theatreId": 2,
+      "date": "2026-07-22",
+      "time": "02:00 PM",
+      "format": "2D",
+      "language": "Hindi",
+      "priceMultiplier": 1,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
+    },
+    {
+      "id": "s9hzyjn0",
+      "movieId": 55,
+      "theatreId": 4,
+      "date": "2026-07-22",
+      "time": "07:30 PM",
+      "format": "2D",
+      "language": "Hindi",
+      "priceMultiplier": 1.2,
+      "totalSeats": 100,
+      "availableSeats": 100,
+      "bookedSeats": []
     }
   ],
   "bookings": [],

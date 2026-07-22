@@ -20,6 +20,11 @@
         {{ movie.rating }}
       </div>
 
+      <!-- Language badge -->
+      <div class="card-language-badge">
+        {{ shortLanguage(movie.language) }}
+      </div>
+
       <!-- Status badge -->
       <div v-if="movie.status === 'coming_soon'" class="card-status">
         Coming Soon
@@ -87,7 +92,7 @@ function shortLanguage(lang) {
 }
 
 function handleImageError(e) {
-  const title = encodeURIComponent(props.movie?.title || 'Movie')
+  const title = (props.movie?.title || 'Movie').replace(/\s+/g, '+')
   e.target.src = `https://placehold.co/500x750/0d0820/e50914?text=${title}&font=roboto`
 }
 </script>
@@ -148,6 +153,22 @@ function handleImageError(e) {
   font-weight: 700;
   color: #fbbf24;
   border: 1px solid rgba(251,191,36,0.3);
+}
+
+/* Language badge */
+.card-language-badge {
+  position: absolute;
+  bottom: 10px; left: 10px;
+  padding: 3px 10px;
+  background: rgba(0, 153, 187, 0.85);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-full);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid rgba(0, 212, 255, 0.3);
 }
 
 /* Status */

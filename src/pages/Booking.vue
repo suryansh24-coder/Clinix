@@ -1,7 +1,7 @@
 <!-- ============================================================
-     Booking.vue — Seat Selection & Booking Page (Protected)
-     Interactive seat map, live price calculation, booking
-     summary, and confirmation. Uses JSON Server + LocalStorage.
+     Booking.vue — PVR-Style Seat Selection & Booking Page
+     Professional tiered seat layout with color-coded availability.
+     Green = Available, Red = Reserved/Booked, Cyan = Your Selection.
      CRUD: creates booking record, updates show available seats.
      ============================================================ -->
 <template>
@@ -54,56 +54,113 @@
             </div>
           </div>
 
-          <!-- ── Seat Map ── -->
+          <!-- ── PVR-Style Seat Map ── -->
           <div class="seat-map-section glass-card">
-            <div class="screen-label">
-              <div class="screen-line"></div>
-              <span>SCREEN</span>
-              <div class="screen-line"></div>
+
+            <!-- Screen Indicator -->
+            <div class="screen-container">
+              <div class="screen-curve">
+                <span class="screen-text">SCREEN THIS WAY</span>
+              </div>
             </div>
 
             <!-- Seat Legend -->
             <div class="seat-legend">
               <div class="legend-item">
-                <div class="seat-demo seat-available"></div>
+                <div class="seat-demo legend-available"></div>
                 <span>Available</span>
               </div>
               <div class="legend-item">
-                <div class="seat-demo seat-selected-demo"></div>
+                <div class="seat-demo legend-selected"></div>
                 <span>Selected</span>
               </div>
               <div class="legend-item">
-                <div class="seat-demo seat-booked-demo"></div>
-                <span>Booked</span>
+                <div class="seat-demo legend-booked"></div>
+                <span>Reserved</span>
               </div>
             </div>
 
-            <!-- Seat Grid -->
-            <div class="seat-grid">
-              <div v-for="row in seatRows" :key="row" class="seat-row">
-                <!-- Row Label -->
-                <span class="row-label">{{ row }}</span>
+            <!-- ── Tiered Seat Grid ── -->
+            <div class="seat-tiers">
 
-                <!-- Seats in Row -->
-                <button
-                  v-for="col in COLS"
-                  :key="`${row}${col}`"
-                  class="seat"
-                  :class="{
-                    'seat-booked':   isBooked(`${row}${col}`),
-                    'seat-selected': isSeatSelected(`${row}${col}`) && !isBooked(`${row}${col}`)
-                  }"
-                  :disabled="isBooked(`${row}${col}`)"
-                  @click="toggleSeat(`${row}${col}`)"
-                  :title="`Seat ${row}${col}`"
-                  :aria-label="`Seat ${row}${col} ${isBooked(`${row}${col}`) ? 'booked' : isSeatSelected(`${row}${col}`) ? 'selected' : 'available'}`"
-                >
-                  {{ col }}
-                </button>
-
-                <!-- Row Label (right) -->
-                <span class="row-label">{{ row }}</span>
+              <!-- PRIME Tier -->
+              <div class="seat-tier">
+                <div class="tier-header">
+                  <span class="tier-price">Rs.280 PRIME</span>
+                </div>
+                <div class="tier-rows">
+                  <div v-for="row in primeRows" :key="row" class="seat-row">
+                    <span class="row-label">{{ row }}</span>
+                    <div class="row-seats">
+                      <template v-for="col in COLS" :key="`${row}${col}`">
+                        <div v-if="col === 16 || col === 6" class="aisle-gap"></div>
+                        <button
+                          class="seat"
+                          :class="getSeatClass(`${row}${col}`)"
+                          :disabled="isBooked(`${row}${col}`)"
+                          @click="toggleSeat(`${row}${col}`)"
+                          :title="`Seat ${row}${col}`"
+                        >
+                          {{ col }}
+                        </button>
+                      </template>
+                    </div>
+                  </div>
+                </div>
               </div>
+
+              <!-- PICTURE PERFECT Tier -->
+              <div class="seat-tier">
+                <div class="tier-header">
+                  <span class="tier-price">Rs.520 PICTURE PERFECT</span>
+                </div>
+                <div class="tier-rows">
+                  <div v-for="row in picturePerfectRows" :key="row" class="seat-row">
+                    <span class="row-label">{{ row }}</span>
+                    <div class="row-seats">
+                      <template v-for="col in COLS" :key="`${row}${col}`">
+                        <div v-if="col === 16 || col === 6" class="aisle-gap"></div>
+                        <button
+                          class="seat"
+                          :class="getSeatClass(`${row}${col}`)"
+                          :disabled="isBooked(`${row}${col}`)"
+                          @click="toggleSeat(`${row}${col}`)"
+                          :title="`Seat ${row}${col}`"
+                        >
+                          {{ col }}
+                        </button>
+                      </template>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CLASSIC Tier -->
+              <div class="seat-tier">
+                <div class="tier-header">
+                  <span class="tier-price">Rs.250 CLASSIC</span>
+                </div>
+                <div class="tier-rows">
+                  <div v-for="row in classicRows" :key="row" class="seat-row">
+                    <span class="row-label">{{ row }}</span>
+                    <div class="row-seats">
+                      <template v-for="col in COLS" :key="`${row}${col}`">
+                        <div v-if="col === 16 || col === 6" class="aisle-gap"></div>
+                        <button
+                          class="seat"
+                          :class="getSeatClass(`${row}${col}`)"
+                          :disabled="isBooked(`${row}${col}`)"
+                          @click="toggleSeat(`${row}${col}`)"
+                          :title="`Seat ${row}${col}`"
+                        >
+                          {{ col }}
+                        </button>
+                      </template>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
 
             <!-- Max Seats Warning -->
@@ -113,10 +170,40 @@
           </div>
         </main>
 
-        <!-- ── Right: Booking Summary ── -->
+        <!-- ── Right: Booking Summary Sidebar ── -->
         <aside class="booking-sidebar">
           <div class="summary-card glass-card">
-            <h3 class="summary-card-title">Booking Summary</h3>
+            <h3 class="summary-card-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10V6a2 2 0 00-2-2H4a2 2 0 00-2 2v4a2 2 0 110 4v4a2 2 0 002 2h16a2 2 0 002-2v-4a2 2 0 110-4z"/></svg>
+              Booking Summary
+            </h3>
+
+            <!-- Movie Mini Info -->
+            <div class="summary-movie-info">
+              <img :src="movie.poster" :alt="movie.title" class="summary-mini-poster" />
+              <div>
+                <p class="summary-movie-name">{{ movie.title }}</p>
+                <p class="summary-movie-meta">{{ movie.language }} • {{ movie.certificate }}</p>
+              </div>
+            </div>
+
+            <!-- Show Info -->
+            <div class="summary-show-info">
+              <div class="show-info-item">
+                <span class="show-info-icon">🏛️</span>
+                <span>{{ theatreName }}</span>
+              </div>
+              <div class="show-info-item">
+                <span class="show-info-icon">📅</span>
+                <span>{{ formatDate(show.date) }}</span>
+              </div>
+              <div class="show-info-item">
+                <span class="show-info-icon">🕐</span>
+                <span>{{ show.time }}</span>
+              </div>
+            </div>
+
+            <hr class="divider" />
 
             <!-- Selected Seats -->
             <div class="summary-row">
@@ -134,17 +221,14 @@
             <hr class="divider" />
 
             <!-- Price Breakdown -->
-            <div class="summary-row">
-              <span class="sr-label">Price per seat</span>
-              <span class="sr-value">₹{{ show.price }}</span>
+            <div class="price-breakdown">
+              <div class="summary-row" v-for="tier in selectedTierBreakdown" :key="tier.name">
+                <span class="sr-label">{{ tier.name }} ({{ tier.count }} × ₹{{ tier.unitPrice }})</span>
+                <span class="sr-value">₹{{ tier.total }}</span>
+              </div>
             </div>
 
-            <div class="summary-row">
-              <span class="sr-label">Seats</span>
-              <span class="sr-value">× {{ selectedSeats.length }}</span>
-            </div>
-
-            <div class="summary-row">
+            <div class="summary-row" v-if="selectedSeats.length">
               <span class="sr-label">Convenience Fee</span>
               <span class="sr-value">₹{{ convenienceFee }}</span>
             </div>
@@ -152,29 +236,28 @@
             <hr class="divider" />
 
             <div class="summary-row total-row">
-              <span class="total-label">Total</span>
+              <span class="total-label">Total Amount</span>
               <span class="total-value">₹{{ grandTotal }}</span>
             </div>
 
             <!-- Available Seat Count -->
             <div class="availability-bar">
               <span class="avail-label" :class="availClass">
-                {{ show.availableSeats }} seats available
+                {{ show.availableSeats }} / {{ show.totalSeats }} seats available
               </span>
             </div>
 
-            <!-- Confirm Booking Button -->
+            <!-- Pay Button (Opens Payment Modal) -->
             <button
               class="btn btn-primary btn-lg w-full confirm-btn"
-              :disabled="!selectedSeats.length || bookingLoading"
-              @click="confirmBooking"
+              :disabled="!selectedSeats.length"
+              @click="openPaymentModal"
             >
-              <span v-if="bookingLoading" class="spinner"></span>
-              {{ bookingLoading ? 'Confirming...' : `Confirm Booking (₹${grandTotal})` }}
+              {{ selectedSeats.length ? `Proceed to Pay ₹${grandTotal}` : 'Select Seats to Continue' }}
             </button>
 
             <p class="booking-note">
-              🔒 Your booking is secured. Cancellation available from My Bookings.
+              🔒 Booking is secured with end-to-end encryption. Cancellation available from My Bookings.
             </p>
           </div>
         </aside>
@@ -182,14 +265,68 @@
 
     </div>
 
+    <!-- ── Payment Modal ── -->
+    <teleport to="body">
+      <transition name="modal">
+        <div v-if="showPaymentModal" class="success-overlay" @click.self="showPaymentModal = false">
+          <div class="payment-modal glass-card animate-scale-in">
+            <h2 class="payment-title">Payment Options</h2>
+            <div class="payment-amount">Amount Payable: <span>₹{{ grandTotal }}</span></div>
+            
+            <div class="payment-methods">
+              <label class="payment-option" :class="{ 'active': paymentMethod === 'upi' }">
+                <input type="radio" v-model="paymentMethod" value="upi" />
+                <span class="pay-icon">📱</span>
+                <span class="pay-text">UPI / QR (GPay, PhonePe, Paytm)</span>
+              </label>
+              
+              <label class="payment-option" :class="{ 'active': paymentMethod === 'card' }">
+                <input type="radio" v-model="paymentMethod" value="card" />
+                <span class="pay-icon">💳</span>
+                <span class="pay-text">Credit / Debit Card</span>
+              </label>
+              
+              <label class="payment-option" :class="{ 'active': paymentMethod === 'netbanking' }">
+                <input type="radio" v-model="paymentMethod" value="netbanking" />
+                <span class="pay-icon">🏦</span>
+                <span class="pay-text">Net Banking</span>
+              </label>
+            </div>
+
+            <!-- Card Input (Mock) if card is selected -->
+            <div v-if="paymentMethod === 'card'" class="mock-card-input animate-fade-in-up">
+              <input type="text" placeholder="Card Number (e.g. 4111...)" class="pay-input" />
+              <div class="pay-input-row">
+                <input type="text" placeholder="MM/YY" class="pay-input" />
+                <input type="text" placeholder="CVV" class="pay-input" />
+              </div>
+            </div>
+
+            <div class="payment-actions">
+              <button class="btn btn-ghost" :disabled="bookingLoading" @click="showPaymentModal = false">Cancel</button>
+              <button class="btn btn-primary" :disabled="!paymentMethod || bookingLoading" @click="confirmBooking">
+                <span v-if="bookingLoading" class="spinner"></span>
+                {{ bookingLoading ? 'Processing...' : `Pay ₹${grandTotal}` }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </teleport>
+
     <!-- ── Success Modal ── -->
     <teleport to="body">
       <transition name="modal">
         <div v-if="bookingSuccess" class="success-overlay" @click.self="goToBookings">
           <div class="success-modal glass-card animate-scale-in">
-            <div class="success-icon">🎉</div>
+            <div class="success-check">
+              <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                <circle cx="32" cy="32" r="30" stroke="#22c55e" stroke-width="3" fill="rgba(34,197,94,0.1)"/>
+                <path d="M20 33L28 41L44 23" stroke="#22c55e" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" class="check-path"/>
+              </svg>
+            </div>
             <h2 class="success-title">Booking Confirmed!</h2>
-            <p class="success-subtitle">Your tickets are booked. Have a great time!</p>
+            <p class="success-subtitle">Your tickets have been booked successfully. Enjoy your movie!</p>
 
             <div class="success-details">
               <div class="sd-row">
@@ -197,16 +334,24 @@
                 <span>{{ movie?.title }}</span>
               </div>
               <div class="sd-row">
+                <span>Theatre</span>
+                <span>{{ theatreName }}</span>
+              </div>
+              <div class="sd-row">
+                <span>Showtime</span>
+                <span>{{ show?.time }} • {{ formatDate(show?.date) }}</span>
+              </div>
+              <div class="sd-row">
                 <span>Seats</span>
                 <span>{{ confirmedBooking?.seatNumbers?.join(', ') }}</span>
               </div>
-              <div class="sd-row">
-                <span>Total</span>
+              <div class="sd-row sd-row-total">
+                <span>Total Paid ({{ paymentMethod.toUpperCase() }})</span>
                 <span>₹{{ confirmedBooking?.totalPrice }}</span>
               </div>
               <div class="sd-row">
                 <span>Booking ID</span>
-                <span>#{{ confirmedBooking?.id }}</span>
+                <span class="booking-id-tag">#{{ confirmedBooking?.id }}</span>
               </div>
             </div>
 
@@ -248,17 +393,65 @@ const pageError       = ref('')
 const bookingLoading  = ref(false)
 const bookingSuccess  = ref(false)
 const confirmedBooking = ref(null)
+const showPaymentModal = ref(false)
+const paymentMethod    = ref('upi')
 
 // ── Seat Layout Configuration ────────────────────────────
-const ROWS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
-const COLS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+// PVR usually numbers from right to left.
+const COLS = Array.from({length: 22}, (_, i) => 22 - i)
 
-const seatRows = computed(() => ROWS)
+// PVR rows go from A to P (bottom up), let's render them P down to A
+const primeRows          = ['P', 'N', 'M', 'L']
+const picturePerfectRows = ['K', 'J', 'H']
+const classicRows        = ['G', 'F', 'E', 'D', 'C', 'B', 'A']
+
+// ── Tier Price Multipliers ────────────────────────────────
+function getTierPrice(tier) {
+  const base = show.value?.price || 0
+  switch (tier) {
+    case 'PRIME':           return Math.round(base * 1.5)
+    case 'PICTURE_PERFECT': return Math.round(base * 1.2)
+    case 'CLASSIC':         return base
+    case 'VALUE':           return Math.round(base * 0.8)
+    default: return base
+  }
+}
+
+function getSeatTier(seatId) {
+  const row = seatId.charAt(0)
+  if (['A', 'B'].includes(row)) return 'PRIME'
+  if (['C', 'D', 'E'].includes(row)) return 'PICTURE_PERFECT'
+  if (['F', 'G', 'H'].includes(row)) return 'CLASSIC'
+  return 'VALUE'
+}
+
+function getSeatPrice(seatId) {
+  return getTierPrice(getSeatTier(seatId))
+}
 
 // ── Price Calculation ─────────────────────────────────────
-const seatTotal      = computed(() => selectedSeats.value.length * (show.value?.price || 0))
+const seatTotal = computed(() => {
+  return selectedSeats.value.reduce((sum, seatId) => sum + getSeatPrice(seatId), 0)
+})
+
 const convenienceFee = computed(() => selectedSeats.value.length ? Math.round(seatTotal.value * 0.05) : 0)
 const grandTotal     = computed(() => seatTotal.value + convenienceFee.value)
+
+// ── Tier breakdown for sidebar ────────────────────────────
+const selectedTierBreakdown = computed(() => {
+  const tiers = {}
+  selectedSeats.value.forEach(seatId => {
+    const tier = getSeatTier(seatId)
+    const price = getTierPrice(tier)
+    const name = tier.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase()).replace('Picture Perfect', 'Picture Perfect')
+    if (!tiers[tier]) {
+      tiers[tier] = { name: tier === 'PICTURE_PERFECT' ? 'Picture Perfect' : tier.charAt(0) + tier.slice(1).toLowerCase(), count: 0, unitPrice: price, total: 0 }
+    }
+    tiers[tier].count++
+    tiers[tier].total += price
+  })
+  return Object.values(tiers)
+})
 
 // ── Seat Availability Color ───────────────────────────────
 const availClass = computed(() => {
@@ -269,9 +462,21 @@ const availClass = computed(() => {
   return 'avail-high'
 })
 
-// ── Check if a seat is already booked (from server) ──────
+// ── Seat state helpers ───────────────────────────────────
 function isBooked(seatId) {
   return bookedSeatNums.value.includes(seatId)
+}
+
+function getSeatClass(seatId) {
+  if (isBooked(seatId)) return 'seat-booked'
+  if (isSeatSelected(seatId)) return 'seat-selected'
+  return 'seat-available'
+}
+
+function getSeatStatus(seatId) {
+  if (isBooked(seatId)) return 'reserved'
+  if (isSeatSelected(seatId)) return 'selected'
+  return 'available'
 }
 
 // ── Lifecycle: load all data ──────────────────────────────
@@ -302,6 +507,11 @@ onMounted(async () => {
 })
 
 // ── Confirm and Create Booking ────────────────────────────
+function openPaymentModal() {
+  if (!selectedSeats.value.length) return
+  showPaymentModal.value = true
+}
+
 async function confirmBooking() {
   if (!selectedSeats.value.length) return
   bookingLoading.value = true
@@ -327,6 +537,7 @@ async function confirmBooking() {
     bookedSeatNums.value = [...bookedSeatNums.value, ...selectedSeats.value]
     clearSeats()
 
+    showPaymentModal.value = false
     bookingSuccess.value = true
     showToast?.({ type: 'success', title: 'Booking Confirmed!', message: 'Enjoy your movie! 🎬' })
   } catch (err) {
@@ -388,7 +599,7 @@ function formatDate(d) {
 /* ── Layout ──────────────────────────────────────────────── */
 .booking-layout {
   display: grid;
-  grid-template-columns: 1fr 320px;
+  grid-template-columns: 1fr 340px;
   gap: var(--space-xl);
   align-items: start;
 }
@@ -399,15 +610,17 @@ function formatDate(d) {
 .movie-summary {
   display: flex;
   gap: var(--space-xl);
-  padding: var(--space-xl);
+  padding: var(--space-lg);
   align-items: center;
 }
 
 .summary-poster {
-  width: 80px;
+  width: 72px;
+  height: 100px;
   border-radius: var(--radius-md);
   object-fit: cover;
   flex-shrink: 0;
+  box-shadow: var(--shadow-md);
 }
 
 .summary-title {
@@ -431,31 +644,33 @@ function formatDate(d) {
   color: var(--text-secondary);
 }
 
-/* ── Seat Map ────────────────────────────────────────────── */
+/* ── Seat Map Styling ────────────────────────────────────── */
 .seat-map-section {
-  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-2xl) 0;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow-x: auto;
 }
 
 /* Screen */
-.screen-label {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  margin-bottom: var(--space-xl);
+.screen-container { width: 80%; margin: 0 auto 3rem; text-align: center; }
+.screen-curve {
+  height: 40px;
+  border-top: 3px solid var(--color-accent);
+  border-radius: 0 0 50% 50% / 0 0 20px 20px;
+  position: relative;
 }
 
-.screen-line {
-  flex: 1;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
-  border-radius: 2px;
-}
-
-.screen-label span {
-  font-size: var(--font-size-xs);
+.screen-text {
+  font-size: 0.65rem;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.25em;
   color: var(--color-accent);
+  text-transform: uppercase;
 }
 
 /* Legend */
@@ -476,87 +691,162 @@ function formatDate(d) {
 }
 
 .seat-demo {
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
-  border: 1px solid;
+  width: 22px;
+  height: 22px;
+  border-radius: 5px 5px 2px 2px;
 }
 
-.seat-available       { background: var(--bg-glass); border-color: var(--border-color); }
-.seat-selected-demo   { background: rgba(0,212,255,0.3); border-color: var(--color-accent); }
-.seat-booked-demo     { background: rgba(229,9,20,0.15); border-color: rgba(229,9,20,0.3); }
+.legend-available {
+  background: #fff;
+  border: 1px solid #4ade80;
+}
+.legend-selected {
+  background: #4ade80;
+  border: 1px solid #4ade80;
+}
+.legend-booked {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
 
-/* Seat Grid */
-.seat-grid {
+/* ── Seat Tiers ──────────────────────────────────────────── */
+.seat-tiers {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  overflow-x: auto;
-  padding-bottom: var(--space-md);
+  gap: var(--space-lg);
 }
 
-.seat-row {
+.seat-tier {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.tier-header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background: var(--bg-glass);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tier-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+
+.tier-prime {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(168, 85, 247, 0.05));
+  color: var(--color-neon-purple);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+.tier-picture-perfect {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(59, 130, 246, 0.05));
+  color: #3b82f6;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+.tier-classic {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(34, 197, 94, 0.05));
+  color: var(--color-neon-green);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+.tier-value {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(245, 158, 11, 0.05));
+  color: var(--color-gold);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.tier-price {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.tier-rows {
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
   gap: 6px;
 }
 
+/* Seat Row */
+.seat-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: center;
+}
+
 .row-label {
-  width: 24px;
+  width: 22px;
   text-align: center;
-  font-size: var(--font-size-xs);
+  font-size: 0.7rem;
   color: var(--text-muted);
-  font-weight: 600;
+  font-weight: 700;
   flex-shrink: 0;
 }
 
-/* Individual Seat Button */
+.row-seats {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.aisle-gap {
+  width: 18px;
+  flex-shrink: 0;
+}
+
+/* ── Individual Seat Button ──────────────────────────────── */
 .seat {
-  width: 34px;
-  height: 30px;
-  border-radius: 4px 4px 0 0;
-  border: 1px solid var(--border-color);
-  background: var(--bg-glass);
-  color: var(--text-secondary);
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  border: 1px solid #4ade80;
+  background: #fff;
+  color: #4ade80;
   font-size: 0.6rem;
-  font-weight: 600;
-  transition: all var(--transition-fast);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
   flex-shrink: 0;
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 }
 
-.seat::after {
-  content: '';
-  position: absolute;
-  bottom: -3px;
-  left: 2px;
-  right: 2px;
-  height: 3px;
-  background: inherit;
-  border-radius: 0 0 3px 3px;
-  border: 1px solid var(--border-color);
-  border-top: none;
+/* Available — GREEN OUTLINE */
+.seat.seat-available {
+  border: 1px solid #4ade80;
+  background: #fff;
+  color: #4ade80;
+}
+.seat.seat-available:hover {
+  background: #dcfce7;
+  border-color: #22c55e;
 }
 
-.seat:hover:not(:disabled) {
-  background: rgba(0,212,255,0.15);
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-  transform: scale(1.1);
-}
-
+/* Selected — SOLID GREEN */
 .seat.seat-selected {
-  background: rgba(0,212,255,0.25);
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-  box-shadow: 0 0 8px rgba(0,212,255,0.3);
+  background: #4ade80 !important;
+  color: #fff !important;
+  border: 1px solid #4ade80 !important;
+  transform: scale(1.08);
 }
 
+/* Booked/Reserved — GREY OUTLINE */
 .seat.seat-booked {
-  background: rgba(229,9,20,0.1);
-  border-color: rgba(229,9,20,0.25);
-  color: rgba(229,9,20,0.4);
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  color: transparent;
   cursor: not-allowed;
+  opacity: 0.8;
 }
 
 .max-seats-note {
@@ -564,79 +854,152 @@ function formatDate(d) {
   color: var(--color-gold);
   font-size: var(--font-size-xs);
   margin-top: var(--space-md);
+  font-weight: 600;
 }
 
 /* ── Booking Sidebar ─────────────────────────────────────── */
 .booking-sidebar { position: sticky; top: 88px; }
 
-.summary-card { padding: var(--space-xl); }
+.summary-card { padding: var(--space-lg); }
 
 .summary-card-title {
   font-family: var(--font-display);
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-lg);
   font-weight: 700;
   margin-bottom: var(--space-lg);
-  padding-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
   border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--text-primary);
 }
 
+/* Movie mini info in sidebar */
+.summary-movie-info {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+  margin-bottom: var(--space-md);
+}
+
+.summary-mini-poster {
+  width: 48px;
+  height: 68px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.summary-movie-name {
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin: 0;
+}
+
+.summary-movie-meta {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  margin: 2px 0 0 0;
+}
+
+/* Show info */
+.summary-show-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-glass);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+}
+
+.show-info-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+.show-info-icon { font-size: 0.85rem; }
+
+/* Summary rows */
 .summary-row {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: var(--space-md);
   font-size: var(--font-size-sm);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 
-.sr-label { color: var(--text-muted); }
-.sr-value { font-weight: 600; }
+.sr-label { color: var(--text-muted); font-size: var(--font-size-xs); }
+.sr-value { font-weight: 600; font-size: var(--font-size-xs); }
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: var(--space-sm) 0;
+}
 
 /* Selected Seats Display */
 .selected-seats-display {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 4px;
   justify-content: flex-end;
   max-width: 60%;
 }
 
 .seat-pill {
-  padding: 2px 8px;
-  background: rgba(0,212,255,0.1);
-  border: 1px solid rgba(0,212,255,0.25);
+  padding: 2px 7px;
+  background: rgba(0,212,255,0.12);
+  border: 1px solid rgba(0,212,255,0.3);
   border-radius: var(--radius-full);
-  font-size: var(--font-size-xs);
+  font-size: 0.65rem;
   color: var(--color-accent);
-  font-weight: 600;
+  font-weight: 700;
 }
 
-.no-seats { color: var(--text-muted); font-style: italic; }
+.no-seats { color: var(--text-muted); font-style: italic; font-size: var(--font-size-xs); }
 
-.total-row { margin-top: var(--space-md); }
-.total-label { font-family: var(--font-display); font-size: var(--font-size-lg); font-weight: 700; }
+.price-breakdown {
+  margin-bottom: var(--space-xs);
+}
+
+.total-row { margin-top: var(--space-xs); }
+.total-label { font-family: var(--font-display); font-size: var(--font-size-base); font-weight: 800; }
 .total-value {
   font-family: var(--font-display);
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-xl);
   font-weight: 800;
   color: var(--color-neon-green);
 }
 
-.availability-bar { margin: var(--space-md) 0; font-size: var(--font-size-xs); }
+.availability-bar { margin: var(--space-sm) 0; font-size: var(--font-size-xs); }
 .avail-label { font-weight: 600; }
 .avail-high   { color: var(--color-neon-green); }
 .avail-medium { color: var(--color-gold); }
 .avail-low    { color: #ff8800; }
 .avail-none   { color: var(--color-primary); }
 
-.confirm-btn { margin-top: var(--space-md); }
+.confirm-btn {
+  margin-top: var(--space-md);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  font-size: var(--font-size-sm);
+}
 
 .booking-note {
-  font-size: var(--font-size-xs);
+  font-size: 0.65rem;
   color: var(--text-muted);
   text-align: center;
-  margin-top: var(--space-md);
-  line-height: 1.6;
+  margin-top: var(--space-sm);
+  line-height: 1.5;
 }
 
 .spinner {
@@ -647,6 +1010,89 @@ function formatDate(d) {
   border-radius: 50%;
   animation: spin 0.7s linear infinite;
   display: inline-block;
+  margin-right: 6px;
+}
+
+/* ── Payment Modal ───────────────────────────────────────── */
+.payment-modal {
+  max-width: 400px;
+  width: 100%;
+  padding: var(--space-xl);
+}
+.payment-title {
+  font-family: var(--font-display);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  color: var(--text-primary);
+  text-align: center;
+}
+.payment-amount {
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border-color);
+}
+.payment-amount span {
+  font-weight: 800;
+  font-size: var(--font-size-xl);
+  color: var(--color-neon-green);
+  display: block;
+  margin-top: 4px;
+}
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  background: var(--bg-glass);
+  transition: all 0.2s;
+}
+.payment-option:hover {
+  background: rgba(0, 153, 187, 0.05);
+  border-color: rgba(0, 153, 187, 0.3);
+}
+.payment-option.active {
+  border-color: var(--color-accent);
+  background: rgba(0, 153, 187, 0.1);
+}
+.payment-option input { display: none; }
+.pay-icon { font-size: 1.25rem; }
+.pay-text { font-size: var(--font-size-sm); font-weight: 600; color: var(--text-primary); }
+
+.mock-card-input {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+.pay-input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+}
+.pay-input:focus { outline: none; border-color: var(--color-accent); }
+.pay-input-row { display: flex; gap: var(--space-sm); }
+
+.payment-actions {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: flex-end;
 }
 
 /* ── Success Modal ───────────────────────────────────────── */
@@ -654,7 +1100,7 @@ function formatDate(d) {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.8);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -663,21 +1109,29 @@ function formatDate(d) {
 }
 
 .success-modal {
-  max-width: 500px;
+  max-width: 480px;
   width: 100%;
   padding: var(--space-2xl);
   text-align: center;
 }
 
-.success-icon {
-  font-size: 4rem;
+.success-check {
   margin-bottom: var(--space-lg);
-  animation: float 2s ease-in-out infinite;
+}
+
+.check-path {
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  animation: drawCheck 0.6s ease 0.3s forwards;
+}
+
+@keyframes drawCheck {
+  to { stroke-dashoffset: 0; }
 }
 
 .success-title {
   font-family: var(--font-display);
-  font-size: var(--font-size-3xl);
+  font-size: var(--font-size-2xl);
   font-weight: 800;
   margin-bottom: var(--space-sm);
   background: var(--gradient-accent);
@@ -689,21 +1143,23 @@ function formatDate(d) {
 .success-subtitle {
   color: var(--text-secondary);
   margin-bottom: var(--space-xl);
+  font-size: var(--font-size-sm);
 }
 
 .success-details {
   background: var(--bg-glass);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: var(--space-lg);
+  padding: var(--space-md);
   margin-bottom: var(--space-xl);
+  text-align: left;
 }
 
 .sd-row {
   display: flex;
   justify-content: space-between;
-  font-size: var(--font-size-sm);
-  padding: var(--space-sm) 0;
+  font-size: var(--font-size-xs);
+  padding: 6px 0;
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
@@ -711,15 +1167,52 @@ function formatDate(d) {
 .sd-row span:first-child { color: var(--text-muted); }
 .sd-row span:last-child  { font-weight: 600; }
 
+.sd-row-total {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  padding-top: 8px;
+}
+.sd-row-total span:last-child { color: var(--color-neon-green); }
+
+.booking-id-tag {
+  background: var(--bg-glass);
+  padding: 1px 8px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+  font-family: monospace;
+}
+
 .success-actions { display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap; }
 
 /* ── Responsive ──────────────────────────────────────────── */
-@media (max-width: 1024px) {
-  .booking-layout { grid-template-columns: 1fr; }
-  .booking-sidebar { position: static; }
+@media (max-width: 1200px) {
+  .booking-layout { grid-template-columns: 1fr 300px; }
+  .seat { width: 28px; height: 25px; font-size: 0.55rem; }
+  .aisle-gap { width: 14px; }
 }
 
-@media (max-width: 600px) {
-  .seat { width: 28px; height: 24px; font-size: 0.5rem; }
+@media (max-width: 1024px) {
+  .booking-layout {
+    grid-template-columns: 1fr;
+  }
+  .booking-sidebar {
+    position: static;
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .seat { width: 26px; height: 23px; font-size: 0.5rem; }
+  .aisle-gap { width: 10px; }
+  .row-label { width: 18px; font-size: 0.6rem; }
+  .tier-rows { padding: 8px 4px; }
+}
+
+@media (max-width: 480px) {
+  .seat { width: 22px; height: 20px; font-size: 0.45rem; }
+  .aisle-gap { width: 8px; }
+  .row-label { width: 14px; font-size: 0.55rem; }
+  .booking-page { padding: var(--space-md) 0 var(--space-xl); }
+  .seat-map-section { padding: var(--space-md); }
 }
 </style>

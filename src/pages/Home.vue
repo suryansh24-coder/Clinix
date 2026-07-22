@@ -1,398 +1,356 @@
-<!-- ============================================================
-     Home.vue — Landing Page
-     Hero carousel, trending movies, now showing, coming soon,
-     category quick-filters with active state, scroll animations.
-     ============================================================ -->
 <template>
   <div class="home-page">
 
     <!-- ── Hero Carousel ── -->
     <HeroCarousel :movies="trendingMovies" />
 
-    <!-- ── Quick Category Filters ── -->
+    <!-- ── Genre Quick Filters ── -->
     <section class="categories-section container">
-      <div class="categories-row">
-        <button
+      <div class="categories-scroll">
+        <router-link
           v-for="cat in categories"
           :key="cat.label"
+          :to="{ path: '/movies', query: cat.query }"
           class="cat-chip"
-          :class="{ 'cat-chip-active': activeCategory === cat.label }"
-          @click="handleCategory(cat)"
+          :class="{ 'cat-chip--active': isActiveCategory(cat) }"
         >
           <span class="cat-icon">{{ cat.icon }}</span>
-          {{ cat.label }}
-        </button>
+          <span>{{ cat.label }}</span>
+        </router-link>
       </div>
     </section>
 
-    <!-- ── Trending Movies ── -->
-    <section class="section container scroll-reveal" ref="trendingRef">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title heading-display">
-            🔥 <span class="text-gradient">Trending</span> Now
-          </h2>
-          <p class="section-subtitle">Top rated movies this week</p>
-        </div>
-        <router-link to="/movies" class="btn btn-outline btn-sm view-all-btn">View All →</router-link>
+    <!-- ── City Indicator ── -->
+    <div class="city-indicator container" v-if="selectedCity">
+      <div class="city-indicator-inner">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Showing movies available in <strong>{{ selectedCity }}</strong></span>
       </div>
-
-      <!-- Skeleton Loader -->
-      <div v-if="isLoading" class="grid grid-5">
-        <div v-for="n in 5" :key="n" class="skeleton skeleton-card"></div>
-      </div>
-
-      <!-- Error State -->
-      <div v-else-if="error" class="error-state glass-card">
-        <span class="error-icon">⚠️</span>
-        <p>{{ error }}</p>
-        <button class="btn btn-accent btn-sm" @click="fetchMovies">Retry</button>
-      </div>
-
-      <!-- Movie Grid -->
-      <div v-else class="grid grid-5">
-        <MovieCard
-          v-for="(movie, i) in trendingMovies.slice(0, 5)"
-          :key="movie.id"
-          :movie="movie"
-          class="animate-fade-in-up"
-          :class="`delay-${i + 1}`"
-        />
-      </div>
-    </section>
+    </div>
 
     <!-- ── Now Showing ── -->
-    <section class="section container scroll-reveal" ref="nowShowingRef">
+    <section class="section container">
       <div class="section-header">
         <div>
           <h2 class="section-title heading-display">
             🎬 <span class="text-gradient-primary">Now</span> Showing
           </h2>
-          <p class="section-subtitle">Book tickets for movies currently in theatres</p>
+          <p class="section-subtitle">Book tickets for movies in theatres now</p>
         </div>
-        <router-link to="/movies?status=now_showing" class="btn btn-outline btn-sm view-all-btn">See All →</router-link>
+        <router-link to="/movies?status=now_showing" class="view-all-link">View All →</router-link>
       </div>
 
-      <!-- Skeleton -->
-      <div v-if="isLoading" class="grid grid-4">
-        <div v-for="n in 8" :key="n" class="skeleton skeleton-card"></div>
+      <div v-if="isLoading" class="grid grid-5">
+        <div v-for="n in 5" :key="n" class="skeleton skeleton-card"></div>
       </div>
-
-      <!-- Error -->
       <div v-else-if="error" class="error-state glass-card">
-        <span class="error-icon">⚠️</span>
-        <p>{{ error }}</p>
+        <span>⚠️</span><p>{{ error }}</p>
         <button class="btn btn-accent btn-sm" @click="fetchMovies">Retry</button>
       </div>
-
-      <!-- Empty -->
-      <div v-else-if="nowShowingMovies.length === 0" class="empty-state glass-card">
-        <span>🎭</span>
-        <p>No movies currently showing. Check back soon!</p>
+      <div v-else-if="filteredNowShowing.length === 0" class="empty-state glass-card">
+        <span>🎭</span><p>No movies showing in {{ selectedCity }} right now.</p>
       </div>
-
-      <!-- Grid -->
-      <div v-else class="grid grid-4">
+      <div v-else class="grid grid-5">
         <MovieCard
-          v-for="(movie, i) in nowShowingMovies.slice(0, 8)"
+          v-for="(movie, i) in filteredNowShowing.slice(0, 10)"
           :key="movie.id"
           :movie="movie"
           class="animate-fade-in-up"
-          :class="`delay-${(i % 4) + 1}`"
+          :style="{ animationDelay: `${i * 50}ms` }"
+        />
+      </div>
+    </section>
+
+    <!-- ── Trending / Top Rated ── -->
+    <section class="section container trending-section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title heading-display">
+            🔥 <span class="text-gradient">Top</span> Rated
+          </h2>
+          <p class="section-subtitle">Highest rated films of all time</p>
+        </div>
+        <router-link to="/movies" class="view-all-link">View All →</router-link>
+      </div>
+
+      <div v-if="isLoading" class="grid grid-5">
+        <div v-for="n in 5" :key="n" class="skeleton skeleton-card"></div>
+      </div>
+      <div v-else class="grid grid-5">
+        <MovieCard
+          v-for="(movie, i) in topRated.slice(0, 5)"
+          :key="movie.id"
+          :movie="movie"
+          class="animate-fade-in-up"
+          :style="{ animationDelay: `${i * 60}ms` }"
         />
       </div>
     </section>
 
     <!-- ── Coming Soon ── -->
-    <section class="coming-soon-strip scroll-reveal" v-if="!isLoading && comingSoonMovies.length" ref="comingSoonRef">
+    <section class="coming-soon-strip" v-if="!isLoading && comingSoonMovies.length">
       <div class="container">
         <div class="section-header">
           <div>
             <h2 class="section-title heading-display">
-              🚀 Coming <span class="text-gradient">Soon</span>
+              🗓️ <span class="text-gradient">Coming</span> Soon
             </h2>
-            <p class="section-subtitle">Mark your calendars</p>
+            <p class="section-subtitle">Upcoming releases to watch for</p>
           </div>
-          <router-link to="/movies?status=coming_soon" class="btn btn-outline btn-sm view-all-btn">View All →</router-link>
+          <router-link to="/movies?status=coming_soon" class="view-all-link">View All →</router-link>
         </div>
-        <div class="grid grid-4">
-          <MovieCard
-            v-for="movie in comingSoonMovies.slice(0, 4)"
-            :key="movie.id"
-            :movie="movie"
-            compact
-          />
+
+        <div class="coming-soon-scroll">
+          <div class="coming-soon-track">
+            <MovieCard
+              v-for="movie in comingSoonMovies.slice(0, 8)"
+              :key="movie.id"
+              :movie="movie"
+              class="coming-soon-card"
+            />
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ── Features Row ── -->
-    <section class="features-section container scroll-reveal" ref="featuresRef">
+    <!-- ── Feature Highlights ── -->
+    <section class="features-section container">
       <div class="features-grid">
-        <div class="feature-card glass-card" v-for="(feat, i) in features" :key="feat.title"
-          :style="`animation-delay: ${i * 0.1}s`">
-          <span class="feature-icon">{{ feat.icon }}</span>
-          <h3 class="feature-title">{{ feat.title }}</h3>
-          <p class="feature-desc">{{ feat.desc }}</p>
+        <div class="feature-card glass-card" v-for="f in features" :key="f.title">
+          <span class="feature-icon">{{ f.icon }}</span>
+          <h3 class="feature-title">{{ f.title }}</h3>
+          <p class="feature-desc">{{ f.desc }}</p>
         </div>
       </div>
     </section>
-
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
-import { useRouter } from 'vue-router'
-import { useMovies } from '@/composables/useMovies'
+import { computed, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
 import HeroCarousel from '@/components/movies/HeroCarousel.vue'
-import MovieCard from '@/components/movies/MovieCard.vue'
+import MovieCard    from '@/components/movies/MovieCard.vue'
+import { useMovies }  from '@/composables/useMovies'
+import { useCity }    from '@/composables/useCity'
 
-const router = useRouter()
+const { movies, isLoading, error, fetchMovies, nowShowingMovies, comingSoonMovies, trendingMovies } = useMovies()
+const { selectedCity } = useCity()
+const route = useRoute()
 
-const {
-  isLoading,
-  error,
-  trendingMovies,
-  nowShowingMovies,
-  comingSoonMovies,
-  fetchMovies
-} = useMovies()
-
-// Active category chip
-const activeCategory = ref('')
-
-// Scroll-reveal refs
-const trendingRef   = ref(null)
-const nowShowingRef = ref(null)
-const comingSoonRef = ref(null)
-const featuresRef   = ref(null)
-
-onMounted(() => {
-  fetchMovies()
-  setupScrollReveal()
-})
-
-onUnmounted(() => {
-  if (observer) observer.disconnect()
-})
-
-// ── Intersection Observer for scroll animations ────────────
-let observer = null
-function setupScrollReveal() {
-  observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed')
-          observer.unobserve(entry.target)
-        }
-      })
-    },
-    { threshold: 0.1 }
-  )
-
-  const sections = [trendingRef.value, nowShowingRef.value, comingSoonRef.value, featuresRef.value]
-  sections.forEach(el => el && observer.observe(el))
-}
-
-// ── Category quick-filter shortcuts ─────────────────────
 const categories = [
-  { label: 'Action',   icon: '💥', query: { genre: 'Action' } },
-  { label: 'Drama',    icon: '🎭', query: { genre: 'Drama' } },
-  { label: 'Sci-Fi',   icon: '🚀', query: { genre: 'Sci-Fi' } },
-  { label: 'Romance',  icon: '❤️', query: { genre: 'Romance' } },
-  { label: 'Horror',   icon: '👻', query: { genre: 'Horror' } },
-  { label: 'Comedy',   icon: '😄', query: { genre: 'Comedy' } },
-  { label: 'Hindi',    icon: '🇮🇳', query: { language: 'Hindi' } },
-  { label: 'Tamil',    icon: '🎶', query: { language: 'Tamil' } },
+  { label: 'Action',    icon: '💥', query: { genre: 'Action' } },
+  { label: 'Drama',     icon: '🎭', query: { genre: 'Drama' } },
+  { label: 'Comedy',    icon: '😂', query: { genre: 'Comedy' } },
+  { label: 'Sci-Fi',    icon: '🚀', query: { genre: 'Sci-Fi' } },
+  { label: 'Romance',   icon: '❤️', query: { genre: 'Romance' } },
+  { label: 'Horror',    icon: '👻', query: { genre: 'Horror' } },
+  { label: 'Thriller',  icon: '🔪', query: { genre: 'Thriller' } },
+  { label: 'Biography', icon: '📖', query: { genre: 'Biography' } },
+  { label: 'Animation', icon: '🎨', query: { genre: 'Animation' } },
+  { label: 'Hindi',     icon: '🇮🇳', query: { language: 'Hindi' } },
 ]
 
-function handleCategory(cat) {
-  activeCategory.value = activeCategory.value === cat.label ? '' : cat.label
-  router.push({ name: 'Movies', query: cat.query })
+const features = [
+  { icon: '🎟️', title: 'Easy Booking',     desc: 'Reserve seats in under 60 seconds with our streamlined checkout.' },
+  { icon: '💺', title: 'Seat Selection',   desc: 'Pick your perfect seat from an interactive theatre layout.' },
+  { icon: '🔒', title: 'Secure Sessions',  desc: 'Your bookings and account are protected at all times.' },
+  { icon: '⚡', title: 'Instant Confirm',  desc: 'Get instant booking confirmation with full details.' },
+]
+
+function isActiveCategory(cat) {
+  if (cat.query?.genre)    return route.query.genre === cat.query.genre
+  if (cat.query?.language) return route.query.language === cat.query.language
+  return false
 }
 
-// ── App feature highlights ───────────────────────────────
-const features = [
-  { icon: '🎟️', title: 'Easy Booking',    desc: 'Book tickets in under 60 seconds with our streamlined checkout.' },
-  { icon: '💺', title: 'Seat Selection',  desc: 'Pick your perfect seat from an interactive theatre layout.' },
-  { icon: '🔒', title: 'Secure Sessions', desc: 'Your bookings and account are protected at all times.' },
-  { icon: '⚡', title: 'Instant Confirm', desc: 'Get instant booking confirmation with full details.' },
-]
+// Filter now-showing by selected city
+const filteredNowShowing = computed(() => {
+  if (!selectedCity.value) return nowShowingMovies.value
+  return nowShowingMovies.value.filter(m =>
+    !Array.isArray(m.cities) || m.cities.includes(selectedCity.value)
+  )
+})
+
+// Top rated across all movies
+const topRated = computed(() =>
+  [...movies.value].sort((a, b) => b.rating - a.rating).slice(0, 5)
+)
+
+onMounted(fetchMovies)
 </script>
 
 <style scoped>
-.home-page {
-  padding-bottom: var(--space-4xl);
-}
+.home-page { padding-bottom: var(--space-4xl); }
 
-/* ── Scroll Reveal ───────────────────────────────────────── */
-.scroll-reveal {
-  opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
-}
-.scroll-reveal.revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ── Category Chips ──────────────────────────────────────── */
+/* ── Categories ──────────────────────────────────────────── */
 .categories-section {
-  padding: var(--space-xl) 0 var(--space-md);
+  padding: 1.5rem 0 0.5rem;
 }
-
-.categories-row {
+.categories-scroll {
   display: flex;
-  gap: var(--space-sm);
-  flex-wrap: wrap;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 0.5rem;
 }
+.categories-scroll::-webkit-scrollbar { display: none; }
 
 .cat-chip {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 0.5rem 1.1rem;
+  gap: 0.4rem;
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-full);
   background: var(--bg-glass);
   border: 1.5px solid var(--border-color);
-  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 600;
   color: var(--text-secondary);
-  font-size: var(--font-size-sm);
-  font-weight: 500;
-  transition: all var(--transition-base);
+  text-decoration: none;
   white-space: nowrap;
-  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
 }
-
 .cat-chip:hover {
-  background: var(--accent-chip-bg);
+  border-color: var(--color-accent);
   color: var(--color-accent);
-  border-color: var(--border-glow);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 14px var(--accent-glow-sm);
+  background: rgba(0,212,255,0.06);
+  transform: translateY(-1px);
 }
-
-.cat-chip:active {
-  transform: translateY(0) scale(0.97);
+.cat-chip--active {
+  border-color: var(--color-accent);
+  background: rgba(0,212,255,0.1);
+  color: var(--color-accent);
 }
+.cat-icon { font-size: 0.875rem; }
 
-.cat-chip-active {
-  background: var(--gradient-accent) !important;
-  color: #fff !important;
-  border-color: transparent !important;
-  box-shadow: 0 4px 16px rgba(0, 212, 255, 0.35) !important;
-  transform: translateY(-2px);
+/* ── City Indicator ──────────────────────────────────────── */
+.city-indicator {
+  margin-top: 0.75rem;
 }
-
-.cat-icon { font-size: 1rem; }
+.city-indicator-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+.city-indicator-inner strong { color: var(--text-primary); }
 
 /* ── Sections ────────────────────────────────────────────── */
 .section {
-  padding: var(--space-2xl) 0;
+  padding: 3rem 0 0;
 }
 
-/* ── View All Button ─────────────────────────────────────── */
-.view-all-btn {
-  background: var(--bg-glass);
-  transition: all var(--transition-base);
+.section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
 }
-.view-all-btn:hover {
-  background: var(--accent-chip-bg);
-  border-color: var(--color-accent);
+.section-title {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  margin-bottom: 0.25rem;
+}
+.section-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+.view-all-link {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 600;
   color: var(--color-accent);
-  transform: translateX(3px);
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 0.35rem 0.875rem;
+  border: 1px solid rgba(0,212,255,0.3);
+  border-radius: var(--radius-full);
+  transition: all 0.2s;
+}
+.view-all-link:hover {
+  background: rgba(0,212,255,0.1);
+  border-color: var(--color-accent);
 }
 
-/* ── Coming Soon Strip ───────────────────────────────────── */
+/* ── Trending section bg ─────────────────────────────────── */
+.trending-section {
+  background: linear-gradient(180deg, transparent, rgba(0,212,255,0.03), transparent);
+  border-radius: var(--radius-xl);
+}
+
+/* ── Grids ───────────────────────────────────────────────── */
+.grid { display: grid; gap: 1.25rem; }
+.grid-5 { grid-template-columns: repeat(5, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* ── Coming Soon ─────────────────────────────────────────── */
 .coming-soon-strip {
   background: var(--bg-secondary);
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
-  padding: var(--space-2xl) 0;
-  margin: var(--space-xl) 0;
+  padding: 3rem 0;
+  margin-top: 3rem;
 }
-
-/* ── Error / Empty States ────────────────────────────────── */
-.error-state,
-.empty-state {
-  padding: var(--space-2xl);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-md);
-}
-.error-icon { font-size: 2rem; }
-.empty-state span { font-size: 2.5rem; }
-.empty-state p { color: var(--text-muted); }
+.coming-soon-scroll { overflow-x: auto; scrollbar-width: none; margin-top: 1.5rem; }
+.coming-soon-scroll::-webkit-scrollbar { display: none; }
+.coming-soon-track { display: flex; gap: 1.25rem; width: max-content; }
+.coming-soon-card { width: 200px; flex-shrink: 0; }
 
 /* ── Features ────────────────────────────────────────────── */
-.features-section {
-  padding: var(--space-3xl) 0;
-}
-
+.features-section { padding: 3rem 0; }
 .features-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-lg);
+  gap: 1.25rem;
 }
-
 .feature-card {
-  padding: var(--space-xl);
+  padding: 2rem 1.5rem;
   text-align: center;
-  transition: all var(--transition-slow);
-  position: relative;
-  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
 }
-
-.feature-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--gradient-accent);
-  opacity: 0;
-  transition: opacity var(--transition-base);
-  border-radius: inherit;
-}
-
-.feature-card:hover::before { opacity: 0.04; }
-
 .feature-card:hover {
   transform: translateY(-6px);
-  border-color: var(--border-glow);
   box-shadow: var(--shadow-glow);
 }
-
-.feature-icon {
-  font-size: 2.5rem;
-  display: block;
-  margin-bottom: var(--space-md);
-  transition: transform var(--transition-spring);
-}
-
-.feature-card:hover .feature-icon {
-  transform: scale(1.15) rotate(-4deg);
-}
-
+.feature-icon { font-size: 2rem; display: block; margin-bottom: 1rem; }
 .feature-title {
   font-family: var(--font-display);
-  font-size: var(--font-size-lg);
+  font-size: 1rem;
   font-weight: 700;
-  margin-bottom: var(--space-sm);
+  margin-bottom: 0.5rem;
   color: var(--text-primary);
 }
-
 .feature-desc {
   color: var(--text-muted);
-  font-size: var(--font-size-sm);
+  font-size: 0.875rem;
   line-height: 1.6;
 }
 
-@media (max-width: 768px) {
-  .features-grid { grid-template-columns: repeat(2, 1fr); }
+/* ── Empty / Error ───────────────────────────────────────── */
+.empty-state, .error-state {
+  padding: 3rem;
+  text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
 }
-@media (max-width: 480px) {
-  .features-grid { grid-template-columns: 1fr; }
-}
+.empty-state span, .error-state span { font-size: 2rem; }
+
+/* Skeleton */
+.skeleton { background: var(--bg-glass); border-radius: var(--radius-lg); animation: skeleton-pulse 1.5s ease-in-out infinite; }
+.skeleton-card { aspect-ratio: 2/3; }
+@keyframes skeleton-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+/* Animation delays */
+.animate-fade-in-up { animation: fadeInUp 0.4s ease both; }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 1200px) { .grid-5 { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 960px)  { .grid-5, .grid-4 { grid-template-columns: repeat(3, 1fr); } .features-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px)  { .grid-5, .grid-4 { grid-template-columns: repeat(2, 1fr); } .features-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 400px)  { .grid-5, .grid-4 { grid-template-columns: 1fr; } }
 </style>

@@ -1,509 +1,755 @@
-<!-- ============================================================
-     Navbar.vue — Premium Navigation Bar
-     Inline search, theme toggle, Bookings link, gradient effects
-     ============================================================ -->
 <template>
   <nav class="navbar" :class="{ scrolled: isScrolled, 'menu-open': isMobileMenuOpen }">
-    <div class="container navbar-inner">
+    <div class="navbar-inner">
 
-      <!-- Logo / Brand -->
-      <router-link to="/" class="navbar-brand" @click="closeMobile">
-        <span class="brand-icon">🎬</span>
-        <span class="brand-text">Cine<span class="brand-accent">Vault</span></span>
-      </router-link>
-
-      <!-- Desktop Navigation Links -->
-      <div class="navbar-links" :class="{ active: isMobileMenuOpen }">
-        <router-link to="/" class="nav-link" active-class="nav-link-active" exact @click="closeMobile">
-          Home
-        </router-link>
-        <router-link to="/movies" class="nav-link" active-class="nav-link-active" @click="closeMobile">
-          Movies
-        </router-link>
-        <router-link to="/my-bookings" class="nav-link nav-link-bookings" active-class="nav-link-active" @click="closeMobile">
-          🎟️ Bookings
+      <!-- ── LEFT: Logo + Auth ─────────────────────────── -->
+      <div class="navbar-left">
+        <router-link to="/" class="navbar-brand" @click="closeMobile">
+          <svg class="brand-logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="32" rx="8" fill="#e50914"/>
+            <path d="M8 10h3l2 4 2-4h3v12h-3v-6l-2 4-2-4v6H8V10z" fill="white"/>
+            <path d="M20 10h4a4 4 0 010 8h-1v4h-3V10zm3 5.5a1.5 1.5 0 000-3h-1v3h1z" fill="white"/>
+          </svg>
+          <span class="brand-text">Cine<span class="brand-accent">Vault</span></span>
         </router-link>
 
-        <!-- Mobile-only auth + search -->
-        <div class="mobile-search-section">
-          <div class="mobile-search-bar">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-            </svg>
-            <input
-              v-model="searchText"
-              type="text"
-              placeholder="Search movies..."
-              class="mobile-search-input"
-              @keyup.enter="performSearch"
-            />
-          </div>
-        </div>
-
-        <div class="mobile-auth-section">
+        <!-- Auth (Desktop left placement) -->
+        <div class="navbar-auth-left desktop-auth">
           <template v-if="isLoggedIn">
-            <router-link to="/profile" class="nav-link" @click="closeMobile">Profile</router-link>
-            <button class="btn btn-outline btn-sm" @click="handleLogout">Logout</button>
+            <router-link to="/profile" class="nav-auth-avatar" title="My Profile">
+              <span>{{ userInitial }}</span>
+            </router-link>
           </template>
           <template v-else>
-            <router-link to="/login" class="btn btn-ghost btn-sm" @click="closeMobile">Sign In</router-link>
-            <router-link to="/register" class="btn btn-primary btn-sm" @click="closeMobile">Sign Up</router-link>
+            <router-link to="/login" class="btn btn-ghost btn-sm nav-signin">Sign In</router-link>
+            <router-link to="/register" class="btn btn-primary btn-sm nav-signup">Sign Up</router-link>
           </template>
         </div>
       </div>
 
-      <!-- Right Section: Inline Search + Theme + Auth -->
+      <!-- ── CENTER: Nav Links ─────────────────────────── -->
+      <div class="navbar-links" :class="{ active: isMobileMenuOpen }">
+        <router-link to="/" class="nav-link" exact-active-class="nav-link--active" @click="closeMobile">Home</router-link>
+        <router-link to="/movies" class="nav-link" active-class="nav-link--active" @click="closeMobile">Movies</router-link>
+        <router-link to="/my-bookings" class="nav-link" active-class="nav-link--active" @click="closeMobile">Bookings</router-link>
+
+        <!-- Mobile-only sections -->
+        <div class="mobile-only-section">
+          <div class="mobile-search-bar">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <input v-model="searchText" type="text" placeholder="Search movies..." class="mobile-search-input" @keyup.enter="performSearch" />
+          </div>
+          <template v-if="isLoggedIn">
+            <router-link to="/profile" class="nav-link" @click="closeMobile">Profile</router-link>
+            <button class="btn btn-outline btn-sm w-full" @click="handleLogout">Logout</button>
+          </template>
+          <template v-else>
+            <router-link to="/login" class="btn btn-ghost btn-sm w-full" @click="closeMobile">Sign In</router-link>
+            <router-link to="/register" class="btn btn-primary btn-sm w-full" @click="closeMobile">Sign Up</router-link>
+          </template>
+        </div>
+      </div>
+
+      <!-- ── RIGHT: City + Search + Theme ─────────────── -->
       <div class="navbar-actions">
 
-        <!-- Inline Search Bar (desktop) -->
+        <!-- City Selector -->
+        <button class="city-selector-btn" @click="openCityPicker" :title="`Showing in ${selectedCity}`">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="city-name">{{ selectedCity }}</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+
+        <!-- Inline Search -->
         <div class="inline-search" :class="{ focused: isSearchFocused }">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-          </svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           <input
             ref="searchInputRef"
             v-model="searchText"
             type="text"
-            placeholder="Search movies, genres, actors..."
+            placeholder="Search movies, actors..."
             class="inline-search-input"
             @focus="isSearchFocused = true"
             @blur="isSearchFocused = false"
             @keyup.enter="performSearch"
             @keyup.escape="searchText = ''"
           />
-          <button v-if="searchText" class="search-clear" @click="searchText = ''" title="Clear">✕</button>
+          <button v-if="searchText" class="search-clear" @click="searchText = ''">✕</button>
         </div>
 
         <!-- Theme Toggle -->
-        <button
-          class="btn-icon nav-icon-btn theme-toggle"
-          @click="toggleTheme"
-          :title="isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'"
-          :aria-label="isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'"
-        >
+        <button class="btn-icon nav-icon-btn" @click="toggleTheme" :title="isDark ? 'Light Mode' : 'Dark Mode'">
           <transition name="theme-icon" mode="out-in">
-            <span v-if="isDark" key="moon" class="theme-icon">☀️</span>
-            <span v-else key="sun" class="theme-icon">🌙</span>
+            <span v-if="isDark" key="sun">☀️</span>
+            <span v-else key="moon">🌙</span>
           </transition>
         </button>
 
-        <!-- Desktop Auth Buttons -->
-        <div class="desktop-auth">
-          <template v-if="isLoggedIn">
-            <router-link to="/profile" class="user-avatar-btn" :title="userName">
-              <span class="avatar-initial">{{ userName.charAt(0).toUpperCase() }}</span>
-            </router-link>
-            <button class="btn btn-ghost btn-sm" @click="handleLogout">Logout</button>
-          </template>
-          <template v-else>
-            <router-link to="/login" class="btn btn-ghost btn-sm">Sign In</router-link>
-            <router-link to="/register" class="btn btn-primary btn-sm">Sign Up</router-link>
-          </template>
-        </div>
-
-        <!-- Mobile Hamburger -->
-        <button
-          class="hamburger"
-          :class="{ open: isMobileMenuOpen }"
-          @click="toggleMobile"
-          aria-label="Toggle menu"
-        >
+        <!-- Hamburger -->
+        <button class="hamburger" @click="isMobileMenuOpen = !isMobileMenuOpen" :class="{ open: isMobileMenuOpen }" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
+
+    <!-- ── City Picker Modal ──────────────────────────── -->
+    <transition name="city-modal">
+      <div v-if="showCityPicker" class="city-picker-overlay" @click.self="closeCityPicker">
+        <div class="city-picker-panel">
+          <div class="city-picker-header">
+            <h3>Select City</h3>
+            <button class="city-picker-close" @click="closeCityPicker">✕</button>
+          </div>
+
+          <!-- Search -->
+          <div class="city-search-wrap">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <input v-model="citySearchQuery" type="text" placeholder="Search for your city" class="city-search-input" ref="citySearchRef" />
+          </div>
+
+          <!-- Detect Location -->
+          <button class="detect-location-btn" @click="detectLocation">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M1 12h4M19 12h4"/><path d="M12 2a10 10 0 100 20 10 10 0 000-20z" opacity=".3"/></svg>
+            Detect my location
+          </button>
+
+          <!-- Popular Cities -->
+          <div class="popular-cities-section">
+            <p class="section-label">Popular Cities</p>
+            <div class="cities-grid">
+              <button
+                v-for="city in filteredPopularCities"
+                :key="city.name"
+                class="city-tile"
+                :class="{ active: selectedCity === city.name }"
+                @click="selectCity(city.name)"
+              >
+                <div class="city-icon-wrap">
+                  <span class="city-emoji">{{ city.emoji }}</span>
+                </div>
+                <span class="city-tile-name">{{ city.name }}</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- All Cities (filtered) -->
+          <div v-if="citySearchQuery && filteredAllCities.length" class="all-cities-section">
+            <p class="section-label">All Cities</p>
+            <div class="all-cities-list">
+              <button
+                v-for="city in filteredAllCities"
+                :key="city"
+                class="city-list-item"
+                :class="{ active: selectedCity === city }"
+                @click="selectCity(city)"
+              >
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                {{ city }}
+              </button>
+            </div>
+          </div>
+
+          <div v-if="!citySearchQuery" class="view-all-row">
+            <button class="view-all-cities-btn" @click="showAllCities = !showAllCities">
+              {{ showAllCities ? 'Show less ↑' : 'View All Cities ↓' }}
+            </button>
+          </div>
+
+          <div v-if="showAllCities && !citySearchQuery" class="all-cities-list extended">
+            <button
+              v-for="city in extraCities"
+              :key="city"
+              class="city-list-item"
+              :class="{ active: selectedCity === city }"
+              @click="selectCity(city)"
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              {{ city }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </transition>
   </nav>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuth } from '@/composables/useAuth'
 import { useTheme } from '@/composables/useTheme'
+import { useCity } from '@/composables/useCity'
 
 const router = useRouter()
-const { isLoggedIn, userName, logout } = useAuth()
+const { isLoggedIn, currentUser, logout } = useAuth()
 const { isDark, toggleTheme } = useTheme()
+const { selectedCity, popularCities, allCities, setCity } = useCity()
 
-// ── Reactive State ────────────────────────────────────────
-const isScrolled      = ref(false)
-const isMobileMenuOpen = ref(false)
-const isSearchFocused = ref(false)
-const searchText      = ref('')
-const searchInputRef  = ref(null)
+// ── State ────────────────────────────────────────────────
+const isScrolled         = ref(false)
+const isMobileMenuOpen   = ref(false)
+const isSearchFocused    = ref(false)
+const searchText         = ref('')
+const searchInputRef     = ref(null)
+const showCityPicker     = ref(false)
+const citySearchQuery    = ref('')
+const citySearchRef      = ref(null)
+const showAllCities      = ref(false)
 
-// ── Scroll Detection ─────────────────────────────────────
-function handleScroll() {
-  isScrolled.value = window.scrollY > 20
+// ── Computed ─────────────────────────────────────────────
+const userInitial = computed(() =>
+  currentUser.value?.name?.charAt(0).toUpperCase() || 'U'
+)
+
+const extraCities = computed(() =>
+  allCities.filter(c => !popularCities.find(p => p.name === c))
+)
+
+const filteredPopularCities = computed(() => {
+  if (!citySearchQuery.value) return popularCities
+  const q = citySearchQuery.value.toLowerCase()
+  return popularCities.filter(c => c.name.toLowerCase().includes(q))
+})
+
+const filteredAllCities = computed(() => {
+  if (!citySearchQuery.value) return []
+  const q = citySearchQuery.value.toLowerCase()
+  return allCities.filter(c =>
+    c.toLowerCase().includes(q) && !popularCities.find(p => p.name === c)
+  )
+})
+
+// ── Methods ──────────────────────────────────────────────
+function closeMobile() { isMobileMenuOpen.value = false }
+
+async function openCityPicker() {
+  showCityPicker.value = true
+  citySearchQuery.value = ''
+  showAllCities.value = false
+  await nextTick()
+  citySearchRef.value?.focus()
 }
 
-onMounted(() => window.addEventListener('scroll', handleScroll, { passive: true }))
-onUnmounted(() => window.removeEventListener('scroll', handleScroll))
+function closeCityPicker() { showCityPicker.value = false }
 
-// ── Mobile Menu ──────────────────────────────────────────
-function toggleMobile() { isMobileMenuOpen.value = !isMobileMenuOpen.value }
-function closeMobile()  { isMobileMenuOpen.value = false }
+function selectCity(cityName) {
+  setCity(cityName)
+  closeCityPicker()
+}
 
-// ── Search ───────────────────────────────────────────────
+function detectLocation() {
+  if (!navigator.geolocation) return
+  navigator.geolocation.getCurrentPosition(
+    () => {
+      // In a real app, reverse geocode the coordinates
+      // For demo, default to Mumbai if location detected
+      selectCity('Mumbai')
+    },
+    () => {
+      closeCityPicker()
+    }
+  )
+}
+
 function performSearch() {
-  if (searchText.value.trim()) {
-    router.push({ name: 'Movies', query: { search: searchText.value.trim() } })
-    searchText.value = ''
-    closeMobile()
-    searchInputRef.value?.blur()
+  if (!searchText.value.trim()) return
+  router.push({ path: '/movies', query: { search: searchText.value.trim() } })
+  isMobileMenuOpen.value = false
+}
+
+function handleLogout() {
+  logout()
+  router.push('/')
+  closeMobile()
+}
+
+// ── Scroll listener ──────────────────────────────────────
+function handleScroll() { isScrolled.value = window.scrollY > 20 }
+
+// ── Close city picker on Escape ──────────────────────────
+function handleKeydown(e) {
+  if (e.key === 'Escape') {
+    closeCityPicker()
+    isMobileMenuOpen.value = false
   }
 }
 
-// ── Logout ───────────────────────────────────────────────
-function handleLogout() {
-  logout()
-  closeMobile()
-  router.push({ name: 'Home' })
-}
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll, { passive: true })
+  window.addEventListener('keydown', handleKeydown)
+})
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+  window.removeEventListener('keydown', handleKeydown)
+})
 </script>
 
 <style scoped>
-/* ── Navbar Container ────────────────────────────────────── */
+/* ── Base Navbar ─────────────────────────────────────────── */
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   z-index: var(--z-sticky);
-  padding: 0.6rem 0;
-  transition: all var(--transition-base);
-  background: transparent;
+  height: 64px;
+  background: var(--bg-navbar);
+  border-bottom: 1px solid transparent;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-
 .navbar.scrolled {
-  background: var(--navbar-bg-scrolled);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid var(--border-color);
-  box-shadow: var(--shadow-md);
+  background: var(--bg-navbar-scrolled);
+  border-bottom-color: var(--border-color);
+  box-shadow: 0 1px 12px rgba(0,0,0,0.15);
+  backdrop-filter: blur(20px);
 }
 
 .navbar-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 100%;
   display: flex;
   align-items: center;
-  gap: var(--space-md);
+  gap: 0;
 }
 
-/* ── Brand ───────────────────────────────────────────────── */
+/* ── LEFT section ────────────────────────────────────────── */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: 0.5rem;
   text-decoration: none;
   color: var(--text-primary);
-  flex-shrink: 0;
 }
 
-.brand-icon { font-size: 1.4rem; }
+.brand-logo-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
 
 .brand-text {
   font-family: var(--font-display);
-  font-size: var(--font-size-xl);
+  font-size: 1.25rem;
   font-weight: 800;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
 }
 
-.brand-accent {
+.brand-accent { color: var(--color-accent); }
+
+/* Auth on left (desktop) */
+.navbar-auth-left { display: flex; align-items: center; gap: 0.5rem; }
+
+.nav-auth-avatar {
+  width: 32px; height: 32px;
+  border-radius: 50%;
   background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 0.875rem;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+.nav-auth-avatar:hover { transform: scale(1.08); }
+
+.nav-signin {
+  font-weight: 500;
+  color: var(--text-secondary) !important;
+  border: 1px solid var(--border-color) !important;
+  background: transparent !important;
+  padding: 0.4rem 0.875rem !important;
+  font-size: 0.8125rem !important;
+}
+.nav-signin:hover {
+  color: var(--text-primary) !important;
+  border-color: var(--color-accent) !important;
+}
+.nav-signup {
+  padding: 0.4rem 0.875rem !important;
+  font-size: 0.8125rem !important;
 }
 
-/* ── Navigation Links ────────────────────────────────────── */
+/* ── CENTER Nav Links ────────────────────────────────────── */
 .navbar-links {
   display: flex;
   align-items: center;
-  gap: 2px;
-  flex-shrink: 0;
+  gap: 0.25rem;
+  flex: 1;
+  justify-content: center;
 }
 
 .nav-link {
-  padding: 0.45rem 0.9rem;
-  font-size: var(--font-size-sm);
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.875rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--text-secondary);
-  border-radius: var(--radius-md);
-  transition: all var(--transition-fast);
   text-decoration: none;
-  white-space: nowrap;
+  transition: color 0.2s ease, background 0.2s ease;
+  letter-spacing: 0.01em;
 }
-
-.nav-link:hover {
-  color: var(--text-primary);
-  background: var(--bg-glass);
-}
-
-.nav-link-active {
-  color: var(--color-accent) !important;
-  background: var(--accent-chip-bg) !important;
-}
-
-/* Bookings link — subtle gradient pill */
-.nav-link-bookings {
-  background: var(--bookings-btn-bg);
-  color: var(--color-primary) !important;
-  border: 1px solid rgba(229, 9, 20, 0.2);
+.nav-link:hover { color: var(--text-primary); background: var(--bg-glass); }
+.nav-link--active {
+  color: var(--color-accent);
+  background: rgba(0, 212, 255, 0.08);
   font-weight: 600;
 }
-.nav-link-bookings:hover {
-  background: rgba(229, 9, 20, 0.18) !important;
-  border-color: var(--color-primary);
-  color: var(--color-primary-light) !important;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(229, 9, 20, 0.25);
-}
+[data-theme="dark"] .nav-link--active { color: var(--color-accent); }
 
-/* ── Inline Search Bar (desktop) ─────────────────────────── */
-.inline-search {
-  flex: 1;
-  max-width: 340px;
+/* ── RIGHT actions ───────────────────────────────────────── */
+.navbar-actions {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
-  padding: 0.45rem 0.9rem;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* City Selector */
+.city-selector-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-md);
+  background: var(--bg-glass);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.city-selector-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--color-accent);
+  background: rgba(0, 212, 255, 0.05);
+}
+.city-name { max-width: 80px; overflow: hidden; text-overflow: ellipsis; }
+
+/* Search */
+.inline-search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.75rem;
   background: var(--bg-input);
   border: 1.5px solid var(--border-color);
   border-radius: var(--radius-full);
   color: var(--text-muted);
-  transition: all var(--transition-base);
-  min-width: 0;
+  transition: all 0.2s ease;
+  width: 200px;
 }
-
-.inline-search svg {
-  flex-shrink: 0;
-  color: var(--text-muted);
-  transition: color var(--transition-fast);
-}
-
 .inline-search.focused,
 .inline-search:focus-within {
   border-color: var(--color-accent);
   background: var(--bg-input-focus);
-  box-shadow: 0 0 0 3px var(--accent-glow-sm);
+  width: 260px;
 }
-
-.inline-search.focused svg {
-  color: var(--color-accent);
-}
-
 .inline-search-input {
   flex: 1;
   background: none;
   border: none;
   outline: none;
   color: var(--text-primary);
-  font-size: var(--font-size-sm);
-  min-width: 0;
+  font-size: 0.8125rem;
+  font-family: var(--font-body);
 }
-
-.inline-search-input::placeholder {
-  color: var(--text-muted);
-}
-
+.inline-search-input::placeholder { color: var(--text-muted); }
 .search-clear {
-  color: var(--text-muted);
   font-size: 0.7rem;
-  padding: 2px 5px;
-  border-radius: var(--radius-full);
-  background: var(--bg-glass);
-  transition: all var(--transition-fast);
-  flex-shrink: 0;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0 2px;
+  line-height: 1;
 }
-.search-clear:hover {
-  color: var(--text-primary);
-  background: var(--bg-glass-hover);
-}
-
-/* ── Navbar Actions ──────────────────────────────────────── */
-.navbar-actions {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  flex-shrink: 0;
-}
-
-.nav-icon-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: var(--radius-full);
-  color: var(--text-secondary);
-  background: var(--bg-glass);
-  border: 1px solid var(--border-color);
-  transition: all var(--transition-fast);
-  flex-shrink: 0;
-}
-
-.nav-icon-btn:hover {
-  color: var(--text-primary);
-  background: var(--bg-glass-hover);
-  transform: scale(1.06);
-}
+.search-clear:hover { color: var(--text-primary); }
 
 /* Theme Toggle */
-.theme-toggle {
+.btn-icon {
+  width: 36px; height: 36px;
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
   font-size: 1rem;
-  border-color: transparent;
+  transition: all 0.2s ease;
 }
-.theme-toggle:hover {
-  border-color: var(--border-color);
-  transform: rotate(15deg) scale(1.08);
-}
+.btn-icon:hover { border-color: var(--color-accent); background: rgba(0,212,255,0.08); }
 
-.theme-icon {
-  display: block;
-  line-height: 1;
-  font-size: 1.05rem;
-}
-
-.theme-icon-enter-active,
-.theme-icon-leave-active { transition: all 0.2s ease; }
-.theme-icon-enter-from   { opacity: 0; transform: rotate(-90deg) scale(0.6); }
-.theme-icon-leave-to     { opacity: 0; transform: rotate(90deg) scale(0.6); }
-
-/* ── User Avatar ─────────────────────────────────────────── */
-.user-avatar-btn {
-  width: 34px;
-  height: 34px;
-  border-radius: var(--radius-full);
-  background: var(--gradient-accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: all var(--transition-fast);
-  flex-shrink: 0;
-}
-.user-avatar-btn:hover {
-  transform: scale(1.08);
-  box-shadow: var(--shadow-glow);
-}
-.avatar-initial {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: var(--font-size-sm);
-  color: #fff;
-}
-
-/* ── Desktop Auth ────────────────────────────────────────── */
-.desktop-auth {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-}
-
-.mobile-auth-section   { display: none; }
-.mobile-search-section { display: none; }
-
-/* ── Hamburger ───────────────────────────────────────────── */
+/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  width: 36px;
-  height: 36px;
-  padding: 6px;
-  border-radius: var(--radius-md);
+  width: 36px; height: 36px;
   background: var(--bg-glass);
   border: 1px solid var(--border-color);
-  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  padding: 8px;
 }
 .hamburger span {
   display: block;
-  width: 100%;
   height: 2px;
   background: var(--text-primary);
   border-radius: 2px;
-  transition: all var(--transition-base);
+  transition: all 0.25s ease;
 }
-.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; }
-.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-only-section { display: none; }
+
+/* ── City Picker Modal ───────────────────────────────────── */
+.city-picker-overlay {
+  position: fixed;
+  inset: 64px 0 0 0;
+  background: rgba(0,0,0,0.6);
+  z-index: calc(var(--z-sticky) + 5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 0.5rem 1rem;
+}
+
+.city-picker-panel {
+  width: 100%;
+  max-width: 520px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+}
+
+.city-picker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.city-picker-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.city-picker-close {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+}
+.city-picker-close:hover { background: rgba(229,9,20,0.1); border-color: var(--color-primary); color: var(--color-primary); }
+
+.city-search-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg-input);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  color: var(--text-muted);
+  margin-bottom: 0.875rem;
+}
+.city-search-wrap:focus-within { border-color: var(--color-accent); }
+.city-search-input {
+  flex: 1; background: none; border: none; outline: none;
+  color: var(--text-primary); font-size: 0.9375rem; font-family: var(--font-body);
+}
+.city-search-input::placeholder { color: var(--text-muted); }
+
+.detect-location-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+  transition: opacity 0.2s;
+}
+.detect-location-btn:hover { opacity: 0.75; }
+
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.875rem;
+}
+
+/* Cities Grid — 5 columns like BookMyShow */
+.cities-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.city-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 0.5rem;
+  border-radius: var(--radius-lg);
+  background: var(--bg-glass);
+  border: 1.5px solid var(--border-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.city-tile:hover {
+  border-color: var(--color-accent);
+  background: rgba(0,212,255,0.06);
+  transform: translateY(-2px);
+}
+.city-tile.active {
+  border-color: var(--color-primary);
+  background: rgba(229,9,20,0.06);
+}
+
+.city-icon-wrap {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.25rem;
+  transition: transform 0.2s;
+}
+.city-tile:hover .city-icon-wrap { transform: scale(1.1); }
+.city-tile.active .city-icon-wrap { background: rgba(229,9,20,0.1); }
+
+.city-tile-name {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.2;
+}
+.city-tile.active .city-tile-name { color: var(--color-primary); }
+
+/* All cities list */
+.all-cities-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+.all-cities-list.extended { margin-top: 0.75rem; }
+
+.city-list-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-md);
+  background: var(--bg-glass);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+.city-list-item:hover { border-color: var(--color-accent); color: var(--text-primary); }
+.city-list-item.active { border-color: var(--color-primary); color: var(--color-primary); background: rgba(229,9,20,0.05); }
+
+.view-all-row { text-align: center; margin-top: 0.75rem; }
+.view-all-cities-btn {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+.view-all-cities-btn:hover { opacity: 0.8; }
+
+/* Modal transition */
+.city-modal-enter-active, .city-modal-leave-active { transition: opacity 0.2s ease; }
+.city-modal-enter-from, .city-modal-leave-to { opacity: 0; }
+.city-modal-enter-active .city-picker-panel,
+.city-modal-leave-active .city-picker-panel { transition: transform 0.2s ease, opacity 0.2s ease; }
+.city-modal-enter-from .city-picker-panel { transform: translateY(-12px); opacity: 0; }
+.city-modal-leave-to .city-picker-panel { transform: translateY(-8px); opacity: 0; }
+
+/* Theme icon transition */
+.theme-icon-enter-active, .theme-icon-leave-active { transition: opacity 0.15s, transform 0.15s; }
+.theme-icon-enter-from { opacity: 0; transform: scale(0.5) rotate(-30deg); }
+.theme-icon-leave-to { opacity: 0; transform: scale(0.5) rotate(30deg); }
 
 /* ── Responsive ──────────────────────────────────────────── */
-@media (max-width: 1024px) {
-  .inline-search { max-width: 220px; }
+@media (max-width: 960px) {
+  .inline-search { width: 160px; }
+  .inline-search.focused, .inline-search:focus-within { width: 180px; }
 }
 
 @media (max-width: 768px) {
-  .hamburger          { display: flex; }
-  .desktop-auth       { display: none; }
-  .inline-search      { display: none; }
-
   .navbar-links {
+    display: none;
     position: fixed;
-    top: 64px;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: 64px; left: 0; right: 0;
+    background: var(--bg-navbar-scrolled);
+    backdrop-filter: blur(20px);
     flex-direction: column;
-    padding: var(--space-xl);
-    gap: var(--space-sm);
-    background: var(--mobile-menu-bg);
-    backdrop-filter: blur(24px);
-    transform: translateX(100%);
-    transition: transform var(--transition-slow);
     align-items: stretch;
+    padding: 1.5rem;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    z-index: calc(var(--z-sticky) - 1);
     overflow-y: auto;
+    max-height: calc(100vh - 64px);
   }
-
-  .navbar-links.active { transform: translateX(0); }
-
-  .nav-link {
-    font-size: var(--font-size-lg);
-    padding: 1rem;
-    border-radius: var(--radius-md);
-  }
-
-  .mobile-search-section {
-    display: block;
-    margin-top: var(--space-md);
-  }
-
-  .mobile-search-bar {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-    padding: 0.75rem 1rem;
-    background: var(--bg-input);
-    border: 1.5px solid var(--border-color);
-    border-radius: var(--radius-lg);
-    color: var(--text-muted);
-  }
-  .mobile-search-bar:focus-within {
-    border-color: var(--color-accent);
-  }
-  .mobile-search-input {
-    flex: 1;
-    background: none;
-    border: none;
-    outline: none;
-    color: var(--text-primary);
-    font-size: var(--font-size-base);
-  }
-  .mobile-search-input::placeholder { color: var(--text-muted); }
-
-  .mobile-auth-section {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-sm);
-    margin-top: var(--space-xl);
-    padding-top: var(--space-xl);
-    border-top: 1px solid var(--border-color);
-  }
+  .navbar-links.active { display: flex; }
+  .nav-link { font-size: 1rem; padding: 0.75rem 1rem; }
+  .mobile-only-section { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color); }
+  .mobile-search-bar { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; background: var(--bg-input); border: 1.5px solid var(--border-color); border-radius: var(--radius-lg); color: var(--text-muted); }
+  .mobile-search-input { flex: 1; background: none; border: none; outline: none; color: var(--text-primary); font-size: 1rem; }
+  .desktop-auth { display: none; }
+  .inline-search { display: none; }
+  .hamburger { display: flex; }
+  .city-name { max-width: 60px; }
+  .cities-grid { grid-template-columns: repeat(4, 1fr); }
+  .city-picker-overlay { padding: 0.5rem; }
+  .city-picker-panel { max-width: 100%; }
 }
 
 @media (max-width: 480px) {
-  .nav-link-bookings { display: none; }
+  .cities-grid { grid-template-columns: repeat(3, 1fr); }
+  .city-selector-btn .city-name { display: none; }
 }
 </style>

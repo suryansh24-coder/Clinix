@@ -54,10 +54,12 @@
   --gradient-hero:    linear-gradient(to right, rgba(245,247,255,0.97) 0%, rgba(245,247,255,0.75) 50%, transparent 100%);
 
   /* Component tokens */
-  --navbar-bg-scrolled:  rgba(245, 247, 255, 0.92);
-  --mobile-menu-bg:      rgba(240, 242, 255, 0.98);
-  --accent-chip-bg:      rgba(0, 153, 187, 0.1);
-  --accent-glow-sm:      rgba(0, 153, 187, 0.15);
+  --navbar-bg-scrolled:    rgba(245, 247, 255, 0.92);
+  --bg-navbar:             transparent;
+  --bg-navbar-scrolled:    rgba(245, 247, 255, 0.96);
+  --mobile-menu-bg:        rgba(240, 242, 255, 0.98);
+  --accent-chip-bg:        rgba(0, 153, 187, 0.1);
+  --accent-glow-sm:        rgba(0, 153, 187, 0.15);
   --bookings-btn-bg:     rgba(229, 9, 20, 0.08);
 
   /* Typography */
@@ -144,8 +146,10 @@
   --gradient-glass:   linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.02));
   --gradient-hero:    linear-gradient(to right, rgba(10,10,26,0.95) 0%, rgba(10,10,26,0.7) 50%, transparent 100%);
 
-  --navbar-bg-scrolled:  rgba(10, 10, 26, 0.88);
-  --mobile-menu-bg:      rgba(10, 10, 26, 0.98);
+  --navbar-bg-scrolled:    rgba(10, 10, 26, 0.88);
+  --bg-navbar:             transparent;
+  --bg-navbar-scrolled:    rgba(10, 10, 26, 0.92);
+  --mobile-menu-bg:        rgba(10, 10, 26, 0.98);
   --accent-chip-bg:      rgba(0, 212, 255, 0.08);
   --accent-glow-sm:      rgba(0, 212, 255, 0.12);
   --bookings-btn-bg:     rgba(229, 9, 20, 0.1);

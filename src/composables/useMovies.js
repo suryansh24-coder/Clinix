@@ -1,60 +1,67 @@
 /* ============================================================
    useMovies.js — Movies Composable
-   Provides reactive movie data, search, filtering, sorting,
-   and CRUD operations for movie-related components.
+   Supports cast as string[] OR object[] {name,role,image}
    ============================================================ */
 
 import { ref, computed, readonly } from 'vue'
 import { moviesAPI, showsAPI, theatresAPI } from '@/services/api'
 import authService from '@/services/auth'
 
-/* ── useMovies Composable ────────────────────────────────── */
 export function useMovies() {
   // ── Reactive State ──────────────────────────────────────
-  const movies = ref([])
-  const currentMovie = ref(null)
-  const shows = ref([])
-  const theatres = ref([])
-  const isLoading = ref(false)
-  const error = ref(null)
+  const movies        = ref([])
+  const currentMovie  = ref(null)
+  const shows         = ref([])
+  const theatres      = ref([])
+  const isLoading     = ref(false)
+  const error         = ref(null)
 
-  // ── Filter & Search State ───────────────────────────────
-  const searchQuery = ref('')
-  const selectedGenre = ref('')
-  const selectedLanguage = ref('')
-  const selectedRating = ref(0)
+  // ── Filter State ────────────────────────────────────────
+  const searchQuery        = ref('')
+  const selectedGenre      = ref('')
+  const selectedLanguage   = ref('')
+  const selectedRating     = ref(0)
   const selectedPriceRange = ref([0, 500])
-  const sortBy = ref('rating') // rating, title, price, releaseDate
+  const selectedCity       = ref('')
+  const sortBy             = ref('rating')
 
-  // ── Computed: Extract unique genres from movie data ─────
+  // ── Helper: get cast member name regardless of format ───
+  function castName(member) {
+    if (typeof member === 'string') return member
+    return member?.name || ''
+  }
+
+  // ── Computed: Unique genres ──────────────────────────────
   const allGenres = computed(() => {
     const genres = new Set()
     movies.value.forEach(movie => {
-      if (Array.isArray(movie.genre)) {
-        movie.genre.forEach(g => genres.add(g))
-      }
+      if (Array.isArray(movie.genre)) movie.genre.forEach(g => genres.add(g))
     })
     return Array.from(genres).sort()
   })
 
-  // ── Computed: Extract unique languages ─────────────────
+  // ── Computed: Unique languages ───────────────────────────
   const allLanguages = computed(() => {
     const langs = new Set()
-    movies.value.forEach(m => langs.add(m.language))
+    movies.value.forEach(m => {
+      // Normalize "Telugu/Hindi" → just list both
+      const raw = m.language || ''
+      raw.split('/').forEach(l => langs.add(l.trim()))
+    })
     return Array.from(langs).sort()
   })
 
-  // ── Computed: Filtered & Sorted movies ────────────────
+  // ── Computed: Filtered & Sorted movies ──────────────────
   const filteredMovies = computed(() => {
     let result = [...movies.value]
 
-    // Search filter — matches title, genre, cast, director
+    // Search filter
     if (searchQuery.value.trim()) {
       const q = searchQuery.value.toLowerCase()
       result = result.filter(movie =>
-        movie.title.toLowerCase().includes(q) ||
+        movie.title?.toLowerCase().includes(q) ||
         (Array.isArray(movie.genre) && movie.genre.some(g => g.toLowerCase().includes(q))) ||
-        (Array.isArray(movie.cast) && movie.cast.some(c => c.toLowerCase().includes(q))) ||
+        (Array.isArray(movie.cast) && movie.cast.some(c => castName(c).toLowerCase().includes(q))) ||
         (movie.director && movie.director.toLowerCase().includes(q))
       )
     }
@@ -66,9 +73,11 @@ export function useMovies() {
       )
     }
 
-    // Language filter
+    // Language filter (partial match for combined languages like "Telugu/Hindi")
     if (selectedLanguage.value) {
-      result = result.filter(movie => movie.language === selectedLanguage.value)
+      result = result.filter(movie =>
+        (movie.language || '').includes(selectedLanguage.value)
+      )
     }
 
     // Rating filter
@@ -84,189 +93,157 @@ export function useMovies() {
       )
     }
 
+    // City filter
+    if (selectedCity.value) {
+      result = result.filter(movie =>
+        !Array.isArray(movie.cities) || movie.cities.includes(selectedCity.value)
+      )
+    }
+
     // Sort
     switch (sortBy.value) {
-      case 'rating':
-        result.sort((a, b) => b.rating - a.rating)
-        break
-      case 'title':
-        result.sort((a, b) => a.title.localeCompare(b.title))
-        break
-      case 'price':
-        result.sort((a, b) => a.price - b.price)
-        break
-      case 'releaseDate':
-        result.sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate))
-        break
+      case 'rating':     result.sort((a, b) => b.rating - a.rating); break
+      case 'title':      result.sort((a, b) => a.title.localeCompare(b.title)); break
+      case 'price':      result.sort((a, b) => a.price - b.price); break
+      case 'releaseDate':result.sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate)); break
     }
 
     return result
   })
 
-  // ── Computed: Now showing movies ──────────────────────
+  // ── Computed: Status subsets ─────────────────────────────
   const nowShowingMovies = computed(() =>
     movies.value.filter(m => m.status === 'now_showing')
   )
-
-  // ── Computed: Coming soon movies ──────────────────────
   const comingSoonMovies = computed(() =>
     movies.value.filter(m => m.status === 'coming_soon')
   )
-
-  // ── Computed: Trending (top rated now showing) ────────
   const trendingMovies = computed(() =>
-    [...nowShowingMovies.value].sort((a, b) => b.rating - a.rating).slice(0, 5)
+    movies.value
+      .filter(m => m.status === 'now_showing')
+      .sort((a, b) => b.rating - a.rating)
+      .slice(0, 10)
   )
 
-  // ── CRUD: Fetch all movies ────────────────────────────
+  // ── Fetch all movies ─────────────────────────────────────
   async function fetchMovies() {
     isLoading.value = true
     error.value = null
     try {
-      const { data } = await moviesAPI.getAll()
-      movies.value = data
+      const response = await moviesAPI.getAll()
+      movies.value = Array.isArray(response.data) ? response.data : []
     } catch (err) {
-      error.value = err.message || 'Failed to fetch movies'
+      error.value = err?.message || 'Failed to load movies'
+      movies.value = []
     } finally {
       isLoading.value = false
     }
   }
 
-  // ── CRUD: Fetch single movie by ID ────────────────────
+  // ── Fetch single movie ───────────────────────────────────
   async function fetchMovie(id) {
     isLoading.value = true
     error.value = null
+    currentMovie.value = null
     try {
-      const { data } = await moviesAPI.getById(id)
-      currentMovie.value = data
-
-      // Track recently viewed in LocalStorage
-      authService.addRecentlyViewed(Number(id))
-
-      return data
+      const response = await moviesAPI.getById(id)
+      currentMovie.value = response.data || null
     } catch (err) {
-      error.value = err.message || 'Movie not found'
-      throw err
+      error.value = err?.message || 'Movie not found'
     } finally {
       isLoading.value = false
     }
   }
 
-  // ── CRUD: Create a movie ──────────────────────────────
-  async function createMovie(movieData) {
-    isLoading.value = true
-    error.value = null
+  // ── Fetch shows for a movie ──────────────────────────────
+  async function fetchShowsForMovie(movieId) {
     try {
-      const { data } = await moviesAPI.create(movieData)
-      movies.value.push(data)
-      return data
-    } catch (err) {
-      error.value = err.message || 'Failed to create movie'
-      throw err
-    } finally {
-      isLoading.value = false
+      const [showsRes, theatresRes] = await Promise.all([
+        showsAPI.getByMovie(movieId),
+        theatresAPI.getAll()
+      ])
+      shows.value     = Array.isArray(showsRes.data)     ? showsRes.data     : []
+      theatres.value  = Array.isArray(theatresRes.data)  ? theatresRes.data  : []
+    } catch {
+      shows.value    = []
+      theatres.value = []
     }
   }
 
-  // ── CRUD: Update a movie ──────────────────────────────
-  async function updateMovie(id, movieData) {
-    isLoading.value = true
-    error.value = null
+  // ── Fetch all theatres ───────────────────────────────────
+  async function fetchTheatres() {
     try {
-      const { data } = await moviesAPI.update(id, movieData)
-      const index = movies.value.findIndex(m => m.id === id)
-      if (index !== -1) movies.value[index] = data
-      return data
-    } catch (err) {
-      error.value = err.message || 'Failed to update movie'
-      throw err
-    } finally {
-      isLoading.value = false
+      const response = await theatresAPI.getAll()
+      theatres.value = Array.isArray(response.data) ? response.data : []
+    } catch {
+      theatres.value = []
     }
   }
 
-  // ── CRUD: Delete a movie ──────────────────────────────
+  // ── CRUD (admin) ─────────────────────────────────────────
+  async function createMovie(data) {
+    try {
+      const response = await moviesAPI.create(data)
+      movies.value.push(response.data)
+      return response.data
+    } catch (err) {
+      throw err
+    }
+  }
+
+  async function updateMovie(id, data) {
+    try {
+      const response = await moviesAPI.update(id, data)
+      const idx = movies.value.findIndex(m => m.id === id)
+      if (idx !== -1) movies.value[idx] = response.data
+      return response.data
+    } catch (err) {
+      throw err
+    }
+  }
+
   async function deleteMovie(id) {
-    isLoading.value = true
-    error.value = null
     try {
       await moviesAPI.delete(id)
       movies.value = movies.value.filter(m => m.id !== id)
     } catch (err) {
-      error.value = err.message || 'Failed to delete movie'
       throw err
-    } finally {
-      isLoading.value = false
     }
   }
 
-  // ── Fetch shows for a movie ───────────────────────────
-  async function fetchShowsForMovie(movieId) {
-    try {
-      const { data } = await showsAPI.getAll({ movieId: Number(movieId) })
-      shows.value = data
-      return data
-    } catch (err) {
-      error.value = err.message || 'Failed to fetch shows'
-      return []
-    }
-  }
-
-  // ── Fetch all theatres ────────────────────────────────
-  async function fetchTheatres() {
-    try {
-      const { data } = await theatresAPI.getAll()
-      theatres.value = data
-      return data
-    } catch (err) {
-      error.value = err.message || 'Failed to fetch theatres'
-      return []
-    }
-  }
-
-  // ── Reset all filters ────────────────────────────────
+  // ── Reset filters ────────────────────────────────────────
   function resetFilters() {
-    searchQuery.value = ''
-    selectedGenre.value = ''
-    selectedLanguage.value = ''
-    selectedRating.value = 0
-    selectedPriceRange.value = [0, 500]
-    sortBy.value = 'rating'
+    searchQuery.value       = ''
+    selectedGenre.value     = ''
+    selectedLanguage.value  = ''
+    selectedRating.value    = 0
+    selectedPriceRange.value= [0, 500]
+    selectedCity.value      = ''
+    sortBy.value            = 'rating'
   }
 
   return {
-    // State
-    movies: readonly(movies),
+    // State (read-only refs)
+    movies:       readonly(movies),
     currentMovie: readonly(currentMovie),
-    shows: readonly(shows),
-    theatres: readonly(theatres),
-    isLoading: readonly(isLoading),
-    error: readonly(error),
+    shows:        readonly(shows),
+    theatres:     readonly(theatres),
+    isLoading:    readonly(isLoading),
+    error:        readonly(error),
 
-    // Filter state (writable for two-way binding)
-    searchQuery,
-    selectedGenre,
-    selectedLanguage,
-    selectedRating,
-    selectedPriceRange,
-    sortBy,
+    // Filter state (writable)
+    searchQuery, selectedGenre, selectedLanguage,
+    selectedRating, selectedPriceRange, selectedCity, sortBy,
 
     // Computed
-    allGenres,
-    allLanguages,
-    filteredMovies,
-    nowShowingMovies,
-    comingSoonMovies,
-    trendingMovies,
+    allGenres, allLanguages,
+    filteredMovies, nowShowingMovies, comingSoonMovies, trendingMovies,
 
     // Methods
-    fetchMovies,
-    fetchMovie,
-    createMovie,
-    updateMovie,
-    deleteMovie,
-    fetchShowsForMovie,
-    fetchTheatres,
-    resetFilters
+    fetchMovies, fetchMovie, createMovie, updateMovie, deleteMovie,
+    fetchShowsForMovie, fetchTheatres, resetFilters,
+
+    // Helpers
+    castName
   }
 }

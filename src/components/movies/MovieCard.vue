@@ -1,16 +1,10 @@
-<!-- ============================================================
-     MovieCard.vue — Premium Movie Card Component
-     Displays movie poster, title, rating, genre, and price.
-     Features hover lift effect, gradient overlay, and rating badge.
-     Reusable across Home, Movies, and search results pages.
-     ============================================================ -->
 <template>
   <router-link
     :to="{ name: 'MovieDetails', params: { id: movie.id } }"
     class="movie-card"
     :class="{ 'card-compact': compact }"
   >
-    <!-- Poster Image with Gradient Overlay -->
+    <!-- Poster -->
     <div class="card-poster">
       <img
         :src="movie.poster"
@@ -18,53 +12,56 @@
         loading="lazy"
         @error="handleImageError"
       />
-      <!-- Gradient overlay for text readability -->
-      <div class="poster-overlay"></div>
+      <div class="poster-gradient"></div>
 
-      <!-- Rating Badge (top-right) -->
+      <!-- Rating Badge -->
       <div class="card-rating">
-        <span class="rating-star">★</span>
-        <span>{{ movie.rating }}</span>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        {{ movie.rating }}
       </div>
 
-      <!-- Status Badge (top-left) -->
-      <div v-if="movie.status === 'coming_soon'" class="card-status badge badge-gold">
+      <!-- Status badge -->
+      <div v-if="movie.status === 'coming_soon'" class="card-status">
         Coming Soon
       </div>
 
-      <!-- Hover Overlay with Book Button -->
+      <!-- Hover overlay -->
       <div class="card-hover-overlay">
-        <span class="hover-play">▶</span>
-        <span class="hover-text">View Details</span>
+        <div class="hover-play-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <span class="hover-label">View Details</span>
       </div>
     </div>
 
-    <!-- Card Info Section -->
+    <!-- Card Info -->
     <div class="card-info">
       <h3 class="card-title">{{ movie.title }}</h3>
 
-      <!-- Genre Tags -->
+      <!-- Genre Tags — clickable -->
       <div class="card-genres">
-        <span
+        <router-link
           v-for="genre in displayGenres"
           :key="genre"
+          :to="{ path: '/movies', query: { genre } }"
           class="genre-tag"
-        >
-          {{ genre }}
-        </span>
+          @click.stop
+        >{{ genre }}</router-link>
       </div>
 
-      <!-- Movie Meta: Language, Duration -->
+      <!-- Meta -->
       <div class="card-meta">
-        <span class="meta-item">{{ movie.language }}</span>
-        <span class="meta-dot">•</span>
-        <span class="meta-item">{{ movie.duration }}</span>
+        <span class="meta-lang">{{ shortLanguage(movie.language) }}</span>
+        <span class="meta-dot">·</span>
+        <span>{{ movie.duration }}</span>
+        <span class="meta-dot">·</span>
+        <span class="meta-cert">{{ movie.certificate }}</span>
       </div>
 
-      <!-- Price -->
-      <div class="card-price">
-        <span class="price-label">From</span>
-        <span class="price-value">₹{{ movie.price }}</span>
+      <!-- Price / CTA -->
+      <div class="card-footer">
+        <span class="price-from">₹{{ movie.price }}</span>
+        <span class="card-cta">Book →</span>
       </div>
     </div>
   </router-link>
@@ -73,25 +70,25 @@
 <script setup>
 import { computed } from 'vue'
 
-/* ── Props ───────────────────────────────────────────────── */
 const props = defineProps({
-  movie: { type: Object, required: true },
+  movie:   { type: Object,  required: true },
   compact: { type: Boolean, default: false }
 })
 
-// Show max 2 genres to keep the card clean
 const displayGenres = computed(() => {
-  if (Array.isArray(props.movie.genre)) {
-    return props.movie.genre.slice(0, 2)
-  }
-  return []
+  if (!Array.isArray(props.movie?.genre)) return []
+  return props.movie.genre.slice(0, 2)
 })
 
-// Fallback for broken poster images
+function shortLanguage(lang) {
+  if (!lang) return ''
+  // Show only first language if combined (e.g. "Telugu/Hindi" → "Telugu")
+  return lang.split('/')[0].trim()
+}
+
 function handleImageError(e) {
-  e.target.src = 'data:image/svg+xml,' + encodeURIComponent(
-    '<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" fill="%2312122a"><rect width="400" height="600"/><text x="200" y="300" text-anchor="middle" fill="%236b6b8d" font-size="20">🎬</text></svg>'
-  )
+  const title = encodeURIComponent(props.movie?.title || 'Movie')
+  e.target.src = `https://placehold.co/500x750/1a1a2e/666?text=${title}`
 }
 </script>
 
@@ -105,191 +102,189 @@ function handleImageError(e) {
   border: 1px solid var(--border-color);
   text-decoration: none;
   color: var(--text-primary);
-  transition: all var(--transition-slow);
-  position: relative;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.3s ease,
+              border-color 0.3s ease;
+  will-change: transform;
 }
-
-/* ── Hover Lift Effect ───────────────────────────────────── */
 .movie-card:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translateY(-6px) scale(1.015);
   border-color: var(--border-glow);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), var(--shadow-glow);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.35), 0 0 0 1px var(--border-glow);
 }
 
-/* ── Poster Section ──────────────────────────────────────── */
+/* ── Poster ──────────────────────────────────────────────── */
 .card-poster {
   position: relative;
   aspect-ratio: 2 / 3;
   overflow: hidden;
+  background: var(--bg-secondary);
 }
-
 .card-poster img {
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   object-fit: cover;
-  transition: transform var(--transition-slow);
+  transition: transform 0.4s ease;
 }
+.movie-card:hover .card-poster img { transform: scale(1.06); }
 
-.movie-card:hover .card-poster img {
-  transform: scale(1.08);
-}
-
-.poster-overlay {
+.poster-gradient {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: 0; left: 0; right: 0;
   height: 50%;
-  background: linear-gradient(to top, rgba(10, 10, 26, 0.9), transparent);
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%);
   pointer-events: none;
 }
 
-/* ── Rating Badge ────────────────────────────────────────── */
+/* Rating badge */
 .card-rating {
   position: absolute;
-  top: var(--space-sm);
-  right: var(--space-sm);
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 4px 10px;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(10px);
+  top: 10px; right: 10px;
+  display: flex; align-items: center; gap: 3px;
+  padding: 4px 8px;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(8px);
   border-radius: var(--radius-full);
-  font-size: var(--font-size-xs);
+  font-size: 0.75rem;
   font-weight: 700;
-  color: var(--color-gold);
-  border: 1px solid rgba(255, 215, 0, 0.2);
+  color: #fbbf24;
+  border: 1px solid rgba(251,191,36,0.3);
 }
 
-.rating-star { font-size: 0.7rem; }
-
-/* ── Status Badge ────────────────────────────────────────── */
+/* Status */
 .card-status {
   position: absolute;
-  top: var(--space-sm);
-  left: var(--space-sm);
+  top: 10px; left: 10px;
+  padding: 3px 8px;
+  background: rgba(245,158,11,0.85);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
-/* ── Hover Overlay ───────────────────────────────────────── */
+/* Hover overlay */
 .card-hover-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0,0,0,0.55);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--space-sm);
+  gap: 0.5rem;
   opacity: 0;
-  transition: opacity var(--transition-base);
+  transition: opacity 0.25s ease;
 }
+.movie-card:hover .card-hover-overlay { opacity: 1; }
 
-.movie-card:hover .card-hover-overlay {
-  opacity: 1;
-}
-
-.hover-play {
-  width: 56px;
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--radius-full);
-  background: var(--gradient-primary);
-  font-size: 1.25rem;
+.hover-play-btn {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  display: flex; align-items: center; justify-content: center;
   color: #fff;
-  box-shadow: var(--shadow-glow-primary);
-  transition: transform var(--transition-spring);
+  box-shadow: 0 0 20px rgba(0,212,255,0.5);
+  transition: transform 0.2s;
 }
+.movie-card:hover .hover-play-btn { transform: scale(1.1); }
 
-.movie-card:hover .hover-play {
-  transform: scale(1.1);
-}
-
-.hover-text {
-  color: #fff;
-  font-size: var(--font-size-sm);
+.hover-label {
+  font-size: 0.8125rem;
   font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.04em;
 }
 
 /* ── Card Info ───────────────────────────────────────────── */
 .card-info {
-  padding: var(--space-md) var(--space-md) var(--space-lg);
+  padding: 0.875rem;
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: 0.4rem;
+  flex: 1;
 }
 
 .card-title {
   font-family: var(--font-display);
-  font-size: var(--font-size-base);
+  font-size: 0.9375rem;
   font-weight: 700;
+  color: var(--text-primary);
   line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  margin: 0;
 }
 
 .card-genres {
   display: flex;
-  gap: 6px;
   flex-wrap: wrap;
+  gap: 0.35rem;
 }
-
 .genre-tag {
-  font-size: 0.65rem;
+  display: inline-block;
   padding: 2px 8px;
-  background: var(--bg-glass);
-  border: 1px solid var(--border-color);
+  background: rgba(0,212,255,0.08);
+  border: 1px solid rgba(0,212,255,0.2);
   border-radius: var(--radius-full);
-  color: var(--text-muted);
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+  font-size: 0.7rem;
   font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.genre-tag:hover {
+  background: rgba(0,212,255,0.18);
+  border-color: var(--color-accent);
+  color: var(--color-accent-light);
 }
 
 .card-meta {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: var(--font-size-xs);
+  gap: 0.35rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
 }
+.meta-dot { opacity: 0.5; }
+.meta-cert {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  padding: 1px 4px;
+  font-weight: 600;
+  font-size: 0.65rem;
+}
 
-.meta-dot { opacity: 0.4; }
-
-.card-price {
+.card-footer {
   display: flex;
-  align-items: baseline;
-  gap: 6px;
+  align-items: center;
+  justify-content: space-between;
   margin-top: auto;
-  padding-top: var(--space-sm);
+  padding-top: 0.5rem;
   border-top: 1px solid var(--border-color);
 }
-
-.price-label {
-  font-size: var(--font-size-xs);
-  color: var(--text-muted);
-}
-
-.price-value {
+.price-from {
   font-family: var(--font-display);
-  font-size: var(--font-size-lg);
+  font-size: 0.9375rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+.card-cta {
+  font-size: 0.75rem;
   font-weight: 700;
-  color: var(--color-neon-green);
+  color: var(--color-accent);
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
 }
+.movie-card:hover .card-cta { color: var(--color-accent-light); }
 
-/* ── Compact Variant ─────────────────────────────────────── */
-.card-compact .card-poster {
-  aspect-ratio: 3 / 4;
-}
-
-.card-compact .card-info {
-  padding: var(--space-sm);
-}
-
-.card-compact .card-title {
-  font-size: var(--font-size-sm);
-}
+/* Compact variant */
+.card-compact .card-info { padding: 0.625rem; }
+.card-compact .card-title { font-size: 0.875rem; }
 </style>

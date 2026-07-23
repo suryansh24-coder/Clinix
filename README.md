@@ -28,15 +28,6 @@
 <img src="https://img.shields.io/badge/Authentication-LocalStorage-red?style=for-the-badge">
 
 ---
-
-## 🎥 Live Preview
-
-> 🔗 **Live Demo**
-
-https://YOUR-LIVE-DEMO-LINK.vercel.app
-
----
-
 ## 📸 Application Preview
 
 <p align="center">

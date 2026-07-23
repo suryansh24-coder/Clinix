@@ -14,7 +14,8 @@ import axios from 'axios'
 // Using an absolute URL like http://localhost:3000 breaks in Replit
 // because the browser cannot reach localhost directly through the proxy.
 const api = axios.create({
-  baseURL: '/api',
+  baseURL:
+  import.meta.env.VITE_API_BASE_URL,
   headers: {
     'Content-Type': 'application/json'
   },

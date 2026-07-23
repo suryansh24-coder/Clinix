@@ -64,20 +64,30 @@
             </div>
 
             <div class="banner-actions" v-if="movie.status === 'now_showing'">
-              <button class="btn btn-primary btn-lg" @click="scrollToShows">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M22 10V6a2 2 0 00-2-2H4a2 2 0 00-2 2v4a2 2 0 110 4v4a2 2 0 002 2h16a2 2 0 002-2v-4a2 2 0 110-4z"/></svg>
-                Book Tickets
-              </button>
-              <button v-if="movie.trailerYouTubeId" class="btn btn-outline btn-lg" @click="scrollToTrailer">
-                ▶ Watch Trailer
-              </button>
-            </div>
-            <div v-else class="coming-soon-cta">
-              <span class="badge badge-gold">Releasing {{ formatDate(movie.releaseDate) }}</span>
-            </div>
+                <button
+                  class="btn btn-primary btn-lg"
+                  @click="scrollToShows">
+                  🎟 Book Tickets
+                </button>
+                <button
+                  class="btn btn-accent btn-lg"
+                  @click="goToRentMovie">
+                  🎬 Rent Movie
+                </button>
+                <button
+                  v-if="movie.trailerYouTubeId"
+                  class="btn btn-outline btn-lg"
+                  @click="scrollToTrailer"
+                >
+                  ▶ Watch Trailer
+                </button>
+              </div>
+          <div v-else class="coming-soon-cta">
+               <span class="badge badge-gold">Releasing {{ formatDate(movie.releaseDate) }}</span>
           </div>
         </div>
-      </div>
+       </div>
+     </div>
 
       <!-- ── Body ── -->
       <div class="details-body container">
@@ -279,10 +289,12 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-import { useMovies }  from '@/composables/useMovies'
+import { useRouter } from 'vue-router'
+import { useMovies } from '@/composables/useMovies'
 import { theatresAPI } from '@/services/api'
 
 const props = defineProps({ id: { type: String, required: true } })
+const router = useRouter()
 
 const {
   isLoading, error, currentMovie: movie,
@@ -351,6 +363,14 @@ function selectShow(show, theatre) {
 }
 function scrollToShows() {
   showsSection.value?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
+function goToRentMovie() {
+  router.push({
+    name: 'RentMovie',
+    params: {
+      id: movie.value.id
+    }
+  })
 }
 function scrollToTrailer() {
   trailerSection.value?.scrollIntoView({ behavior: 'smooth', block: 'start' })

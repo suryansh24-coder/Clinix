@@ -19,7 +19,9 @@
           <h3 class="modal-title">{{ title }}</h3>
 
           <!-- Modal Message -->
-          <p class="modal-message">{{ message }}</p>
+          <p class="modal-message" style="white-space: pre-line;">
+            {{ message }}
+          </p>
 
           <!-- Modal Actions -->
           <div class="modal-actions">

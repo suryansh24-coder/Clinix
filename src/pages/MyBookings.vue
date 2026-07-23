@@ -142,7 +142,11 @@
     <ConfirmModal
       :show="showCancelModal"
       title="Cancel Booking?"
-      :message="`Cancel your booking for '${selectedBooking?.movieTitle}'? Your seats will be released.`"
+      :message="`Movie: ${selectedBooking?.movieTitle}
+      Total Paid: ₹${selectedBooking?.totalPrice}
+      Cancellation Charge: ₹${Math.round((selectedBooking?.totalPrice || 0) * 0.10)}
+      Refund Amount: ₹${(selectedBooking?.totalPrice || 0) - Math.round((selectedBooking?.totalPrice || 0) * 0.10)}
+      Are you sure you want to cancel this booking?`"
       confirm-text="Yes, Cancel"
       cancel-text="Keep Booking"
       type="danger"

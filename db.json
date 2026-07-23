@@ -4458,27 +4458,7 @@
       "price": 264
     }
   ],
-  "bookings": [
-    {
-      "userId": 2,
-      "movieId": 28,
-      "movieTitle": "The Dark Knight",
-      "moviePoster": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
-      "showId": 27,
-      "theatre": "INOX – Select Citywalk",
-      "date": "2026-07-22",
-      "time": "08:30 PM",
-      "seatNumbers": [
-        "K12",
-        "K11",
-        "K10"
-      ],
-      "totalPrice": 1058,
-      "bookingDate": "2026-07-23T05:48:09.959Z",
-      "status": "confirmed",
-      "id": 1
-    }
-  ],
+  "bookings": [],
   "seats": [
     {
       "id": 1,
@@ -33843,6 +33823,24 @@
       "seatNumber": "K10",
       "status": "booked",
       "id": 4894
+    },
+    {
+      "showId": 27,
+      "seatNumber": "L16",
+      "status": "booked",
+      "id": 4895
+    },
+    {
+      "showId": 27,
+      "seatNumber": "L15",
+      "status": "booked",
+      "id": 4896
+    },
+    {
+      "showId": 27,
+      "seatNumber": "L14",
+      "status": "booked",
+      "id": 4897
     }
   ]
 }

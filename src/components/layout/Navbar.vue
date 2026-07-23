@@ -12,19 +12,6 @@
           </svg>
           <span class="brand-text">Cine<span class="brand-accent">Vault</span></span>
         </router-link>
-
-        <!-- Auth (Desktop left placement) -->
-        <div class="navbar-auth-left desktop-auth">
-          <template v-if="isLoggedIn">
-            <router-link to="/profile" class="nav-auth-avatar" title="My Profile">
-              <span>{{ userInitial }}</span>
-            </router-link>
-          </template>
-          <template v-else>
-            <router-link to="/login" class="btn btn-ghost btn-sm nav-signin">Sign In</router-link>
-            <router-link to="/register" class="btn btn-primary btn-sm nav-signup">Sign Up</router-link>
-          </template>
-        </div>
       </div>
 
       <!-- ── CENTER: Nav Links ─────────────────────────── -->
@@ -84,6 +71,25 @@
             <span v-else key="moon">🌙</span>
           </transition>
         </button>
+
+        <!-- Desktop Auth -->
+          <div class="navbar-auth-right desktop-auth">
+            <template v-if="isLoggedIn">
+              <router-link to="/profile" class="nav-auth-avatar" title="My Profile">
+                <span>{{ userInitial }}</span>
+              </router-link>
+            </template>
+
+            <template v-else>
+              <router-link to="/login" class="btn btn-ghost btn-sm nav-signin">
+                Sign In
+              </router-link>
+
+              <router-link to="/register" class="btn btn-primary btn-sm nav-signup">
+                Sign Up
+              </router-link>
+            </template>
+          </div>
 
         <!-- Hamburger -->
         <button class="hamburger" @click="isMobileMenuOpen = !isMobileMenuOpen" :class="{ open: isMobileMenuOpen }" aria-label="Menu">
@@ -346,7 +352,7 @@ onUnmounted(() => {
 .brand-accent { color: var(--color-accent); }
 
 /* Auth on left (desktop) */
-.navbar-auth-left { display: flex; align-items: center; gap: 0.5rem; }
+.navbar-auth-right { display: flex; align-items: center; gap: 0.5rem; }
 
 .nav-auth-avatar {
   width: 32px; height: 32px;

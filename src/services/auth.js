@@ -83,13 +83,13 @@ const authService = {
 
       // Create user in JSON Server database
       const newUser = {
-        name: userData.name,
-        email: userData.email.toLowerCase(),
-        password: userData.password, // Stored as-is (academic project)
-        phone: userData.phone || '',
-        avatar: '',
-        createdAt: new Date().toISOString()
-      }
+          name: userData.name.trim(),
+          email: userData.email.toLowerCase().trim(),
+          password: userData.password,
+          phone: (userData.phone || '').replace(/\D/g, '').slice(0, 10),
+          avatar: '',
+          createdAt: new Date().toISOString()
+        }
 
       const { data: createdUser } = await usersAPI.create(newUser)
 
@@ -201,7 +201,14 @@ const authService = {
    */
   async updateProfile(userId, updates) {
     try {
-      const { data: updatedUser } = await usersAPI.patch(userId, updates)
+      const sanitizedUpdates = {
+        ...updates,
+        phone: updates.phone
+          ? updates.phone.replace(/\D/g, '').slice(0, 10)
+          : ''
+      }
+
+      const { data: updatedUser } = await usersAPI.patch(userId, sanitizedUpdates)
       const sessionUser = { ...updatedUser }
       delete sessionUser.password
       saveToStorage(STORAGE_KEYS.CURRENT_USER, sessionUser)

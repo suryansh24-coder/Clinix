@@ -55,12 +55,16 @@
           <div class="form-group">
             <label class="form-label" for="phone">Phone Number <span class="optional">(optional)</span></label>
             <input
-              id="phone"
-              v-model="form.phone"
-              type="tel"
-              class="form-input"
-              placeholder="9876543210"
-            />
+                id="phone"
+                v-model="form.phone"
+                type="tel"
+                class="form-input"
+                placeholder="9876543210"
+                maxlength="10"
+                inputmode="numeric"
+                pattern="[0-9]*"
+                @input="form.phone = $event.target.value.replace(/\D/g, '')"
+              />
           </div>
 
           <!-- Password -->
@@ -228,7 +232,7 @@ async function handleRegister() {
       name:     form.value.name.trim(),
       email:    form.value.email,
       password: form.value.password,
-      phone:    form.value.phone
+      phone: form.value.phone.replace(/\D/g, '').slice(0, 10)
     })
 
     showToast?.({ type: 'success', title: 'Account created!', message: 'Welcome to CineVault!' })

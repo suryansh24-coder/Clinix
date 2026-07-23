@@ -124,7 +124,16 @@
                 </div>
                 <div class="form-group">
                   <label class="form-label">Phone</label>
-                  <input v-model="editForm.phone" type="tel" class="form-input" placeholder="9876543210" />
+                  <input
+                    v-model="editForm.phone"
+                    type="tel"
+                    class="form-input"
+                    placeholder="9876543210"
+                    maxlength="10"
+                    inputmode="numeric"
+                    pattern="[0-9]*"
+                    @input="editForm.phone = $event.target.value.replace(/\D/g, '')"
+                  />
                 </div>
               </div>
 
@@ -279,7 +288,10 @@ async function saveProfile() {
   isSaving.value = true
   saveError.value = ''
   try {
-    await updateProfile({ name: editForm.value.name.trim(), phone: editForm.value.phone })
+    await updateProfile({
+      name: editForm.value.name.trim(),
+      phone: editForm.value.phone.replace(/\D/g, '').slice(0, 10)
+    })
     isEditing.value = false
     showToast?.({ type: 'success', title: 'Profile Updated', message: 'Your details have been saved.' })
   } catch (err) {

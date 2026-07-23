@@ -151,6 +151,7 @@ export const theatresAPI = {
 export const showsAPI = {
   getAll: (params = {}) => api.get('/shows', { params }),
   getById: (id) => api.get(`/shows/${id}`),
+  getByMovie: (movieId) => api.get('/shows', { params: { movieId } }),
   patch: (id, data) => api.patch(`/shows/${id}`, data)
 }
 

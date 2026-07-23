@@ -17,6 +17,10 @@ const MyBookings = () => import('@/pages/MyBookings.vue')
 const Profile = () => import('@/pages/Profile.vue')
 const Login = () => import('@/pages/Login.vue')
 const Register = () => import('@/pages/Register.vue')
+const FAQ = () => import('@/pages/FAQ.vue')
+const Contact = () => import('@/pages/Contact.vue')
+const Terms = () => import('@/pages/Terms.vue')
+const Privacy = () => import('@/pages/Privacy.vue')
 const NotFound = () => import('@/pages/NotFound.vue')
 
 // ── Route Definitions ───────────────────────────────────
@@ -88,6 +92,30 @@ const routes = [
       title: 'Create Account — CineVault',
       guestOnly: true
     }
+  },
+  {
+    path: '/faq',
+    name: 'FAQ',
+    component: FAQ,
+    meta: { title: 'FAQs — CineVault' }
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: Contact,
+    meta: { title: 'Contact Us — CineVault' }
+  },
+  {
+    path: '/terms',
+    name: 'Terms',
+    component: Terms,
+    meta: { title: 'Terms of Service — CineVault' }
+  },
+  {
+    path: '/privacy',
+    name: 'Privacy',
+    component: Privacy,
+    meta: { title: 'Privacy Policy — CineVault' }
   },
   {
     // Catch-all 404 route

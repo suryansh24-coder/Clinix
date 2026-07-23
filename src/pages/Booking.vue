@@ -54,6 +54,36 @@
             </div>
           </div>
 
+          <!-- ── Show Time Selector (PVR-style) ── -->
+          <div class="showtime-selector glass-card animate-fade-in-up">
+            <div class="showtime-header">
+              <div class="showtime-date-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                {{ formatDateShort(show.date) }}
+              </div>
+              <div class="showtime-ticket-count" v-if="selectedSeats.length">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22 10V6a2 2 0 00-2-2H4a2 2 0 00-2 2v4a2 2 0 110 4v4a2 2 0 002 2h16a2 2 0 002-2v-4a2 2 0 110-4z"/></svg>
+                {{ selectedSeats.length }} {{ selectedSeats.length === 1 ? 'Ticket' : 'Tickets' }}
+              </div>
+            </div>
+            <div class="showtime-slots">
+              <button
+                v-for="s in sameTheatreShows"
+                :key="s.id"
+                class="showtime-slot"
+                :class="{ active: s.id === show.id, 'low-availability': s.availableSeats < 20 && s.id !== show.id }"
+                @click="switchShow(s)"
+                :disabled="s.availableSeats === 0"
+              >
+                <span class="slot-time">{{ s.time }}</span>
+                <span v-if="s.format" class="slot-format">{{ s.format }}</span>
+                <span class="slot-avail" :class="getAvailClass(s.availableSeats)">
+                  {{ s.availableSeats === 0 ? 'Housefull' : s.availableSeats < 20 ? 'Filling Fast' : 'Available' }}
+                </span>
+              </button>
+            </div>
+          </div>
+
           <!-- ── PVR-Style Seat Map ── -->
           <div class="seat-map-section glass-card">
 
@@ -86,7 +116,7 @@
               <!-- PRIME Tier -->
               <div class="seat-tier">
                 <div class="tier-header">
-                  <span class="tier-price">Rs.280 PRIME</span>
+                  <span class="tier-price">₹{{ getTierPrice('PRIME') }} &nbsp;PRIME</span>
                 </div>
                 <div class="tier-rows">
                   <div v-for="row in primeRows" :key="row" class="seat-row">
@@ -112,7 +142,7 @@
               <!-- PICTURE PERFECT Tier -->
               <div class="seat-tier">
                 <div class="tier-header">
-                  <span class="tier-price">Rs.520 PICTURE PERFECT</span>
+                  <span class="tier-price">₹{{ getTierPrice('PICTURE_PERFECT') }} &nbsp;PICTURE PERFECT</span>
                 </div>
                 <div class="tier-rows">
                   <div v-for="row in picturePerfectRows" :key="row" class="seat-row">
@@ -138,7 +168,7 @@
               <!-- CLASSIC Tier -->
               <div class="seat-tier">
                 <div class="tier-header">
-                  <span class="tier-price">Rs.250 CLASSIC</span>
+                  <span class="tier-price">₹{{ getTierPrice('CLASSIC') }} &nbsp;CLASSIC</span>
                 </div>
                 <div class="tier-rows">
                   <div v-for="row in classicRows" :key="row" class="seat-row">
@@ -384,17 +414,18 @@ const { showToast } = useToast()
 const { selectedSeats, isSeatSelected, toggleSeat, clearSeats, createBooking, getBookedSeats, setBookingContext } = useBookings()
 
 // ── Local state ────────────────────────────────────────────
-const movie           = ref(null)
-const show            = ref(null)
-const theatreName     = ref('')
-const bookedSeatNums  = ref([])
-const pageLoading     = ref(true)
-const pageError       = ref('')
-const bookingLoading  = ref(false)
-const bookingSuccess  = ref(false)
-const confirmedBooking = ref(null)
-const showPaymentModal = ref(false)
-const paymentMethod    = ref('upi')
+const movie             = ref(null)
+const show              = ref(null)
+const theatreName       = ref('')
+const bookedSeatNums    = ref([])
+const pageLoading       = ref(true)
+const pageError         = ref('')
+const bookingLoading    = ref(false)
+const bookingSuccess    = ref(false)
+const confirmedBooking  = ref(null)
+const showPaymentModal  = ref(false)
+const paymentMethod     = ref('upi')
+const sameTheatreShows  = ref([])  // Other show times at same theatre
 
 // ── Seat Layout Configuration ────────────────────────────
 // PVR usually numbers from right to left.
@@ -419,10 +450,9 @@ function getTierPrice(tier) {
 
 function getSeatTier(seatId) {
   const row = seatId.charAt(0)
-  if (['A', 'B'].includes(row)) return 'PRIME'
-  if (['C', 'D', 'E'].includes(row)) return 'PICTURE_PERFECT'
-  if (['F', 'G', 'H'].includes(row)) return 'CLASSIC'
-  return 'VALUE'
+  if (['P', 'N', 'M', 'L'].includes(row)) return 'PRIME'
+  if (['K', 'J', 'H'].includes(row)) return 'PICTURE_PERFECT'
+  return 'CLASSIC'
 }
 
 function getSeatPrice(seatId) {
@@ -494,6 +524,22 @@ onMounted(async () => {
     const theatreRes = await theatresAPI.getById(show.value.theatreId)
     theatreName.value = theatreRes.data.name
 
+    // Fetch all shows for same movie + theatre + date (for time selector)
+    const allShowsRes = await showsAPI.getAll({ movieId: Number(props.movieId) })
+    sameTheatreShows.value = allShowsRes.data
+      .filter(s => s.theatreId === show.value.theatreId && s.date === show.value.date)
+      .sort((a, b) => {
+        // Sort by time (convert 12h to comparable 24h)
+        const toMinutes = t => {
+          const [time, period] = t.split(' ')
+          let [h, m] = time.split(':').map(Number)
+          if (period === 'PM' && h !== 12) h += 12
+          if (period === 'AM' && h === 12) h = 0
+          return h * 60 + m
+        }
+        return toMinutes(a.time) - toMinutes(b.time)
+      })
+
     // Fetch already-booked seats for this show
     bookedSeatNums.value = await getBookedSeats(Number(props.showId))
 
@@ -505,6 +551,22 @@ onMounted(async () => {
     pageLoading.value = false
   }
 })
+
+// ── Switch to a different show time ──────────────────────
+async function switchShow(newShow) {
+  if (newShow.id === show.value.id) return
+  clearSeats()
+  show.value = newShow
+  setBookingContext({ pricePerSeat: newShow.price })
+  bookedSeatNums.value = await getBookedSeats(newShow.id)
+}
+
+// ── Seat availability class for time slot ─────────────────
+function getAvailClass(avail) {
+  if (avail === 0) return 'avail-none'
+  if (avail < 20)  return 'avail-low'
+  return 'avail-ok'
+}
 
 // ── Confirm and Create Booking ────────────────────────────
 function openPaymentModal() {
@@ -553,15 +615,121 @@ function goToBookings() {
   router.push({ name: 'MyBookings' })
 }
 
-// ── Format date helper ────────────────────────────────────
+// ── Format date helpers ───────────────────────────────────
 function formatDate(d) {
   if (!d) return ''
   return new Date(d).toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' })
+}
+
+function formatDateShort(d) {
+  if (!d) return ''
+  return new Date(d).toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short' })
 }
 </script>
 
 <style scoped>
 .booking-page { padding: var(--space-xl) 0 var(--space-4xl); }
+
+/* ── Show Time Selector ──────────────────────────────────── */
+.showtime-selector {
+  padding: var(--space-lg);
+}
+
+.showtime-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+}
+
+.showtime-date-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.showtime-ticket-count {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--color-accent);
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.25);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+}
+
+.showtime-slots {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.showtime-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--border-color);
+  background: var(--bg-glass);
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 100px;
+}
+
+.showtime-slot:hover:not(:disabled) {
+  border-color: var(--color-accent);
+  background: rgba(0, 212, 255, 0.06);
+}
+
+.showtime-slot.active {
+  border-color: #22c55e;
+  background: rgba(34, 197, 94, 0.1);
+}
+
+.showtime-slot:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.showtime-slot.low-availability {
+  border-color: rgba(251, 191, 36, 0.5);
+}
+
+.slot-time {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  font-family: var(--font-display);
+}
+.showtime-slot.active .slot-time { color: #22c55e; }
+
+.slot-format {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 2px 8px;
+  background: rgba(0, 212, 255, 0.15);
+  color: var(--color-accent);
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.slot-avail {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+.slot-avail.avail-ok   { color: #22c55e; }
+.slot-avail.avail-low  { color: #f59e0b; }
+.slot-avail.avail-none { color: #ef4444; }
 
 /* ── Breadcrumb ──────────────────────────────────────────── */
 .breadcrumb {
@@ -705,8 +873,8 @@ function formatDate(d) {
   border: 1px solid #4ade80;
 }
 .legend-booked {
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
+  background: #dc2626;
+  border: 1px solid #dc2626;
 }
 
 /* ── Seat Tiers ──────────────────────────────────────────── */
@@ -840,13 +1008,13 @@ function formatDate(d) {
   transform: scale(1.08);
 }
 
-/* Booked/Reserved — GREY OUTLINE */
+/* Booked/Reserved — SOLID RED */
 .seat.seat-booked {
-  border: 1px solid #e5e7eb;
-  background: #f9fafb;
-  color: transparent;
+  border: 1px solid #dc2626;
+  background: #dc2626;
+  color: #fff;
   cursor: not-allowed;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .max-seats-note {
